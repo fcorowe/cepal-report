@@ -1,4 +1,166 @@
 {
-    "sources": [],
+    "sources": [
+        {
+            "DOI": "10.48550/ARXIV.2206.03272",
+            "URL": "https://arxiv.org/abs/2206.03272",
+            "author": [
+                {
+                    "family": "Rowe",
+                    "given": "Francisco"
+                },
+                {
+                    "family": "Calafiore",
+                    "given": "Alessia"
+                },
+                {
+                    "family": "Arribas-Bel",
+                    "given": "Daniel"
+                },
+                {
+                    "family": "Samardzhiev",
+                    "given": "Krasen"
+                },
+                {
+                    "family": "Fleischmann",
+                    "given": "Martin"
+                }
+            ],
+            "id": "rowe2022",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "title": "Urban exodus? Understanding human mobility in britain during the COVID-19 pandemic using facebook data",
+            "type": "article-journal"
+        },
+        {
+            "URL": "http://dx.doi.org/10.31219/osf.io/xcdms",
+            "author": [
+                {
+                    "family": "Rowe",
+                    "given": "Francisco"
+                },
+                {
+                    "family": "Lovelace",
+                    "given": "Robin"
+                },
+                {
+                    "family": "Dennett",
+                    "given": "Adam"
+                }
+            ],
+            "id": "rowe2022a",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022,
+                        7,
+                        22
+                    ]
+                ]
+            },
+            "title": "Spatial interaction modelling: A manifesto",
+            "title-short": "Spatial interaction modelling",
+            "type": ""
+        },
+        {
+            "DOI": "10.1007/s44212-022-00018-w",
+            "URL": "http://dx.doi.org/10.1007/s44212-022-00018-w",
+            "author": [
+                {
+                    "family": "Wang",
+                    "given": "Yikang"
+                },
+                {
+                    "family": "Zhong",
+                    "given": "Chen"
+                },
+                {
+                    "family": "Gao",
+                    "given": "Qili"
+                },
+                {
+                    "family": "Cabrera-Arnau",
+                    "given": "Carmen"
+                }
+            ],
+            "container-title": "Urban Informatics",
+            "id": "wang2022",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022,
+                        11,
+                        29
+                    ]
+                ]
+            },
+            "language": "en",
+            "title": "Understanding internal migration in the UK before and during the COVID-19 pandemic using twitter data",
+            "type": "article-journal",
+            "volume": "1"
+        },
+        {
+            "id": "ISCRAM19",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "title": "16th international conference on information systems for crisis response and management",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Maas",
+                    "given": "P."
+                },
+                {
+                    "family": "Iyer",
+                    "given": "S."
+                },
+                {
+                    "family": "Gros",
+                    "given": "A."
+                },
+                {
+                    "family": "Park",
+                    "given": "W."
+                },
+                {
+                    "family": "McGorman",
+                    "given": "L."
+                },
+                {
+                    "family": "Nayak",
+                    "given": "C."
+                },
+                {
+                    "family": "Dow",
+                    "given": "P. A."
+                }
+            ],
+            "container-title": "16th international conference on information systems for crisis response and management",
+            "id": "Maas19",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "page": "836-847",
+            "title": "Facebook disaster maps: Aggregate insights for crisis response and recovery",
+            "title-short": "Facebook disaster maps",
+            "type": "paper-conference"
+        }
+    ],
     "project_biblios": []
 }

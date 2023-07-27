@@ -1,5 +1,5 @@
 ---
-title: "Arguing the use of digital footprint data for evidence-based policies in response to human mobility changes after COVID-19 in Latin America"
+title: "Making a case for the use of digital footprint data for evidence-based policies in response to human mobility changes after COVID-19 in Latin America"
 author: "Francisco Rowe, Carmen Cabrera-Arnau, Miguel González-Leonardo, Andrea Nasuto, Ruth Neville"
 format:
   pdf:
@@ -15,25 +15,76 @@ editor_options:
 
 # Introduction
 
-- Identify the opportunities of digital footprint data for human mobility in Chile
+Digital footprint data (DFD) are increasingly becoming a vital component of the data ecosystem to measure and monitor human mobility.
+DFD are digital traces left as a result from social interactions on digital platforms, such as the Internet through web search engines (e.g. Google), social media networks (e.g. Twitter and Facebook), commercial systems in the way of transactions (e.g. payment systems), sensor networks to capture environmental and human changes (e.g. fitness trackers, temperature and sound sensors), and imagery collected via satellites, cameras, drones, CCTV and imaging devices.
+Digital traces encoding location recorded through Call Detail Records (CDRs), eXtended Detail Records (XDR), Global Positioning System (GPS), Bluetooth and smart card data have been particularly valuable to reconstruct a traceable digital representation of human mobility.
 
-- 
+These forms of DFD offer three key opportunities to capture human mobility (1) at higher geographical and temporal granularity; (2) over extensive geographical coverage comprising entire population systems or geographical areas; and (3) in real or near-real time \[REF\].
+These attributes have enabled to complement traditional data sources to capture human mobility at various geographically scales, including urban mobility \[REF\], internal migration \[REF\] and international migration \[REF\]
 
+Yet, the use of DFD poses significant challenges.
+These data are a by-product of administrative processes.
+They are not collected for research purposes.
+Their use involves major conceptual, methodological, data and ethical challenges \[REF\].
+For instance, turning raw DFD into actionable, usable information requires significant data engineering, embracing data-driven hypotheses, accounting for data biases, ensuring privacy and anonymity, and integrating and validating the resulting outcomes with external data sources \[REF\].
+These challenges to be overcome to unleash the opportunities offered by DFD.
 
+An increasing number of "Data for Good" initiatives have been developed to leverage the potential positive social impact of DFD.
+These include data governance, data strategy and data sharing initiatives [@europeancommission.jointresearchcentre.2022].
+Data governance initiatives involve efforts focused on the provision of guidance about best practices for the collection, storage, share and use DFD for the social good.
+Data strategy initiatives focus on building capacity in civil society by designing data strategies for nonprofits and government agencies, such as Data-Pop Alliance and the Open Data Institute.
+Data sharing initiatives entail the creation and facilitation of access to datasets by data providers for organisations seeking to generate data solutions and positive social impact.
+These initiatives include [Data for Good at Meta](https://dataforgood.facebook.com/dfg/about) and [Waze Partner Hub](https://www.waze.com/wazeforcities/).
 
-Aim: 
+Enabled by these initiatives, the use of DFD seems to have been - much more promising in less developed countries given data scarcity.
 
-- 
+-   Discuss how digital footprint data have been used in more developed countries or global north
+
+-   Highlight the limited use of digital footprint data in the global south
+
+-   Aim: Use of digital footprint data for mobility and policy response
+
+-   Argue case for COVID and mobility
+
+-   Structure
 
 # Background
 
+## Internal population movements during the COVID-19 pandemic
+
+## Contemporary patterns of internal population movements
+
 # Data
+
+Description of the Meta-Facebook Data - Population and movement
+
+Description of the COVID stringency data
+
+Description of the WorldPop data
 
 # Methods
 
+Describe the distinction of movements of different distances and rationale
+
+Describe and display population density classification
+
+Description of the analysis using the baseline
+
+Description of the netflows, inflows and outflows
+
+Description of flow maps
+
 # Results
 
+## 
+
 # Discussion
+
+Discussion of the key findings
+
+Interpretation
+
+Policy implications - for housing, transport and planning - for data
 
 # Conclusion
 

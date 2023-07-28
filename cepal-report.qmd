@@ -76,15 +76,60 @@ Description of flow maps
 
 # Results
 
-## 
+## Population movements early 2020 and 2020 following the COVID-19 outbreak
+
+Describe the violin / box plots.
+Key points:
+
+-   Decline in mobility following the implementation of COVID-19 stringency measures in early 2020.
+    The decline follows a gradient: stronger in the most density areas, smaller in the least dense areas.
+    Describe differences across countries and types of moves when relevant.
+
+-   Recovery in 2022 following the relaxation of COVID-19 restrictions.
+    Describe differences across countries and types of move when relevant.
+
+## Spatio-temporal patterns of population redistribution during COVID-19
+
+**\> 50km**
+
+-   Negative net balance in the highest density regions of the metropolitan area in early 2020 for Chile - support of urban exodus but temporarily.
+    The negative net balance in the highest density araes coincides with increases with positive balances in low density areas (class 2 and 3)
+
+-   Different patterns in Argentina, Colombia and Mexico - a trend of positive net balances coinciding with negative balances in low density areas (class 2 and 3) - particularly in Colombia and Mexico
+
+-   A systematic pattern of negative net balance in medium size cities across all countries (class 7)
+
+-   The temporal patterns in the intensity of outflows and inflows are remarkably similar with differences in magnitude.
+
+    **\< 50km**
+
+-   Negative net balances in the highest density areas of Argentina, Colombia and Mexico - evidence of a donut effect i.e. negative balance in the core of metropolitan cities
+
+-   This pattern coincides with positive balances across different places in the urban hierarchy in these countries.
+
+-   Chile reports a different pattern - relatively little change - remarkable is the large negative balance in class 8.
+
+## Movements from and to capital cities
+
+<!--# We need to see the maps -->
 
 # Discussion
 
-Discussion of the key findings
+## Summary of key findings
 
-Interpretation
+-   Decline in mobility intensity after the outbreak of COVID-19
 
-Policy implications - for housing, transport and planning - for data
+-   Support of urban exodus for Chile - but temporary - recovery to pre-pandemic levels
+
+-   Donut effect in Argentina, Colombia and Mexico
+
+## Interpretation
+
+## Policy implications
+
+-   for housing, transport and planning
+
+-   for data
 
 # Conclusion
 

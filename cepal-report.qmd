@@ -6,9 +6,17 @@ author:
       - ref: uol
     corresponding: true
   - name: \small Carmen Cabrera-Arnau
+    affiliation:
+      - ref: uol
   - name: \small Miguel González-Leonardo
+    affiliation:
+      - ref: colmex
   - name: \small Andrea Nasuto
+    affiliation:
+      - ref: uol
   - name: \small Ruth Neville
+    affiliation:
+      - ref: uol
 affiliations: 
   - id: uol
     name: University of Liverpool
@@ -16,12 +24,11 @@ affiliations:
   - id: colmex
     name: El Colegio de México
     city: Mexico
-classoption: abstract
 abstract: |
-  Text for abstract
+  **Abstract**. Text for abstract
 format: 
   pdf: 
-    mainfont: SF Pro
+    mainfont: Baskerville
     fontsize: 10.5pt
 editor: visual
 bibliography: refs.bib

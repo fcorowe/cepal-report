@@ -28,8 +28,8 @@ abstract: |
   **Abstract**. Text for abstract
 format: 
   pdf: 
-    mainfont: Baskerville
-    fontsize: 10.5pt
+    mainfont: Helvetica
+    fontsize: 10pt
 editor: visual
 bibliography: refs.bib
 editor_options:

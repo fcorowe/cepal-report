@@ -1,17 +1,34 @@
 ---
 title: "Making a case for the use of digital footprint data for evidence-based policies in response to human mobility changes after COVID-19 in Latin America"
-author: "Francisco Rowe, Carmen Cabrera-Arnau, Miguel González-Leonardo, Andrea Nasuto, Ruth Neville"
-format:
-  pdf:
-    template: template.tex
+author: 
+  - name: \small Francisco Rowe
+    affiliation:
+      - ref: uol
+    corresponding: true
+  - name: \small Carmen Cabrera-Arnau
+  - name: \small Miguel González-Leonardo
+  - name: \small Andrea Nasuto
+  - name: \small Ruth Neville
+affiliations: 
+  - id: uol
+    name: University of Liverpool
+    city: Liverpool
+  - id: colmex
+    name: El Colegio de México
+    city: Mexico
+classoption: abstract
+abstract: |
+  Text for abstract
+format: 
+  pdf: 
+    mainfont: SF Pro
+    fontsize: 10.5pt
 editor: visual
 bibliography: refs.bib
 editor_options:
   markdown:
     wrap: sentence
 ---
-
-<!--# The abstract is set up in the tex file.-->
 
 # Introduction
 
@@ -112,8 +129,6 @@ Key points:
 ## Movements from and to capital cities
 
 <!--# We need to see the maps -->
-
-I would expect more long-distance outflows in 2020. According to box plots, long-distance outflows from the category 10 of population density declined by about 40% in Argentina during 2020 and by about 15% in 2022 (see figures 1 and 2). Therefore, we should see more outflows in the map of 2020.
 
 # Discussion
 

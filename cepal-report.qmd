@@ -131,15 +131,20 @@ An additional data set from WorldPop was used to capture the spatial distributio
 
 # Methods
 
-Describe the distinction of movements of different distances and rationale
+## Classifying Bing tiles according to their population density
 
-Describe and display population density classification
+Here we aim to understand how the population density at the origin and the destination might influence mobility behaviours. To help characterise the population density between origin and destination, we classify the Bing tiles into 10 discrete categories of population density according to the Jenks natural breaks classification method, hence obtaining a categorisation of Bing tiles a lot more detailed than the traditional binary rural/urban classification.
 
-Description of the analysis using the baseline
+## Tile-based mobility metrics
 
-Description of the netflows, inflows and outflows
+We measured changes in the intensity of inflows and outflows, i.e. population flows entering ond leaving every tile respectively. We did this across the urban hierarchy of Argentina, Chile, Colombia and Mexico and for two distinctive months during the course of the COVID-19 pandemic: May 2020 and March 2022. Changes in the number of inflows and outflows are measured as a percentage with respect to the baseline values defined by Meta-Facebook [@Maas19]. Specifically, we computed the percentage change for each inflow and outflow to and from every tile. Then, for each of the 10 population density categories, we obtained boxplots that illustrate the spread of values of percentage change in the intensity of the two types of flows.
 
-Description of flow maps
+Furthermore, we also analysed the evolution of netflows, i.e. the difference in the number of people entering and leaving a location, throughout the whole period of the dataset. The netflows where computed aggregating the movement data by month and by population density class category.
+
+## Local vs long-distance mobility
+
+We computed all the tile-based metrics described above for movements where the Euclidean distance between the origin and the destination location was recorded to be greater than 0 km. Furthermore, we stratified the data into two groups that capture local movements and long-distance mobility, by considering flows where the Euclidean distance betwee nthe origin and the destinaiton locations was below or above 100 km. The rationale for this stratification is that we expect the COVID-19 pandemic to affect mobility differently at different spatial scales.
+
 
 # Results
 

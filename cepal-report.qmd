@@ -277,7 +277,7 @@ Therefore, we should be aware of this limitation when interpreting the results.
 Surprisingly, long-distance out-flows in the lowest category of population density in Colombia exceeded pre-pandemic figures.
 This increase was probably driven by people from rural areas who postponed their plans of moving until the restrictions were lifted.
 
-Concerning inflows (Figures 1 and 2 in the Appendix <!--# FR: add this section / figures -->), changes in levels and patterns across the rural-urban hierarchy mirror those observed in outflows, with a few nuances <!--# FR: don't think we need to introduce new figures to make a point we have made already -->.
+Concerning inflows (Figures 1 and 2 in the Appendix <!--# FR: add this section / figures -->), changes in levels and patterns across the rural-urban hierarchy mirror those observed in outflows, with a few nuances <!--# FR: don't think we need to introduce new figures to make a point we have made already. If this is what we will say, suggest we say at the start of the section when we introduce the figures that we report the reports for inflows in the appendix and that they show similar trends. -->.
 We do not observe an urban exodus in Latin America during the first wave of COVID-19, but a general decline in movements from and to all population density areas during early stages of the pandemic.
 Declines seems to have been temporary, as intensities of internal population movements recovered pre-pandemic levels in March 2022, although they were still slightly lower, preliminary in the main cities.
 The only exception is Mexico, where intensities almost reached pre-pandemic figures.
@@ -295,6 +295,8 @@ Key points:
     Describe differences across countries and types of move when relevant.
 
 ## Spatio-temporal patterns of population redistribution during COVID-19
+
+To analyse the evolution of the changes in internal population movements, we analysed changes in the net balance between inflows and outflows during the COVID-19 pandemic.
 
 In this section, we examine how net balances of internal population movements changes over the pandemic across the rural-urban hierarchy.
 For that purpose, we calculate net movements, as the difference between inflows and outflows, by categories of population density and months from March 2020 to May 2022.

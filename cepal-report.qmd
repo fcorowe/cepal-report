@@ -30,6 +30,7 @@ format:
   pdf: 
     mainfont: Helvetica
     fontsize: 10pt
+number-sections: true
 editor: visual
 bibliography: refs.bib
 editor_options:

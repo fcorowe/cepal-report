@@ -204,7 +204,7 @@ NEED TABLE HERE!
 
 ## Tile-based mobility metrics
 
-<!--# FR: would include equations for this section and I would make the difference between the internsity and impact of mobility, to introduce the two indicators used i.e. change in intensity and change in net mobility (impact) -->
+<!--# FR: would include equations for this section and I would make the difference between the internsity and impact of mobility, to introduce the two indicators used i.e. change in intensity and change in net mobility (impact)  -->
 
 We measured changes in the intensity of inflows and outflows, i.e. the number of people entering and leaving every tile.
 We did this across all tiles of Argentina, Chile, Colombia and Mexico for two distinctive months during the course of the COVID-19 pandemic: May 2020 and March 2022.

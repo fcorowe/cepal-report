@@ -296,10 +296,10 @@ Key points:
 
 ## Spatio-temporal patterns of population redistribution during COVID-19
 
-To analyse the evolution of the changes in internal population movements, we analysed changes in the net balance between inflows and outflows during the COVID-19 pandemic.
+To analyse the evolution of the changes in internal population movements, we analysed changes in the net balance between inflows and outflows across the rural-urban hierarchy during the COVID-19 pandemic.
+We calculated the monthly net movement balance as the difference between inflows minus outflows by population density classes during March 2020 to May 2022.
+We used
 
-In this section, we examine how net balances of internal population movements changes over the pandemic across the rural-urban hierarchy.
-For that purpose, we calculate net movements, as the difference between inflows and outflows, by categories of population density and months from March 2020 to May 2022.
 As for the previous sub-section, we distinguish between movements under 100 Km (Figure 3) and over 100 Km (Figure 4).
 
 ![Total number of net movement by population density class over time. Movements under 100km.](./outputs/netflows_u100_0km_format_report.pdf){#fig-fig3}

@@ -323,8 +323,8 @@ At the same time, @fig-fig3 shows a relatively consistent positive net balance o
 Argentina records a consistent pattern of greater inward movement than outward movement in medium density areas of class 5 type, including <!--# name example areas -->, and a trend of irregular net positive balances in the least dense areas of class 1-3 and high density locations of class 9.
 Areas of class 1-3 in Argentina correspond to rural and sparsely populated regions across the country, while class 9 areas predominantly represent suburban metropolitan and large city areas <!--# name example areas -->.
 In Colombia, positive net balances are less pronounced.
-They tended to occur in areas of class 3, 7 and 8 over 2021 and 2022, displaying an upward trend.
-In Mexico,
+They tended to occur in areas of class 3, 7 and 8 over 2021 and 2022, predominantly in <!--# name example areas -->.
+In Mexico, a pattern of consistently positive net balance of movements occurred in the range of less dense areas of class 1 to 5, particularly in
 
 Chile displays a different pattern.
 

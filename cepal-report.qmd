@@ -39,7 +39,9 @@ editor_options:
 
 # Introduction
 
-Digital footprint data (DFD) are increasingly becoming a vital component of the data ecosystem to measure and monitor human mobility. DFD are digital traces left as a result of social interactions on digital platforms, such as the Internet through web search engines (e.g. Google), social media networks (e.g. Twitter and Facebook), commercial systems in the way of transactions (e.g. payment systems), sensor networks to capture environmental and human changes (e.g. fitness trackers, temperature and sound sensors), and imagery collected via satellites, cameras, drones, CCTV and imaging devices. Digital traces encoding location recorded through Call Detail Records (CDRs), eXtended Detail Records (XDR), Global Positioning System (GPS), Bluetooth and smart card data have been particularly valuable to reconstruct a traceable digital representation of human mobility.
+Digital footprint data (DFD) are increasingly becoming a vital component of the data ecosystem to measure and monitor human mobility.
+DFD are digital traces left as a result of social interactions on digital platforms, such as the Internet through web search engines (e.g. Google), social media networks (e.g. Twitter and Facebook), commercial systems in the way of transactions (e.g. payment systems), sensor networks to capture environmental and human changes (e.g. fitness trackers, temperature and sound sensors), and imagery collected via satellites, cameras, drones, CCTV and imaging devices.
+Digital traces encoding location recorded through Call Detail Records (CDRs), eXtended Detail Records (XDR), Global Positioning System (GPS), Bluetooth and smart card data have been particularly valuable to reconstruct a traceable digital representation of human mobility.
 
 These forms of DFD offer three key opportunities to capture human mobility (1) at higher geographical and temporal granularity; (2) over extensive geographical coverage comprising entire population systems or geographical areas; and (3) in real or near-real time \[REF\].
 These attributes have enabled to complement traditional data sources to capture human mobility at various geographically scales, including urban mobility \[REF\], internal migration \[REF\] and international migration \[REF\]
@@ -51,7 +53,12 @@ Their use involves major conceptual, methodological, data and ethical challenges
 For instance, turning raw DFD into actionable, usable information requires significant data engineering, embracing data-driven hypotheses, accounting for data biases, ensuring privacy and anonymity, and integrating and validating the resulting outcomes with external data sources \[REF\].
 These challenges to be overcome to unleash the opportunities offered by DFD.
 
-An increasing number of "Data for Good" initiatives have been developed to leverage the potential positive social impact of DFD. These include data governance, data strategy and data sharing initiatives [@europeancommission.jointresearchcentre.2022]. Data governance initiatives involve efforts focused on the provision of guidance about best practices for the collection, storage, share and use DFD for the social good. Data strategy initiatives focus on building capacity in civil society by designing data strategies for nonprofits and government agencies, such as Data-Pop Alliance and the Open Data Institute. Data sharing initiatives entail the creation and facilitation of access to datasets by data providers for organisations seeking to generate data solutions and positive social impact. These initiatives include [Data for Good at Meta](https://dataforgood.facebook.com/dfg/about) and [Waze Partner Hub](https://www.waze.com/wazeforcities/).
+An increasing number of "Data for Good" initiatives have been developed to leverage the potential positive social impact of DFD.
+These include data governance, data strategy and data sharing initiatives [@europeancommission.jointresearchcentre.2022].
+Data governance initiatives involve efforts focused on the provision of guidance about best practices for the collection, storage, share and use DFD for the social good.
+Data strategy initiatives focus on building capacity in civil society by designing data strategies for nonprofits and government agencies, such as Data-Pop Alliance and the Open Data Institute.
+Data sharing initiatives entail the creation and facilitation of access to datasets by data providers for organisations seeking to generate data solutions and positive social impact.
+These initiatives include [Data for Good at Meta](https://dataforgood.facebook.com/dfg/about) and [Waze Partner Hub](https://www.waze.com/wazeforcities/).
 
 Enabled by these initiatives, the use of DFD seems to have been - much more promising in less developed countries given data scarcity.
 
@@ -69,27 +76,62 @@ Enabled by these initiatives, the use of DFD seems to have been - much more prom
 
 ## The impact of COVID-19 on internal population movements
 
-Globally, there is evidence that the COVID-19 pandemic constrained both shorth- and long-distance movements within national boundaries [@nouvellet2021; @gonzález-leonardo2022a; @wang2022; @rowe2023]. Declines were documented across the Global North during the first year of the pandemic, in the United States [@ramani2021], some European countries, Japan and Australia [@rowe2023], from 2.5% in Spain to 8.5% in Australia. Drops mostly occurred when governments implemented non-pharmaceutical interventions, such as stay-at-home requirements, travel restrictions, mobility restrictions, business and school closures. Levels of human mobility within countries, however, recovered pre-pandemic values following the elimination of lockdowns and other stringency measures. Declines on human mobility were attributed to lockdowns, increasing teleworking and restrictions of movements, but also to a loss of labour market dynamism as a consequence of the economic recession during the pandemic [@perales2022]. In addition to evidence in the Global North, drops in internal population movements were also found in Latin American, declining by about 10% during periods of severe stringency measures [@aromí2023]. The highest declines occurred in Bolivia, Ecuador and Argentina, ranging from 16% to 19%, while they did not reach 3% in Paraguay and Venezuela.
+Globally, there is evidence that the COVID-19 pandemic constrained both shorth- and long-distance movements within national boundaries [@nouvellet2021; @gonzález-leonardo2022a; @wang2022; @rowe2023].
+Declines were documented across the Global North during the first year of the pandemic, in the United States [@ramani2021], some European countries, Japan and Australia [@rowe2023], from 2.5% in Spain to 8.5% in Australia.
+Drops mostly occurred when governments implemented non-pharmaceutical interventions, such as stay-at-home requirements, travel restrictions, mobility restrictions, business and school closures.
+Levels of human mobility within countries, however, recovered pre-pandemic values following the elimination of lockdowns and other stringency measures.
+Declines on human mobility were attributed to lockdowns, increasing teleworking and restrictions of movements, but also to a loss of labour market dynamism as a consequence of the economic recession during the pandemic [@perales2022].
+In addition to evidence in the Global North, drops in internal population movements were also found in Latin American, declining by about 10% during periods of severe stringency measures [@aromí2023].
+The highest declines occurred in Bolivia, Ecuador and Argentina, ranging from 16% to 19%, while they did not reach 3% in Paraguay and Venezuela.
 
-In global north countries, the COVID-19 pandemic also modified the patters of internal population movements between large cities and areas with lower population densities [@rowe2023]. Variations were found in the United States [@ramani2021], United Kingdom [@rowe2023; @wang2022], Spain [@gonzález-leonardo2022b; @gonzález-leonardo2022a], Germany [@stawarz2022], Sweden [@vogiazides2022], Norway [@tønnessen2021], Australia [@perales2022] and Japan [@fielding2021, @kotsubo2022]. Net-migration rates in large cities declined in the United States, Germany, Norway, Sweden and Japan during 2020, while they increased in their suburbs. [@ramani2021] called this phenomenon as "donut effect", reflecting a decrease in population inflows to urban centers (urbanization) and a growth of movements from cities to their suburban rings (suburbanization). Nonetheless, there is no evidence of a "donut effect" in the United Kingdom, Spain and Japan, as net-flows in suburbs did not show significant changes. However, inflows to large cities also declined and counterurbanisation movements increased, reflecting unusual population gains in rural areas. In Spain, Sweden, Japan and Germany, holiday town with second homes of wealthy individuals were also found as popular destination for people leaving large cities during the pandemic. It suggests that wealthy populations and professionals who are able to work remotely seems to underpin movements from large cities to areas with lower population densities where they own second residences [@haslag2021; @tønnessen2021].
+In global north countries, the COVID-19 pandemic also modified the patters of internal population movements between large cities and areas with lower population densities [@rowe2023].
+Variations were found in the United States [@ramani2021], United Kingdom [@rowe2023; @wang2022], Spain [@gonzález-leonardo2022b; @gonzález-leonardo2022a], Germany [@stawarz2022], Sweden [@vogiazides2022], Norway [@tønnessen2021], Australia [@perales2022] and Japan [@fielding2021, @kotsubo2022].
+Net-migration rates in large cities declined in the United States, Germany, Norway, Sweden and Japan during 2020, while they increased in their suburbs.
+[@ramani2021] called this phenomenon as "donut effect", reflecting a decrease in population inflows to urban centers (urbanization) and a growth of movements from cities to their suburban rings (suburbanization).
+Nonetheless, there is no evidence of a "donut effect" in the United Kingdom, Spain and Japan, as net-flows in suburbs did not show significant changes.
+However, inflows to large cities also declined and counterurbanisation movements increased, reflecting unusual population gains in rural areas.
+In Spain, Sweden, Japan and Germany, holiday town with second homes of wealthy individuals were also found as popular destination for people leaving large cities during the pandemic.
+It suggests that wealthy populations and professionals who are able to work remotely seems to underpin movements from large cities to areas with lower population densities where they own second residences [@haslag2021; @tønnessen2021].
 
 Despite the above-mentioned changes to the human mobility system during the pandemic, research suggests that pre-existing macro-structures of internal population movement across the rural-urban continuum were not altered, since the majority of movements continued to occur within and between urban areas, and changes are not likely to endure [@rowe2023].
-For instance, mobility patterns returned to those registered before the pandemic after the lockdown in the United Kingdom [@rowe2022; @wang2022]. The pandemic caused minor impacts on spatial patterns of internal population movements in Australia, and variations attributed to COVID-19 disappeared in late 2020 [@perales2022]. Urbanisation levels returned to those register prior to the pandemic in Spain when the lockdown ended in mid-2020 [@gonzález-leonardo2022b], although unusually high levels of counterurbanisation persisted over 2021, despite decreasing over the year [@gonzález-leonardo2022a].
+For instance, mobility patterns returned to those registered before the pandemic after the lockdown in the United Kingdom [@rowe2022; @wang2022].
+The pandemic caused minor impacts on spatial patterns of internal population movements in Australia, and variations attributed to COVID-19 disappeared in late 2020 [@perales2022].
+Urbanisation levels returned to those register prior to the pandemic in Spain when the lockdown ended in mid-2020 [@gonzález-leonardo2022b], although unusually high levels of counterurbanisation persisted over 2021, despite decreasing over the year [@gonzález-leonardo2022a].
 
-Previous work provided a good understanding on how human mobility across the rural-urban hierarchy was affected by the pandemic in the Global North. However, less is known about COVID-19 impacts on movements between cities, suburbs and rural areas in the Global South and the durability of potential changes. Anecdotal evidence, based on small surveys carried out in India [@irudayarajan2020] and South Africa [@ginsburg2022], pointed out that flows from large cities to less populated areas increased due to the return of workers to their hometown, while movements of labour force to cities decreased. Both surveys saw that the economic downturn caused by non-pharmaceutical interventions during the pandemic [@ghosh2020] underpinned declining inflows of workers to cities and increasing returns among people who lost their jobs. The above-mentioned anecdotal evidence suggests that vulnerable populations seem to have played a role in movements to and away from large cities during the pandemic in the Global South.
+Previous work provided a good understanding on how human mobility across the rural-urban hierarchy was affected by the pandemic in the Global North.
+However, less is known about COVID-19 impacts on movements between cities, suburbs and rural areas in the Global South and the durability of potential changes.
+Anecdotal evidence, based on small surveys carried out in India [@irudayarajan2020] and South Africa [@ginsburg2022], pointed out that flows from large cities to less populated areas increased due to the return of workers to their hometown, while movements of labour force to cities decreased.
+Both surveys saw that the economic downturn caused by non-pharmaceutical interventions during the pandemic [@ghosh2020] underpinned declining inflows of workers to cities and increasing returns among people who lost their jobs.
+The above-mentioned anecdotal evidence suggests that vulnerable populations seem to have played a role in movements to and away from large cities during the pandemic in the Global South.
 
-Nonetheless, a recent study demonstrated that wealthy individuals from large cities in Brazil, Colombia, Indonesia, Mexico, Philippines and South Africa moved to lees populated areas during the first wave of COVID-19 [@lucchini2023]. On average, residents from high-wealthy neighborhoods were 1.5 times more likely to leave cities compared to those from low-wealthy areas. These finding is in line to results in Global North countries. Despite anecdotal evidence suggesting pandemic impacts on the patterns of internal population movements across the rural-urban hierarchy in some Global South countries, lack of data has not allowed for quantifying the magnitude and durability of potential impacts on the human mobility system. To fill the gap, we use Facebook data to analyse the effect of COVID-19 on the patterns of internal population movements in Argentina, Chile, Colombia and Mexico.
+Nonetheless, a recent study demonstrated that wealthy individuals from large cities in Brazil, Colombia, Indonesia, Mexico, Philippines and South Africa moved to lees populated areas during the first wave of COVID-19 [@lucchini2023].
+On average, residents from high-wealthy neighborhoods were 1.5 times more likely to leave cities compared to those from low-wealthy areas.
+These finding is in line to results in Global North countries.
+Despite anecdotal evidence suggesting pandemic impacts on the patterns of internal population movements across the rural-urban hierarchy in some Global South countries, lack of data has not allowed for quantifying the magnitude and durability of potential impacts on the human mobility system.
+To fill the gap, we use Facebook data to analyse the effect of COVID-19 on the patterns of internal population movements in Argentina, Chile, Colombia and Mexico.
 
 ## Human mobility across the rural-urban continuum in Latin American countries
 
-Currently, Latin America has the highest urbanization rate in the world after North America, totaling 81% [@UNpopulation19]. It means that the population is highly concentrated across space within Latin American countries, particularly in large cities with more than one million inhabitants, where half of urban residents are settled [@PintoDaCunha02; @lattes2017]. High urbanization rates are due to massive levels of population redistribution from rural settlements to cities until the 1980s, mostly during the fast industrialisation period from early-1950s to late-1970s, when population gains were mainly observed in chief cities [@firebaugh1979; @lattes95; @sobrino12]. Internal population movements in Latin America have been declining since the 1980s, as rural population stocks were depleted [@chávezgalindo2016] and the industrial crisis leaded to deconcentration trends in large cities, such as Santiago de Chile [@gonzálezollino2006) or Mexico City [@sobrino2006], where long distance inflows have declined. In sum, middle size cities became more attractive to internal migrants as a consequence of increasing domestic and foreign investment in export-oriented industries or tourism activities, leading to geographic economic dispersal [@Brea03; @Pérez-Campuzano13; @chávezgalindo2016]. Nowadays, movements between cities dominate the internal migratory system in Latin American countries [@bernard2017; @rodríguez-vignoli2018; @UNpopulation19]. About 80% of internal migrants moved between cities, according to the 2010-11 census round [@rodríguez-vignoli2018]. Medium-sizes cities from 500.000 to 1 million residents showed the highest population gains by internal migration, while large cities with more than 1 million residents registered balanced rates and small cities with less than 500.000 inhabitants lost population by internal mobility [@rodríguez-vignoli2018].
+Currently, Latin America has the highest urbanization rate in the world after North America, totaling 81% [@UNpopulation19].
+It means that the population is highly concentrated across space within Latin American countries, particularly in large cities with more than one million inhabitants, where half of urban residents are settled [@PintoDaCunha02; @lattes2017].
+High urbanization rates are due to massive levels of population redistribution from rural settlements to cities until the 1980s, mostly during the fast industrialisation period from early-1950s to late-1970s, when population gains were mainly observed in chief cities [@firebaugh1979; @lattes95; @sobrino12].
+Internal population movements in Latin America have been declining since the 1980s, as rural population stocks were depleted [@chávezgalindo2016] and the industrial crisis leaded to deconcentration trends in large cities, such as Santiago de Chile [@gonzálezollino2006) or Mexico City [@sobrino2006], where long distance inflows have declined.
+In sum, middle size cities became more attractive to internal migrants as a consequence of increasing domestic and foreign investment in export-oriented industries or tourism activities, leading to geographic economic dispersal [@Brea03; @Pérez-Campuzano13; @chávezgalindo2016].
+Nowadays, movements between cities dominate the internal migratory system in Latin American countries [@bernard2017; @rodríguez-vignoli2018; @UNpopulation19].
+About 80% of internal migrants moved between cities, according to the 2010-11 census round [@rodríguez-vignoli2018].
+Medium-sizes cities from 500.000 to 1 million residents showed the highest population gains by internal migration, while large cities with more than 1 million residents registered balanced rates and small cities with less than 500.000 inhabitants lost population by internal mobility [@rodríguez-vignoli2018].
 
-Latin American cities have shown a significant growth in terms of land development in their urban peripheries. Since the 1970s, large cities, such as Santiago de Chile, Buenos Aires or Mexico City, but also middle and small cities have experienced suburbanisation [@graizbord2007; @chávezgalindo2016]. Suburbanisation flows comprise middle- and high-class families moving from cities to auto-segregated areas in the periphery [@borsdorf2003; @rodríguezvignoli2017]. Low-income individuals also settle in slams across suburbs but, in this case, in those areas where the land cost is cheaper [@janoschka2002; @rodríguezvignoli2017]. Both residents in auto-segregated areas and slams commute daily to cities, mainly for work reasons [@chávezgalindo2016]. Most recently, reurbanisation trends have been identified in central areas due to gentrification dynamics, although suburbanization flows continue to dominate short distance movements [@sobrino12; @chávezgalindo2016]. In this repot, we explore COVID-19 impacts on the patterns of human mobility across the rural-urban continuum in Latin America.
-
+Latin American cities have shown a significant growth in terms of land development in their urban peripheries.
+Since the 1970s, large cities, such as Santiago de Chile, Buenos Aires or Mexico City, but also middle and small cities have experienced suburbanisation [@graizbord2007; @chávezgalindo2016].
+Suburbanisation flows comprise middle- and high-class families moving from cities to auto-segregated areas in the periphery [@borsdorf2003; @rodríguezvignoli2017].
+Low-income individuals also settle in slams across suburbs but, in this case, in those areas where the land cost is cheaper [@janoschka2002; @rodríguezvignoli2017].
+Both residents in auto-segregated areas and slams commute daily to cities, mainly for work reasons [@chávezgalindo2016].
+Most recently, reurbanisation trends have been identified in central areas due to gentrification dynamics, although suburbanization flows continue to dominate short distance movements [@sobrino12; @chávezgalindo2016].
+In this repot, we explore COVID-19 impacts on the patterns of human mobility across the rural-urban continuum in Latin America.
 
 # Data - section reviewed by Carmen
 
-## Meta-Facebook Data 
+## Meta-Facebook Data
 
 The multinational technology conglomerate Meta offers a range of data products aimed for social good through their Data for Good programme, which is open to trusted partners including universities, non-profit organisations, and international institutions.
 The data is available at small spatial and temporal scales and has the potential to improve how we respond to real-world crises or unusual events, such as earthquakes, hurricanes, floods or pandemics [@Maas19].
@@ -100,71 +142,114 @@ The collected location data also enables targeting of AMBER alerts and prompts t
 While the raw location data remains available only to the data owners, the datasets available through Data for Good consist of anonymised and aggregated near real-time data corresponding to a period of crisis which might extend over several weeks, months or years.
 The datasets also contain historical location data as a baseline period before the event [@Maas19].
 
-## Facebook Population During Crisis and Facebook Movement During Crisis data 
+## Facebook Population During Crisis and Facebook Movement During Crisis data
 
-In this report, we analyse human mobility during the COVID-19 pandemic using the datasets Coronavirus Disease Prevention Map of Facebook Population During Crisis (Tile Level) and Coronavirus Disease Prevention Map of Facebook Movements During Crisis (Tile Level), hereinafter Facebook Population and Facebook Movements datasets. Specifically, we analyse human movement data from four Latin American countries: Argentina, Chile, Colombia and Mexico. The former dataset allows us to analyse how the number of Facebook users changed across space during the COVID-19 pandemic. The focus of our analysis, however, is on the latter, which contains information about the evolution of spatial patterns of mobility during COVID-19.
+In this report, we analyse human mobility during the COVID-19 pandemic using the datasets Coronavirus Disease Prevention Map of Facebook Population During Crisis (Tile Level) and Coronavirus Disease Prevention Map of Facebook Movements During Crisis (Tile Level), hereinafter Facebook Population and Facebook Movements datasets.
+Specifically, we analyse human movement data from four Latin American countries: Argentina, Chile, Colombia and Mexico.
+The former dataset allows us to analyse how the number of Facebook users changed across space during the COVID-19 pandemic.
+The focus of our analysis, however, is on the latter, which contains information about the evolution of spatial patterns of mobility during COVID-19.
 
-The datasets contain data corresponding to a two-year period, starting on the 10th March 2020 and ending in mid-March 2022. Data are temporally aggregated into three 8-hour daily time windows (00:00-08:00, 08:00-16:00 and 16:00-00:00). The datasets also include data for baseline levels before COVID-19 based on a 45-day period ending on the 10th of March of 2020.
+The datasets contain data corresponding to a two-year period, starting on the 10th March 2020 and ending in mid-March 2022.
+Data are temporally aggregated into three 8-hour daily time windows (00:00-08:00, 08:00-16:00 and 16:00-00:00).
+The datasets also include data for baseline levels before COVID-19 based on a 45-day period ending on the 10th of March of 2020.
 The baseline data is computed using an average for the same time of the day and day of the week in the period preceding the crisis (e.g., average over all data collected on a Monday from 00:00 to 8:00 or average over all data collected on a Wednesday from 16:00 to 00:00).
 For more details on how the baseline values are computed, see [@Maas19].
 
-The data is spatially aggregated into units called Tiles, according to the Bing Maps Tile System developed by Microsoft [@microsoftBingMaps]. This widely-used system offers a variety of world partitions, where the spatial units are square cells at various levels of resolution. The Data for Good datasets are typically generated using Bing tile levels 13 through 16, where level 13 results in tiles that are about 4.9 x 4.9 km at the Equator [@Maas19].
+The data is spatially aggregated into units called Tiles, according to the Bing Maps Tile System developed by Microsoft [@microsoftBingMaps].
+This widely-used system offers a variety of world partitions, where the spatial units are square cells at various levels of resolution.
+The Data for Good datasets are typically generated using Bing tile levels 13 through 16, where level 13 results in tiles that are about 4.9 x 4.9 km at the Equator [@Maas19].
 
-The Facebook Population data provides the number of mobile app users who have the Location Services setting turned on, aggregated by tile. The location of each user in a given 8-hour time window is determined by the tile where they spent most of the time within that window.
-The Facebook Movement data captures the number of mobile app users who have the the Location Services setting turned on moving between a pairs of tile. The origin and destination of a movement are defined as the locations where a user spent most time between two subsequent time windows (e.g., 00:00-8:00 and 8:00-16:00). In addition to the count data, both the Facebook Population and the Facebook Movement datasets include the percentage difference between the number of counts during the crisis period and the corresponding baseline level for each entry.
+The Facebook Population data provides the number of mobile app users who have the Location Services setting turned on, aggregated by tile.
+The location of each user in a given 8-hour time window is determined by the tile where they spent most of the time within that window.
+The Facebook Movement data captures the number of mobile app users who have the the Location Services setting turned on moving between a pairs of tile.
+The origin and destination of a movement are defined as the locations where a user spent most time between two subsequent time windows (e.g., 00:00-8:00 and 8:00-16:00).
+In addition to the count data, both the Facebook Population and the Facebook Movement datasets include the percentage difference between the number of counts during the crisis period and the corresponding baseline level for each entry.
 
-Prior to releasing the datasets, information on personal characteristics of users is removed and several techniques are applied to ensure privacy and anonymity. Small-count dropping is one of these techniques, whereby a data entry is removed from the data set if population or movement counts are lower than 10 during the crisis period, the baseline period or both.
-While this technique makes it harder to identify individual users based on their movement patterns, the removal of data entries containing locations with small counts may lead to an underrepresentation of the population in these places. Another of these techniques consists in adding a small undisclosed amount of random noise to ensure that it is not possible to ascertain precise, true counts for sparsely populated locations. In order to produce a smooth population count surface, spatial smoothing using inverse distance-weighted averaging is also applied (see [@Maas19] for details).
+Prior to releasing the datasets, information on personal characteristics of users is removed and several techniques are applied to ensure privacy and anonymity.
+Small-count dropping is one of these techniques, whereby a data entry is removed from the data set if population or movement counts are lower than 10 during the crisis period, the baseline period or both.
+While this technique makes it harder to identify individual users based on their movement patterns, the removal of data entries containing locations with small counts may lead to an underrepresentation of the population in these places.
+Another of these techniques consists in adding a small undisclosed amount of random noise to ensure that it is not possible to ascertain precise, true counts for sparsely populated locations.
+In order to produce a smooth population count surface, spatial smoothing using inverse distance-weighted averaging is also applied (see [@Maas19] for details).
 
 ## Covid-19 stringency data
 
-To understand the patterns of mobility in the context of the COVID-19 pandemic, we use the stringency index as a measure of the level of nonpharmaceutical interventions to COVID-19, such as social distancing and lockdowns. The stringency index ranges from 0 to 100, with 100 being the value corresponding to the most strict scenario. The values for the stringency index were retrieved from the COVID-19 government response tracker (https://www.bsg.ox.ac.uk/research/research-projects/covid-19-government-response-tracker).
+To understand the patterns of mobility in the context of the COVID-19 pandemic, we use the stringency index as a measure of the level of nonpharmaceutical interventions to COVID-19, such as social distancing and lockdowns.
+The stringency index ranges from 0 to 100, with 100 being the value corresponding to the most strict scenario.
+The values for the stringency index were retrieved from the COVID-19 government response tracker (https://www.bsg.ox.ac.uk/research/research-projects/covid-19-government-response-tracker).
 For more information, see Hale et al. [@Hale2021].
 
 ## Worldpop population data
 
-An additional data set from WorldPop was used to capture the spatial distribution of actual population in the different countries analysed here. The WorlPop poulation dataset is in raster format and contains gridded population data at 1 sqkm resolution. We processed the WorlPop population data so it is spatially aggregated according to the Bing Maps Tile System.
+An additional data set from WorldPop was used to capture the spatial distribution of actual population in the different countries analysed here.
+The WorlPop poulation dataset is in raster format and contains gridded population data at 1 sqkm resolution.
+We processed the WorlPop population data so it is spatially aggregated according to the Bing Maps Tile System.
 The level of detail was chosen so it coincides with that used in the Facebook Population and the Facebook Movements data for each of the countries analysed in this study.
 
 # Methods - section reviewed by Carmen
 
 ## Classifying Bing tiles according to their population density
 
-In this study, we aim to understand how the population density at the origin and destination locations might influence mobility behaviours. To help characterise the population density of different locations, we consider the Worldpop population data aggregated into Bing tiles. We then use the Jenks natural breaks classification method in order to obtain 10 categories of population density, with categories 1 and 10 being the least and most dense categories respectively. This categorisation of Bing tiles, which offers a greater level of detail than the traditional binary rural/urban classification, is represented in Figure 1. In the Figure, we have included maps for the four countries in the study showing the Bing tiles coloured according to the population density category they belong to. It is possible to see from the in-set histograms that Argentina and Chile have very skewed distributions due to the strong concentration of highest-density areas in just a few tiles belonging to their capital cities, Buenos Aires and Santiago. By contrast, Colombia and Mexico display more balanced population density distributions across tiles. It is important to note that the cut-off values for each population density category vary across countries, but we expect tiles belonging to the same category in each country to have similar functions in the urban hierarchy (e.g. the high-density tiles belonging to category 10 always correspond to major urban centres that act as socioeconomic hubs in their respective regions).
+In this study, we aim to understand how the population density at the origin and destination locations might influence mobility behaviours.
+To help characterise the population density of different locations, we consider the Worldpop population data aggregated into Bing tiles.
+We then use the Jenks natural breaks classification method in order to obtain 10 categories of population density, with categories 1 and 10 being the least and most dense categories respectively.
+This categorisation of Bing tiles, which offers a greater level of detail than the traditional binary rural/urban classification, is represented in Figure 1.
+In the Figure, we have included maps for the four countries in the study showing the Bing tiles coloured according to the population density category they belong to.
+It is possible to see from the in-set histograms that Argentina and Chile have very skewed distributions due to the strong concentration of highest-density areas in just a few tiles belonging to their capital cities, Buenos Aires and Santiago.
+By contrast, Colombia and Mexico display more balanced population density distributions across tiles.
+It is important to note that the cut-off values for each population density category vary across countries, but we expect tiles belonging to the same category in each country to have similar functions in the urban hierarchy (e.g. the high-density tiles belonging to category 10 always correspond to major urban centres that act as socioeconomic hubs in their respective regions).
 
-![Maps showing the density classes for the different tiles in Argentina, Chile, Colombia and Mexico.](outputs/Map_density_histogram.png)
-In order to provide a better intuition of the type of areas that each population density category represents, we also include Table 1, where we give a few examples of names of places belonging to each density category.
-
+![Maps showing the density classes for the different tiles in Argentina, Chile, Colombia and Mexico.](outputs/Map_density_histogram.png) In order to provide a better intuition of the type of areas that each population density category represents, we also include Table 1, where we give a few examples of names of places belonging to each density category.
 
 NEED TABLE HERE!
 
-
 ## Tile-based mobility metrics
 
-We measured changes in the intensity of inflows and outflows, i.e. the number of people entering and leaving every tile. We did this across all tiles of Argentina, Chile, Colombia and Mexico for two distinctive months during the course of the COVID-19 pandemic: May 2020 and March 2022. To detect changes in the number of inflows and outflows, we use the percentage change values provided in the Facebook Movement data sets [@Maas19]. Specifically, we retrieve all the movements entering and leaving each of the 10 population density categories during the selected month. Then we generate boxplots for the percentage change variable, corresponding to each population density category. Therefore, the boxplots illustrate the spread of values of percentage change in the number of inflows and outflows during a selected month for each population density category.
+We measured changes in the intensity of inflows and outflows, i.e. the number of people entering and leaving every tile.
+We did this across all tiles of Argentina, Chile, Colombia and Mexico for two distinctive months during the course of the COVID-19 pandemic: May 2020 and March 2022.
+To detect changes in the number of inflows and outflows, we use the percentage change values provided in the Facebook Movement data sets [@Maas19].
+Specifically, we retrieve all the movements entering and leaving each of the 10 population density categories during the selected month.
+Then we generate boxplots for the percentage change variable, corresponding to each population density category.
+Therefore, the boxplots illustrate the spread of values of percentage change in the number of inflows and outflows during a selected month for each population density category.
 
-Furthermore, we also analysed the evolution of netflows, i.e. the difference in the number of people entering and leaving a location, throughout the whole period of the dataset. The netflows where computed aggregating the movement data by month and by population density category. Doing so allows us to visualise the evolution on the net number of people entering a given pouplation density category over the course of the COVID-19 pandemic.
+Furthermore, we also analysed the evolution of netflows, i.e. the difference in the number of people entering and leaving a location, throughout the whole period of the dataset.
+The netflows where computed aggregating the movement data by month and by population density category.
+Doing so allows us to visualise the evolution on the net number of people entering a given pouplation density category over the course of the COVID-19 pandemic.
 
 ## Local vs long-distance mobility
 
-All the tile-based metrics described above where computed for movements where the Euclidean distance between the origin and the destination location was recorded to be greater than 0 km. Movements where the recorded distance was 0 km were discarded. Furthermore, we stratified the movement data into two groups capturing local movements and long-distance mobility. We did this by splitting the Facebook Movement dataset into two, one considering flows where the crow-fly distance covered by the movement was below than 100 km and the other one for movements covering more than 100 km. The rationale for this stratification is that we expect the COVID-19 pandemic to affect mobility differently at different spatial scales. In particular, we expect the changes in home-to-work travel to display different trends to longer-distance, cross-regional trips. 
+All the tile-based metrics described above where computed for movements where the Euclidean distance between the origin and the destination location was recorded to be greater than 0 km.
+Movements where the recorded distance was 0 km were discarded.
+Furthermore, we stratified the movement data into two groups capturing local movements and long-distance mobility.
+We did this by splitting the Facebook Movement dataset into two, one considering flows where the crow-fly distance covered by the movement was below than 100 km and the other one for movements covering more than 100 km.
+The rationale for this stratification is that we expect the COVID-19 pandemic to affect mobility differently at different spatial scales.
+In particular, we expect the changes in home-to-work travel to display different trends to longer-distance, cross-regional trips.
 
 # Results
 
 ## Changes in mobility in May 2020 and in March 2022 - Partially reviewed by Carmen (not completed yet)
 
-We analysed changes in the intensity of inflows and outflows for different population density categories across Argentina, Chile, Colombia and Mexico in May 2020 and March 2022. These two months represent two pivotal points in the pandemic: the early days when many relatively strong stringency measures where still in place following the WHO's declaration on the 11th of March 2020 that COVID-19 was a global pandmic, and the later days when many of these stringency measures had already been relaxed in most countries. 
+We analysed changes in the intensity of inflows and outflows for different population density categories across Argentina, Chile, Colombia and Mexico in May 2020 and March 2022.
+These two months represent two pivotal points in the pandemic: the early days when many relatively strong stringency measures where still in place following the WHO's declaration on the 11th of March 2020 that COVID-19 was a global pandmic, and the later days when many of these stringency measures had already been relaxed in most countries.
 
-Figures 1 and 2 show boxplots of the distribution of values for the percentage change in the number of outflows, for under and over 100 km respectively. The boxplots in the Figures correspond to movements that emerge from each population density category during May 2020 and March 2022. The baseline levels are represented by the dotted line at $y=0$. Positive values of percentage change in the number of outflows indicate increases in mobility levels relative to the pre-pandemic period, while reductions in mobility are captured by negative values. 
+Figures 1 and 2 show boxplots of the distribution of values for the percentage change in the number of outflows, for under and over 100 km respectively.
+The boxplots in the Figures correspond to movements that emerge from each population density category during May 2020 and March 2022.
+The baseline levels are represented by the dotted line at $y=0$.
+Positive values of percentage change in the number of outflows indicate increases in mobility levels relative to the pre-pandemic period, while reductions in mobility are captured by negative values.
 
 ![Outflows change in May 2020 and March 2022 compared to baseline by deciles of population density. Movements under 100km.](./outputs/all_countries_outflows_u100.pdf){#fig-fig1}
 
-![Outflows change in May 2020 and March 2022 compared to baseline by deciles of population density. Movements over 100km.](./outputs/all_countries_outflows_o100.pdf){#fig-fig1}
+![Outflows change in May 2020 and March 2022 compared to baseline by deciles of population density. Movements over 100km.](./outputs/all_countries_outflows_o100.pdf)
 
-Overall, we observe a consistent decline in outflows across all population density categories, for movements under and over 100 km. The decline is specially strong in the early days of the pandemic, and we observe some degree of recovery in May 2022, evidenced by the fact that the boxplots appear closer to the baseline levels. - I AM HERE
+Overall, we observe a consistent decline in outflows across all population density categories, for movements under and over 100 km.
+The decline is specially strong in the early days of the pandemic, and we observe some degree of recovery in May 2022, evidenced by the fact that the boxplots appear closer to the baseline levels.
+- I AM HERE
 
-across the rural-urban hierarchy during early stages of the pandemic, reflecting the effect of stringency measures to contain the spread of COVID-19. On average, mobility declined by x%.
-Declines show a consistent gradient according to population densities: the greater the level of population density, the higher the decline in outflows. In other words, the largest drops occurred in highly densely populated areas, such as Buenos Aires, Santiago, Bogota and Mexico City, exceeding 50%, while low densely areas deported lower declines. Otherwise, we identify a relatively higher level of variability in changes of outflows in less dense populated areas than in those with high densities, where reduction in mobility intensities were closer to the average change. These patterns are consistent across the four countries in both short- and long-distance movements.
+across the rural-urban hierarchy during early stages of the pandemic, reflecting the effect of stringency measures to contain the spread of COVID-19.
+On average, mobility declined by x%.
+Declines show a consistent gradient according to population densities: the greater the level of population density, the higher the decline in outflows.
+In other words, the largest drops occurred in highly densely populated areas, such as Buenos Aires, Santiago, Bogota and Mexico City, exceeding 50%, while low densely areas deported lower declines.
+Otherwise, we identify a relatively higher level of variability in changes of outflows in less dense populated areas than in those with high densities, where reduction in mobility intensities were closer to the average change.
+These patterns are consistent across the four countries in both short- and long-distance movements.
 
 However, we observed some nuances.
 For instance, declines in short-distance movements from high and medium densely areas seem to be slightly lower in Argentina and Mexico than in Chile and Colombia.
@@ -249,7 +334,18 @@ When restrictions were lifted over 2022, net gains in large cities increased, su
 
 ## Movements from and to capital cities
 
-<!--# We need to see the maps -->
+In this section, we explore spatial patterns of outflows under and over 100 Km from the capital cities of Argentina, Chile, Colombia and Mexico during the first wave of COVID-19 in May 2020 and during late stages of the pandemic in March 2022.
+We identity that both outflows under and over 100 Km away from all cities were much lower in May 2020 than in March 2022, especially from Buenos Aires and Bogota.
+This finding is consistent to those from Figures 1 and 2 and reinforce that a decline of movements away from large cities occurred in early stages of the pandemic, while levels returned closer to those register before the pandemic after the elimination of stringency measures.
+However, we find that outflows over 100 Km from capital cities were much more affected by the above-mentioned decline that those under 100km, especially in Argentina Colombia.
+
+We do not observe significant changes in the patterns of internal population movements away from the capital cities between May 2020 and March 2022 in Chile and Mexico.
+In other works, the distribution of outflows from these cities is mostly the same in both periods.
+In Argentina and Colombia, however, both movements under and over 100 Km were of shorter distance in May 2020 than in March 2022.
+Thus, there was a significant decline in the distance that people moved toward the periphery and also to other parts of the country farther away from Buenos Aires and Bogota during early stages of the pandemic.
+
+Our findings suggest that a general drop of movements from large cities occurred in Latin America during the first wave of COVID-19, but the patterns of internal population movements away from these cities were not altered, despite a decline in the distance that people travelled from Buenos Aires and Bogota.
+Nonetheless, variations seem to have been temporary and did not altered macro-structures of the human mobility in Latin American countries.
 
 # Discussion
 

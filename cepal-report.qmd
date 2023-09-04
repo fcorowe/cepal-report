@@ -129,7 +129,9 @@ Both residents in auto-segregated areas and slams commute daily to cities, mainl
 Most recently, reurbanisation trends have been identified in central areas due to gentrification dynamics, although suburbanization flows continue to dominate short distance movements [@sobrino12; @chávezgalindo2016].
 In this repot, we explore COVID-19 impacts on the patterns of human mobility across the rural-urban continuum in Latin America.
 
-# Data - section reviewed by Carmen
+# Data
+
+<!--# section reviewed by Carmen -->
 
 ## Meta-Facebook Data
 
@@ -142,7 +144,7 @@ The collected location data also enables targeting of AMBER alerts and prompts t
 While the raw location data remains available only to the data owners, the datasets available through Data for Good consist of anonymised and aggregated near real-time data corresponding to a period of crisis which might extend over several weeks, months or years.
 The datasets also contain historical location data as a baseline period before the event [@Maas19].
 
-## Facebook Population During Crisis and Facebook Movement During Crisis data
+## Facebook data
 
 In this report, we analyse human mobility during the COVID-19 pandemic using the datasets Coronavirus Disease Prevention Map of Facebook Population During Crisis (Tile Level) and Coronavirus Disease Prevention Map of Facebook Movements During Crisis (Tile Level), hereinafter Facebook Population and Facebook Movements datasets.
 Specifically, we analyse human movement data from four Latin American countries: Argentina, Chile, Colombia and Mexico.
@@ -171,7 +173,7 @@ While this technique makes it harder to identify individual users based on their
 Another of these techniques consists in adding a small undisclosed amount of random noise to ensure that it is not possible to ascertain precise, true counts for sparsely populated locations.
 In order to produce a smooth population count surface, spatial smoothing using inverse distance-weighted averaging is also applied (see [@Maas19] for details).
 
-## Covid-19 stringency data
+## COVID-19 stringency data
 
 To understand the patterns of mobility in the context of the COVID-19 pandemic, we use the stringency index as a measure of the level of nonpharmaceutical interventions to COVID-19, such as social distancing and lockdowns.
 The stringency index ranges from 0 to 100, with 100 being the value corresponding to the most strict scenario.
@@ -185,9 +187,11 @@ The WorlPop poulation dataset is in raster format and contains gridded populatio
 We processed the WorlPop population data so it is spatially aggregated according to the Bing Maps Tile System.
 The level of detail was chosen so it coincides with that used in the Facebook Population and the Facebook Movements data for each of the countries analysed in this study.
 
-# Methods - section reviewed by Carmen
+# Methods {#sec-methods}
 
-## Classifying Bing tiles according to their population density
+<!--# section reviewed by Carmen -->
+
+## Population density classes {#sec-methods1}
 
 In this study, we aim to understand how the population density at the origin and destination locations might influence mobility behaviours.
 To help characterise the population density of different locations, we consider the Worldpop population data aggregated into Bing tiles.
@@ -253,7 +257,7 @@ The decline is specially strong in the early days of the pandemic, and we observ
 <!--# I AM HERE -->
 
 across the rural-urban hierarchy during early stages of the pandemic, reflecting the effect of stringency measures to contain the spread of COVID-19.
-On average, mobility declined by x% <!--# FR: add percentahe -->.
+On average, mobility declined by x% <!--# FR: add percentage -->.
 Declines show a consistent gradient according to population densities: the greater the level of population density, the higher the decline in outflows.
 In other words, the largest drops occurred in highly densely populated areas, such as Buenos Aires, Santiago, Bogota and Mexico City, exceeding 50%, while low densely areas deported lower declines.
 Otherwise, we identify a relatively higher level of variability in changes of outflows in less dense populated areas than in those with high densities, where reduction in mobility intensities were closer to the average change.
@@ -299,13 +303,14 @@ Key points:
 We also analysed the spatial impact of mobility on redistributing population across the country during the COVID-19 pandemic.
 Specifically, we examined the evolution of changes in the net balance between mobility inflows and outflows across the rural-urban hierarchy during the pandemic.
 We calculated the monthly net movement balance as the difference between mobility inflows minus outflows for individual population density classes during March 2020 to May 2022.
-@fig-fig3
-
-As for the previous sub-section, we distinguish between movements under 100 Km (Figure 3) and over 100 Km (Figure 4).
+@fig-fig3 and @fig-fig4 shows the changes in net balance for movements under 100km and over 100km, respectively.
 
 ![Total number of net movement by population density class over time. Movements under 100km.](./outputs/netflows_u100_0km_format_report.pdf){#fig-fig3}
 
 ![Total number of net movement by population density class over time. Movements under 100km.](./outputs/netflows_o100_0km_format_report.pdf){#fig-fig4}
+
+@fig-fig3 reveals a persistent pattern of negative net balance for movements under 100km in the highest population density areas in Argentina, Colombia and Mexico during most of the period under analysis.
+As indicated in @sec-methods1, these locations comprise highly dense areas in the capital cities of these countries, including
 
 Concerning short-distance movements, those under 100 Km, we do not identify remarkable positive or negative balances during the very first months of the pandemic.
 However, we do observe a negative net balance in the largest cities of Argentina, Colombia and Mexico during the following months of the pandemic when levels of restrictions were relaxed.

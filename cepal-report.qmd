@@ -244,8 +244,6 @@ Positive values of percentage change in the number of outflows indicate increase
 
 ![Changes in mobility flows during May 2020 and March 2022 by population density deciles, relative to baseline period. Movements under 100km.](./outputs/all_countries_outflows_u100.pdf){#fig-fig1}
 
-
-
 ![Changes in mobility flows during May 2020 and March 2022 by population density deciles, relative to baseline period. Movements over 100km.](./outputs/all_countries_outflows_o100.pdf)
 
 Overall, we observe a consistent decline in outflows across all population density categories, for movements under and over 100 km.
@@ -259,7 +257,7 @@ In other words, the largest drops occurred in highly densely populated areas, su
 Otherwise, we identify a relatively higher level of variability in changes of outflows in less dense populated areas than in those with high densities, where reduction in mobility intensities were closer to the average change.
 These patterns are consistent across the four countries in both short- and long-distance movements.
 
-However, we observed some nuances.
+However, we observed some nuances <!--# FR: don't think statements like this works -->.
 For instance, declines in short-distance movements from high and medium densely areas seem to be slightly lower in Argentina and Mexico than in Chile and Colombia.
 We also identify some variability in the gradient of decline according to population density levels in long distance outflows from Argentina, Chile and Colombia, despite following the general pattern.
 The gradient is more consistent in long distance movements from Mexico, where, in addition, the lowest category of population density show, in average, almost no change compared to the baseline period before the pandemic.
@@ -277,8 +275,8 @@ Therefore, we should be aware of this limitation when interpreting the results.
 Surprisingly, long-distance out-flows in the lowest category of population density in Colombia exceeded pre-pandemic figures.
 This increase was probably driven by people from rural areas who postponed their plans of moving until the restrictions were lifted.
 
-Concerning inflows (Figures 1 and 2 in the appendix), changes in levels and patterns across the rural-urban hierarchy mirror those observed in outflows, with a few nuances.
-In conclusion, we do not observe an urban exodus in Latin America during the first wave of COVID-19, but a general decline in movements from and to all population density areas during early stages of the pandemic.
+Concerning inflows (Figures 1 and 2 in the Appendix <!--# FR: add this section / figures -->), changes in levels and patterns across the rural-urban hierarchy mirror those observed in outflows, with a few nuances <!--# FR: don't think we need to introduce new figures to make a point we have made already -->.
+We do not observe an urban exodus in Latin America during the first wave of COVID-19, but a general decline in movements from and to all population density areas during early stages of the pandemic.
 Declines seems to have been temporary, as intensities of internal population movements recovered pre-pandemic levels in March 2022, although they were still slightly lower, preliminary in the main cities.
 The only exception is Mexico, where intensities almost reached pre-pandemic figures.
 

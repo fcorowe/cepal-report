@@ -235,29 +235,31 @@ In particular, we expect the changes in home-to-work travel to display different
 ## Changes in mobility in May 2020 and in March 2022 <!--#  Partially reviewed by Carmen (not completed yet) -->
 
 We analysed changes in the intensity of inflows and outflows for different population density categories across Argentina, Chile, Colombia and Mexico in May 2020 and March 2022.
-These two months represent two pivotal points in the pandemic: the early days when many relatively strong stringency measures where still in place following the WHO's declaration on the 11th of March 2020 that COVID-19 was a global pandmic, and the later days when many of these stringency measures had already been relaxed in most countries.
+These two months represent two pivotal points in the pandemic.
+March provides a good representation of the early days when a series of strong stringency measures were enacted following the WHO's declaration of COVID-19 on the 11th of March 2020 as a global pandemic.
+March 2022 captures the later days of the COVID-19 pandemic about six months after most of COVID-19 restrictions had been relaxed in the countries in our analysis.
 
-Figures 1 and 2 show boxplots of the distribution of values for the percentage change in the number of outflows, for under and over 100 km respectively.
-The boxplots in the Figures correspond to movements that emerge from each population density category during May 2020 and March 2022.
+Figures 1 and 2 show boxplots of the distribution of the percentage change in the number of outflows by areas according to their population density for under and over 100 km, respectively.
+The boxplots report movements that emerge from each population density category during May 2020 and March 2022.
 The baseline levels are represented by the dotted line at $y=0$.
-Positive values of percentage change in the number of outflows indicate increases in mobility levels relative to the pre-pandemic period, while reductions in mobility are captured by negative values.
+Positive scores indicate percentage change increases in mobility relative to the pre-pandemic period, while negative scores record percentage change reductions in mobility.
 
 ![Changes in mobility flows during May 2020 and March 2022 by population density deciles, relative to baseline period. Movements under 100km.](./outputs/all_countries_outflows_u100.pdf){#fig-fig1}
 
 ![Changes in mobility flows during May 2020 and March 2022 by population density deciles, relative to baseline period. Movements over 100km.](./outputs/all_countries_outflows_o100.pdf)
 
-Overall, we observe a consistent decline in outflows across all population density categories, for movements under and over 100 km.
+Overall, we observe a consistent decline in outflows across all population density categories for movements under and over 100 km.
 The decline is specially strong in the early days of the pandemic, and we observe some degree of recovery in May 2022, evidenced by the fact that the boxplots appear closer to the baseline levels.
 <!--# I AM HERE -->
 
 across the rural-urban hierarchy during early stages of the pandemic, reflecting the effect of stringency measures to contain the spread of COVID-19.
-On average, mobility declined by x%.
+On average, mobility declined by x% <!--# FR: add percentahe -->.
 Declines show a consistent gradient according to population densities: the greater the level of population density, the higher the decline in outflows.
 In other words, the largest drops occurred in highly densely populated areas, such as Buenos Aires, Santiago, Bogota and Mexico City, exceeding 50%, while low densely areas deported lower declines.
 Otherwise, we identify a relatively higher level of variability in changes of outflows in less dense populated areas than in those with high densities, where reduction in mobility intensities were closer to the average change.
 These patterns are consistent across the four countries in both short- and long-distance movements.
 
-However, we observed some nuances <!--# FR: don't think statements like this works -->.
+However, we observed some nuances <!--# FR: bit vague - we need stronger statements than this -->.
 For instance, declines in short-distance movements from high and medium densely areas seem to be slightly lower in Argentina and Mexico than in Chile and Colombia.
 We also identify some variability in the gradient of decline according to population density levels in long distance outflows from Argentina, Chile and Colombia, despite following the general pattern.
 The gradient is more consistent in long distance movements from Mexico, where, in addition, the lowest category of population density show, in average, almost no change compared to the baseline period before the pandemic.
@@ -265,9 +267,9 @@ It means that a similar amount of people than before the pandemic left rural are
 
 In March 2022, following the relaxation of COVID-19 restrictions, we observe increases in both short- and long-distance outflows across the rural-urban hierarchy.
 Mobility intensity bounced back closer to pre-pandemic levels.
-Less densely populated areas fully or almost recovered pre-pandemic levels, while dense populous areas continued to record slightly lower mobility levels than those registered before COVID-19.
+<!--# FR: need a statement here to highlight the sentence that follows --> Less densely populated areas fully or almost recovered pre-pandemic levels, while dense populous areas continued to record slightly lower mobility levels than those registered before COVID-19.
 
-Yet again, we identify some nuances.
+Yet again, we identify some nuances <!--# FR: as before, if there is any message we want to get across must use stronger words. Would emphasise key differences across the rural-urban hierarchy -->.
 Mexico almost reached the same levels than before the pandemic in March 2022, except in Mexico City, while the other three countries show a lower recovery, especially Chile.
 Variations across countries could be driven by different levels and durability of stringency measures, which were lower and shorter in Mexico compared to other countries.
 Otherwise, we should consider that the baseline period before COVID-19 in Chile, from February to mid-March, corresponds to holiday season when levels and patterns of internal population movements are different than those registered over the rest of the years.

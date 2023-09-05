@@ -145,9 +145,7 @@ The collected location data also enables targeting of AMBER alerts and prompts t
 While the raw location data remains available only to the data owners, the datasets available through Data for Good consist of anonymised and aggregated near real-time data corresponding to a period of crisis which might extend over several weeks, months or years.
 The datasets also contain historical location data as a baseline period before the event [@Maas19].
 
-## Facebook data
-
-In this report, we analyse human mobility during the COVID-19 pandemic using the datasets Coronavirus Disease Prevention Map of Facebook Population During Crisis (Tile Level) and Coronavirus Disease Prevention Map of Facebook Movements During Crisis (Tile Level), hereinafter Facebook Population and Facebook Movements datasets.
+We analyse human mobility during the COVID-19 pandemic using the datasets Coronavirus Disease Prevention Map of Facebook Population During Crisis (Tile Level) and Coronavirus Disease Prevention Map of Facebook Movements During Crisis (Tile Level), hereinafter Facebook Population and Facebook Movements datasets.
 Specifically, we analyse human movement data from four Latin American countries: Argentina, Chile, Colombia and Mexico.
 The former dataset allows us to analyse how the number of Facebook users changed across space during the COVID-19 pandemic.
 The focus of our analysis, however, is on the latter, which contains information about the evolution of spatial patterns of mobility during COVID-19.
@@ -211,7 +209,6 @@ In order to provide a better intuition of the type of areas that each population
 
 ## Tile-based mobility metrics
 
-
 We measured changes in the intensity of movement by computing the variation in the number of inflows and outflows by population density category, i.e. the number of people entering and leaving tiles belonging to a specific population density category.
 We did this across all tiles of Argentina, Chile, Colombia and Mexico for two distinctive months during the course of the COVID-19 pandemic: May 2020 and March 2022.
 Specifically, we use the percentage change in the intensity of a population flow as provided in the Facebook Movement data sets [@Maas19].
@@ -219,7 +216,7 @@ For each entry in the dataset, which represents a flow of people between an orig
 
 $$
 Change (\%) = (\dfrac{n_{crisis}}{n_{baseline}}-1)\times 100
-$$ 
+$$
 
 where $n_{crisis}$ corresponds to the number of people moving and $n_{baseline}$ corresponds to the number of people that would be expected to move in the baseline pre-pandemic period at the same time of the day, on the same day of the week and between the same origin and destination tiles.
 A positive value indicates an increase in the extent of population movement relative to the baseline levels.
@@ -231,11 +228,9 @@ The boxplots illustrate the spread of values of percentage change in the number 
 
 Furthermore, we also considered the impact of the pandemic in the mobility patterns by analysing changes in net mobility.
 We looked at the evolution of netflows, i.e. the difference in the number of people entering and leaving a location, throughout the whole period of the dataset.
-The netflows where computed as 
-$$
+The netflows where computed as $$
 netflows = inflows - outflows
-$$ 
-where in this case, $inflows$ and $outflows$ represent the total number of people entering and exiting a given density category in a given month.
+$$ where in this case, $inflows$ and $outflows$ represent the total number of people entering and exiting a given density category in a given month.
 Therefore, we can obtain the netflows corresponding, for example, to August 2021 for population density category 8 or to October 2020 for population density category 3.
 
 ## Local vs long-distance mobility
@@ -251,8 +246,7 @@ In particular, we expect populations flows covering under 100 km to capture loca
 
 # Results
 
-
-## Changes in mobility in May 2020 and in March 2022 
+## Changes in mobility in May 2020 and in March 2022
 
 <!--#  Reviewed by Carmen -->
 
@@ -281,11 +275,11 @@ Generally speaking, we also identify a relatively higher level of variability in
 
 There are some exceptions to the general behaviours discussed above.
 Firstly, declines in short-distance movements from high and medium densely areas are slightly lower in Argentina and Mexico than in Chile and Colombia.
-Second, while outflows over 100 km in Argentina, Chile and Colombia decline more for higher density categories, this trend displays more variability than in the case of Mexico and in the case of ouflows under 100 km.
+Second, while outflows over 100 km in Argentina, Chile and Colombia declined more for higher density categories, this trend displays more variability than in the case of Mexico and in the case of ouflows under 100 km.
 This could be attributed to the smaller sample size of population flows covering more than 100 km.
 
 This last remark leads us to address the issue that in Colombia, both in May 2020 and in March 2022, there are some population density categories with no outflows over 100 km.
-On the one hand, the tiles used in the Facebook Movements data set to spatially aggregate the data are smaller for the case of Colombia, so fewer movements are recorded per cell.
+<!-- maybe start describing the process that may produce low counts in the first place? Pointing all on the data may not help our case --> On the one hand, the tiles used in the Facebook Movements data set to spatially aggregate the data are smaller for the case of Colombia, so fewer movements are recorded per cell.
 On the other hand, according to Facebook's documentation, three procedures are applied to maintain data privacy, which could be the reason why we have so few population flows covering a distance of more than 100 km recorded in the raw Facebook Movement data set (before aggregating them by month).
 Of these three procedures, 'small-count dropping' could be specially relevant since population flows with small counts for either the pandemic or the baseline period, are fully removed from the data set.
 Essentially, in the first place, we have few movements emerging from each tile for each 8-hour time interval due to the small tile size, so when the small count dropping mechanism is applied for each time interval, these low counts are removed from the data set.
@@ -310,6 +304,7 @@ In summary, based on @fig-outflowsU100 and @fig-outflowsO100, we see less people
 We observe, however, a general decline in the intensity of population flows from and to all population density categories during early stages of the pandemic, especially for highly-dense areas.
 This decline shows signs of being temporary, since the number of people moving has almost recovered to pre-pandemic levels as of March 2022.
 
+```{=html}
 <!--### Comments
 
 Describe the violin / box plots.
@@ -321,7 +316,7 @@ Key points:
 
 -   Recovery in 2022 following the relaxation of COVID-19 restrictions.
     Describe differences across countries and types of move when relevant. -->
-
+```
 ## Spatio-temporal patterns of population redistribution during COVID-19
 
 We also analysed the spatial impact of mobility on redistributing population across the country during the COVID-19 pandemic.
@@ -332,6 +327,8 @@ We calculated the monthly net movement balance as the difference between mobilit
 ![Total number of net movement by population density class over time. Movements under 100km.](./outputs/netflows_u100_0km_format_report.pdf){#fig-fig3}
 
 ![Total number of net movement by population density class over time. Movements under 100km.](./outputs/netflows_o100_0km_format_report.pdf){#fig-fig4}
+
+*Short-distance movement*
 
 @fig-fig3 reveals a persistent pattern of fluctuating negative net balances of movements under 100km in the highest population density areas in Argentina, Colombia and Mexico for most of March 2020 to May 2022.
 The extent of these balances become more notably pronounced after July 2020, but they vary widely by country.
@@ -347,22 +344,18 @@ Argentina records a consistent pattern of greater inward movement than outward m
 Areas of class 1-3 in Argentina correspond to rural and sparsely populated regions across the country, while class 9 areas predominantly represent suburban metropolitan and large city areas <!--# name example areas -->.
 In Colombia, positive net balances are less pronounced.
 They tended to occur in areas of class 3, 7 and 8 over 2021 and 2022, predominantly in <!--# name example areas -->.
-In Mexico, a pattern of consistently positive net balance of movements occurred in the range of less dense areas of class 1 to 5, particularly in
+In Mexico, a pattern of consistently positive net balance of movements occurred in the range of less dense areas of class 1 to 5 and 8.
+These balances were particularly pronounced in areas of class 2 and 4, encompassing places such as <!--# name example areas -->.
+In Mexico, the observed patterns suggest mobility out of high density areas in Mexico City, including metropolitan core areas and suburbs, to nearby sparsely and rural areas within a radius of 100km.
 
 Chile displays a different pattern.
+The most densely populated areas in the country record net balances around zero for movements under 100km.
+This pattern suggests limited population redistribution from and to metropolitan core areas in Santiago over short distances during the pandemic.
+Yet, areas of class 8 display large net losses, particularly from July 2021 following less stringent COVID-19 restrictions.
+At the same time, areas of class 9 report more pronounced net gains since July 2021.
+These findings suggest a pattern of movement up the rural-urban hierarchy from urban areas, such as <!--# name example areas --> to more dense locations, such as <!--# name example areas -->.
 
-Concerning short-distance movements, those under 100 Km, we do not identify remarkable positive or negative balances during the very first months of the pandemic.
-However, we do observe a negative net balance in the largest cities of Argentina, Colombia and Mexico during the following months of the pandemic when levels of restrictions were relaxed.
-This finding may suggest a slight trend of urban exodus and a potential donut effect, with people moving away from core cities of metropolitan regions.
-This pattern coincides with positive balances across different categories in the urban hierarchy.
-For instance, the categories of population density 5 and 9 in Argentina registered a positive net balance, as well as the categories 3, 6 and 7 in Colombia, 1, 2, 4, 5 and 8 in Mexico.
-These density classes comprise suburbs of the capital cities, but also small and medium size cities and rural areas in their close proximity.
-
-Chile, however, reports a different pattern where almost no gains or losses were observed during the pandemic in Santiago.
-However, there was a remarkable negative balance in class 8, while category 9 shows positive values.
-Patterns in the four countries seem to vary over time according to different levels of restriction, but they also seem to be a bit random in some instances.
-Generally, positive and negative balances are closer to 0 in late stages of the pandemic.
-This trend suggests than potential changes on short-distance movements due to COVID-19 could be temporary.
+*Long-distance movements*
 
 Regarding long-distance movements, those over 100 Km, net balances close to 0 are generally observed in the highest density class during 2020, except in Chile, where we identify a small and temporary net loss which coincides with a small positive balance in density classes 1, 2 and 3.
  Over the course of the pandemic, net gains in the category 10 increased in the four countries, preliminarily during 2022 where restrictions were completely lifted.

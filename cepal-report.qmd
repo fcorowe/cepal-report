@@ -258,7 +258,7 @@ The boxplots report movements that emerge from each population density category 
 The baseline levels are represented by the dotted line at $y=0$.
 Positive values indicate increases in mobility relative to the pre-pandemic period, while negative values indicate a reduction in mobility.
 
-![Changes in mobility flows during May 2020 and March 2022 by population density deciles, relative to baseline period. Movements under 100km.](./outputs/all_countries_outflows_u100_minus_Colombia.pdf){#fig-outflowsU100}
+![Changes in mobility flows during May 2020 and March 2022 by population density deciles, relative to baseline period. Movements under 100km.](./outputs/all_countries_outflows_u100_minus_Colombia_lighter.pdf){#fig-outflowsU100}
 
 ![Changes in mobility flows during May 2020 and March 2022 by population density deciles, relative to baseline period. Movements over 100km.](./outputs/all_countries_outflows_o100_minus_Colombia.pdf){#fig-outflowsO100}
 
@@ -366,17 +366,11 @@ To understand better the nature of movements involving areas of population densi
 
 - In Chile, what are the flows, origins and destinations underpinning the limited redistribution in class 10 areas over short distances
 
-- In Argentina, Chile and Mexico, how do we explain the 
+- In Chile, how we explain a negative net balance early in the pandemic
 
-We next examine spatial patterns of outflows under and over 100 Km from the capital cities of Argentina, Chile, Colombia and Mexico during the first wave of COVID-19 in May 2020 and during late stages of the pandemic in March 2022.
-We identity that both outflows under and over 100 Km away from all cities were much lower in May 2020 than in March 2022, especially from Buenos Aires and Bogota.
-This finding is consistent to those from Figures 1 and 2 and reinforce that a decline of movements away from large cities occurred in early stages of the pandemic, while levels returned closer to those register before the pandemic after the elimination of stringency measures.
-However, we find that outflows over 100 Km from capital cities were much more affected by the above-mentioned decline that those under 100km, especially in Argentina Colombia.
+- In Argentina, Chile and Mexico, how do we explain the rise in positive net balances in 2021 and 2022
 
-We do not observe significant changes in the patterns of internal population movements away from the capital cities between May 2020 and March 2022 in Chile and Mexico.
-In other works, the distribution of outflows from these cities is mostly the same in both periods.
-In Argentina and Colombia, however, both movements under and over 100 Km were of shorter distance in May 2020 than in March 2022.
-Thus, there was a significant decline in the distance that people moved toward the periphery and also to other parts of the country farther away from Buenos Aires and Bogota during early stages of the pandemic.
+
 
 Our findings suggest that a general drop of movements from large cities occurred in Latin America during the first wave of COVID-19, but the patterns of internal population movements away from these cities were not altered, despite a decline in the distance that people travelled from Buenos Aires and Bogota.
 Nonetheless, variations seem to have been temporary and did not altered macro-structures of the human mobility in Latin American countries.

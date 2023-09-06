@@ -360,6 +360,7 @@ At the same time, we observed a continuous trend of negative net balances in hig
 
 ## Movements from and to capital cities
 
+To understand better the nature of movements involving areas of population density class 10, we analysed the spatial patterns of movement from and to capital cities.
 
 We next examine spatial patterns of outflows under and over 100 Km from the capital cities of Argentina, Chile, Colombia and Mexico during the first wave of COVID-19 in May 2020 and during late stages of the pandemic in March 2022.
 We identity that both outflows under and over 100 Km away from all cities were much lower in May 2020 than in March 2022, especially from Buenos Aires and Bogota.

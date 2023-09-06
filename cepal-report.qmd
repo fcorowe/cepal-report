@@ -395,7 +395,9 @@ Discussion about what we are actually capturing i.e. commuting, shopping trips, 
 
 -   for housing, transport and planning
 
--   for data
+-   for DFD access
+
+- challenges of working with DFD
 
 # Conclusion
 

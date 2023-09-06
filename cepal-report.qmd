@@ -71,7 +71,7 @@ Enabled by these initiatives, the use of DFD seems to have been - much more prom
 
 -   Argue case for COVID and mobility
 
-- Discuss the hypotheses we intend to test and our focus on capital cities
+-   Discuss the hypotheses we intend to test and our focus on capital cities
 
 -   Structure
 
@@ -360,30 +360,37 @@ At the same time, we observed a continuous trend of negative net balances in hig
 
 ## Movements from and to capital cities
 
-To understand better the nature of movements involving areas of population density class 10, we analysed the spatial patterns of movement of under and over 100km from and to capital cities. Movements from and to areas of population density class 10 exclusively represent mobility patterns from and to metropolitan core areas of capital cities in our analysis. 
+To understand better the nature of movements involving areas of population density class 10, we analysed the spatial patterns of movement of under and over 100km from and to capital cities.
+Movements from and to areas of population density class 10 exclusively represent mobility patterns from and to metropolitan core areas of capital cities in our analysis.
 
-- In the context of negative net balances relating to short-distance movement for areas of class 10 in Argentina and Mexico, identify the key destinations and any systematic patterns of outflows - what sort of areas attracted people
+-   In the context of negative net balances relating to short-distance movement for areas of class 10 in Argentina and Mexico, identify the key destinations and any systematic patterns of outflows - what sort of areas attracted people
 
-- In Chile, what are the flows, origins and destinations underpinning the limited redistribution in class 10 areas over short distances
+-   In Chile, what are the flows, origins and destinations underpinning the limited redistribution in class 10 areas over short distances
 
-- In Chile, how we explain a negative net balance early in the pandemic
+-   In Chile, how we explain a negative net balance early in the pandemic
 
-- In Argentina, Chile and Mexico, how do we explain the rise in positive net balances in 2021 and 2022
-
-
+-   In Argentina, Chile and Mexico, how do we explain the rise in positive net balances in 2021 and 2022
 
 Our findings suggest that a general drop of movements from large cities occurred in Latin America during the first wave of COVID-19, but the patterns of internal population movements away from these cities were not altered, despite a decline in the distance that people travelled from Buenos Aires and Bogota.
 Nonetheless, variations seem to have been temporary and did not altered macro-structures of the human mobility in Latin American countries.
 
 # Discussion
 
-## Summary of key findings
+## Key findings
+
+Recent studies has produced evidence indicating that the COVID-19 pandemic resulted in a urban exodus from large cities in developed countries.
+Anecdotal evidence has suggested a similar pattern occurring in Latin American countries.
+However, lack of access to suitable data has prevented to monitor the evolution of changes in internal population movements over the pandemic.
+Drawing on DFD from Meta-Facebook users, we sought to analyse the extent and durability of changes in internal population movements across the rural--urban hierarchy in Argentina, Chile and Mexico during the COVID-19 pandemic from March 2020 to May 2022.
+We found evidence of an overall decline in human mobility between areas during the enactment of nonpharmaceutical interventions between March 2020 and February 2021, bouncing back to precoronavirus levels following the rollout of the government lockdown exit strategy in March 2021
+
+DID derived from mobile phone applications now provide a unique opportunity to capture these movements at an unprecedented spatial and temporal granularity
 
 -   Decline in mobility intensity after the outbreak of COVID-19
 
 -   Support of urban exodus - short distances for Argentina, and Mexico and over long-distance for Chile
 
-- but temporary - recovery to pre-pandemic levels
+-   but temporary - recovery to pre-pandemic levels
 
 -   Donut effect in Argentina, Colombia and Mexico
 
@@ -391,13 +398,13 @@ Nonetheless, variations seem to have been temporary and did not altered macro-st
 
 Discussion about what we are actually capturing i.e. commuting, shopping trips, etc. vs residential movements / internal migration, and therefore how we interpret the results
 
-## Policy implications
+## Implications and future work
 
 -   for housing, transport and planning
 
 -   for DFD access
 
-- challenges of working with DFD
+-   challenges of working with DFD
 
 # Conclusion
 

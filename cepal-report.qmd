@@ -360,7 +360,13 @@ At the same time, we observed a continuous trend of negative net balances in hig
 
 ## Movements from and to capital cities
 
-To understand better the nature of movements involving areas of population density class 10, we analysed the spatial patterns of movement from and to capital cities.
+To understand better the nature of movements involving areas of population density class 10, we analysed the spatial patterns of movement of under and over 100km from and to capital cities. Movements from and to areas of population density class 10 exclusively represent mobility patterns from and to metropolitan core areas of capital cities in our analysis. 
+
+- In the context of negative net balances relating to short-distance movement for areas of class 10 in Argentina and Mexico, identify the key destinations and any systematic patterns of outflows - what sort of areas attracted people
+
+- In Chile, what are the flows, origins and destinations underpinning the limited redistribution in class 10 areas over short distances
+
+- In Argentina, Chile and Mexico, how do we explain the 
 
 We next examine spatial patterns of outflows under and over 100 Km from the capital cities of Argentina, Chile, Colombia and Mexico during the first wave of COVID-19 in May 2020 and during late stages of the pandemic in March 2022.
 We identity that both outflows under and over 100 Km away from all cities were much lower in May 2020 than in March 2022, especially from Buenos Aires and Bogota.
@@ -381,7 +387,9 @@ Nonetheless, variations seem to have been temporary and did not altered macro-st
 
 -   Decline in mobility intensity after the outbreak of COVID-19
 
--   Support of urban exodus for Chile - but temporary - recovery to pre-pandemic levels
+-   Support of urban exodus - short distances for Argentina, and Mexico and over long-distance for Chile
+
+- but temporary - recovery to pre-pandemic levels
 
 -   Donut effect in Argentina, Colombia and Mexico
 

@@ -326,11 +326,10 @@ The spatial concentration of negative net balances in high density areas mirrors
 
 At the same time, @fig-fig4 shows a relatively consistent positive net balance of movements in specific types of areas along the rural-urban hierarchy.
 Argentina records a consistent pattern of greater inward movement than outward movement in medium density areas of class 5 type, including <!--# name example areas -->, and a trend of irregular net positive balances in the least dense areas of class 1-3 and high density locations of class 9.
-Areas of class 1-3 in Argentina correspond to rural and sparsely populated regions across the country, while class 9 areas predominantly represent suburban metropolitan and large city areas <!--# name example areas -->.
+Areas of class 1-3 in Argentina correspond to rural and sparsely populated regions across the country, while class 9 areas predominantly represent suburban metropolitan and large city areas<!--# name example areas -->.
 <!--# In Colombia, positive net balances are less pronounced.
-They tended to occur in areas of class 3, 7 and 8 over 2021 and 2022, predominantly in  name example areas -->.
-In Mexico, a pattern of consistently positive net balance of movements occurred in the range of less dense areas of class 1 to 5 and 8.
-These balances were particularly pronounced in areas of class 2 and 4, encompassing places such as <!--# name example areas -->.
+They tended to occur in areas of class 3, 7 and 8 over 2021 and 2022, predominantly in  name example areas --> In Mexico, a pattern of consistently positive net balance of movements occurred in the range of less dense areas of class 1 to 5 and 8.
+These balances were particularly pronounced in areas of class 2 and 4, encompassing places such as<!--# name example areas -->.
 In Mexico, the observed patterns suggest mobility out of high density areas in Mexico City, including metropolitan core areas and suburbs, to nearby sparsely and rural areas within a radius of 100km.
 
 Chile displays a different pattern.
@@ -338,7 +337,7 @@ The most densely populated areas in the country record net balances around zero 
 This pattern suggests limited population redistribution from and to metropolitan core areas in Santiago over short distances during the pandemic.
 Yet, areas of class 8 display large net losses, particularly from July 2021 following less stringent COVID-19 restrictions.
 At the same time, areas of class 9 report more pronounced net gains since July 2021.
-These findings suggest a pattern of movement up the rural-urban hierarchy from urban areas, such as <!--# name example areas --> to more dense locations, such as <!--# name example areas -->.
+These findings suggest a pattern of movement up the rural-urban hierarchy from urban areas, such as<!--# name example areas --> to more dense locations, such as<!--# name example areas -->.
 
 *Long-distance movements*
 
@@ -381,17 +380,24 @@ Nonetheless, variations seem to have been temporary and did not altered macro-st
 Emerging evidence has indicated that the COVID-19 pandemic resulted in a urban exodus from large cities in developed countries.
 Anecdotal evidence has suggested a similar pattern occurring in Latin American countries.
 However, lack of access to suitable data has prevented to monitor the evolution of changes in internal population movements over the pandemic.
-Drawing on location data from Meta-Facebook users, we sought to analyse the extent and durability of changes in internal population movements across the rural--urban hierarchy in Argentina, Chile and Mexico during the COVID-19 pandemic from March 2020 to May 2022. We found evidence of an overall systematic decline in the level of population internal movement during the enactment of nonpharmaceutical interventions in May 2020 across all three countries.
-We showed that declines occurred across the rural-urban continuum for movements over both  short and long distances.
+Drawing on location data from Meta-Facebook users, we sought to analyse the extent and durability of changes in internal population movements across the rural--urban hierarchy in Argentina, Chile and Mexico during the COVID-19 pandemic from March 2020 to May 2022.
+We found evidence of an overall systematic decline in the level of population internal movement during the enactment of nonpharmaceutical interventions in May 2020 across all three countries.
+We showed that declines occurred across the rural-urban continuum for movements over both short and long distances.
 The largest reductions occurred in the most dense areas of Argentina, Chile and Mexico.
-Average levels of declines in less dense areas were less pronounced as a large number of them recorded rises mobility levels. 
-We also revealed that the intensity of mobility was closer to pre-pandemic levels in May 2022 following the relaxation of COVID-19 stringency measures. Yet, the intensity of movement remained below pre-pandemic levels in many areas.
+Average levels of declines in less dense areas were less pronounced as a large number of them recorded rises mobility levels.
+We also revealed that the intensity of mobility was closer to pre-pandemic levels in May 2022 following the relaxation of COVID-19 stringency measures.
+Yet, the intensity of movement remained below pre-pandemic levels in many areas.
 
-Additionally, we presented evidence of sustained negative net balances of short-distance movements in the highest density areas of Argentina and Mexico during 2020 and 2022. 
-
-
-under less than 100km, co-occurring with an irregular pattern of positive net balance of movements, in the highest density areas of Argentina and Mexico during 2021 and 2022.
-In contrast,
+Additionally, we presented evidence of sustained negative net balances of movements under 100km in the highest density areas of Argentina and Mexico during 2020 and 2022, particularly since July 2020.
+At the same time, we identified a positive net balance of movements for distances under 100km in areas of low and moderate population density.
+In Chile, population redistribution for movements under 100km is limited across the urban hierarchy, except for moderately high density areas.
+These patterns differ from those observed for movements over 100km.
+In all three countries, the most dense areas registered positive net balances of movements over 100km particularly from early 2021.
+Only in Chile, we found evidence of a negative net balance for movements over 100km in these areas during 2020 as COVID-19 began spreading throughout the country and stringency measures were rolled out.
+The patterns of population redistribution at lower levels of the urban hierarchy varied by country.
+In Argentina, we observed moderate negative net balances of movements over 100km in dense areas.
+In Chile, a pronounced and growing negative net balance for these movements occurred in highly dense areas.
+In Mexico, large negative net balances were recorded in low density areas.
 
 Larger declines in highly dense areas
 

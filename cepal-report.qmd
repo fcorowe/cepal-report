@@ -381,14 +381,16 @@ Nonetheless, variations seem to have been temporary and did not altered macro-st
 Emerging evidence has indicated that the COVID-19 pandemic resulted in a urban exodus from large cities in developed countries.
 Anecdotal evidence has suggested a similar pattern occurring in Latin American countries.
 However, lack of access to suitable data has prevented to monitor the evolution of changes in internal population movements over the pandemic.
-Drawing on DFD from Meta-Facebook users, we sought to analyse the extent and durability of changes in internal population movements across the rural--urban hierarchy in Argentina, Chile and Mexico during the COVID-19 pandemic from March 2020 to May 2022.
-We found evidence of an overall decline in the level of population internal movement during the enactment of nonpharmaceutical interventions in May 2020, trending to pre-pandemic levels in May 2022 following the relaxation of these stringency measures.
-For May 2020, we showed that declines in the level of movements both under and over 100km across the rural-urban continuum.
+Drawing on location data from Meta-Facebook users, we sought to analyse the extent and durability of changes in internal population movements across the rural--urban hierarchy in Argentina, Chile and Mexico during the COVID-19 pandemic from March 2020 to May 2022. We found evidence of an overall systematic decline in the level of population internal movement during the enactment of nonpharmaceutical interventions in May 2020 across all three countries.
+We showed that declines occurred across the rural-urban continuum for movements over both  short and long distances.
 The largest reductions occurred in the most dense areas of Argentina, Chile and Mexico.
-Average levels of declines in less dense areas were less pronounced as a large number of them recorded rises mobility levels.
-ADD: although they increase they remain below pre-pandemic levels in many areas.
+Average levels of declines in less dense areas were less pronounced as a large number of them recorded rises mobility levels. 
+We also revealed that the intensity of mobility was closer to pre-pandemic levels in May 2022 following the relaxation of COVID-19 stringency measures. Yet, the intensity of movement remained below pre-pandemic levels in many areas.
 
-We also presented evidence of sustained negative net balances of movements under less than 100km, co-occurring with an irregular pattern of positive net balance of movements, in the highest density areas of Argentina and Mexico during 2021 and 2022.
+Additionally, we presented evidence of sustained negative net balances of short-distance movements in the highest density areas of Argentina and Mexico during 2020 and 2022. 
+
+
+under less than 100km, co-occurring with an irregular pattern of positive net balance of movements, in the highest density areas of Argentina and Mexico during 2021 and 2022.
 In contrast,
 
 Larger declines in highly dense areas

@@ -28,7 +28,7 @@ abstract: |
   **Abstract**. Text for abstract
 format: 
   pdf: 
-    mainfont: Helvetica
+    mainfont: Helvetica Neue
     fontsize: 10pt
 number-sections: true
 editor: visual
@@ -399,9 +399,33 @@ In Argentina, we observed moderate negative net balances of movements over 100km
 In Chile, a pronounced and growing negative net balance for these movements occurred in highly dense areas.
 In Mexico, large negative net balances were recorded in low density areas.
 
-Larger declines in highly dense areas
+## Interpretation
 
-Greater recovery in Mexico
+Collectively, our findings suggest
+
+-   Decline in Levels
+
+    -   extend prior work - changes in 2020 or until 2021
+
+    -   implications for housing, transport, planning - net zero carbon
+
+    -   changes in mobility patterns due to working from home
+
+-   Population redistribution
+
+    -   some evidence of urban exodus / donut effect
+
+        -   different patterns at play: with variations by country and distance of moves
+
+    -   Argentina and Mexico - suburbanisation / urban expansion - short distance
+
+    -   Chile - temporary exodus - no donut effect but class 9 areas
+
+-   Durability
+
+-   About data
+
+Discussion about what we are actually capturing i.e. commuting, shopping trips, etc. vs residential movements / internal migration, and therefore how we interpret the results
 
 DID derived from mobile phone applications now provide a unique opportunity to capture these movements at an unprecedented spatial and temporal granularity
 
@@ -413,9 +437,7 @@ DID derived from mobile phone applications now provide a unique opportunity to c
 
 -   Donut effect in Argentina, Colombia and Mexico
 
-## Interpretation
-
-Discussion about what we are actually capturing i.e. commuting, shopping trips, etc. vs residential movements / internal migration, and therefore how we interpret the results
+## 
 
 ## Implications and future work
 

@@ -192,13 +192,12 @@ The level of detail was chosen so it coincides with that used in the Facebook Po
 
 ## Population density classification {#sec-methods1}
 
-In this study, we aim to understand how the population density at the origin and destination locations might influence mobility behaviours.
-To help characterise the population density of different locations, we consider the Worldpop population data aggregated into Bing tiles.
+In this study, we aim to analyse the extent and durability of changes in internal population movements across the rural-urban hierarchy of multiple Latin American countries. Classifying the origin and destination locations of each movement accroding to their population density allows us to achieve this aim. To help characterise the population density of different locations, we consider the Worldpop population data aggregated into Bing tiles.
 We then use the Jenks natural breaks classification method in order to obtain 10 categories of population density, with categories 1 and 10 being the least and most dense categories respectively.
 This categorisation of Bing tiles, which offers a greater level of detail than the traditional binary rural/urban classification, is represented in @fig-map.
-In the Figure, we have included maps for the four countries in the study showing the Bing tiles coloured according to the population density category they belong to.
+In the Figure, we have included maps for the three countries in the study showing the Bing tiles coloured according to the population density category they belong to.
 It is possible to see from the in-set histograms that Argentina and Chile have very skewed distributions due to the strong concentration of highest-density areas in just a few tiles belonging to their capital cities, Buenos Aires and Santiago.
-By contrast, Colombia and Mexico display more balanced population density distributions across tiles.
+By contrast, Mexico displays more balanced population density distributions across tiles.
 It is important to note that the cut-off values for each population density category vary across countries, but we expect tiles belonging to the same category in each country to have similar functions in the urban hierarchy (e.g. the high-density tiles belonging to category 10 always correspond to major urban centres that act as socioeconomic hubs in their respective regions).
 
 ![Population density at Microsoft Bing tile level, Argentina, Chile and Mexico.](./outputs/Map_density_histogram_minus_Colombia.pdf){#fig-map}
@@ -210,7 +209,7 @@ In order to provide a better intuition of the type of areas that each population
 ## Tile-based mobility metrics
 
 We measured changes in the intensity of movement by computing the variation in the number of inflows and outflows by population density category, i.e. the number of people entering and leaving tiles belonging to a specific population density category.
-We did this across all tiles of Argentina, Chile, Colombia and Mexico for two distinctive months during the course of the COVID-19 pandemic: May 2020 and March 2022.
+We did this across all tiles of Argentina, Chile and Mexico for two distinctive months during the course of the COVID-19 pandemic: May 2020 and March 2022.
 Specifically, we use the percentage change in the intensity of a population flow as provided in the Facebook Movement data sets [@Maas19].
 For each entry in the dataset, which represents a flow of people between an origin and a destination tile, the percentage change in the intensity of the flow is computed as:
 
@@ -224,7 +223,7 @@ A negative score represents a decrease, while a zero score denotes no changes.
 
 We then group the population flows according to the population density category of origin (for outflows) or destination (for inflows) during the two selected months.
 We generate boxplots for the percentage change variable, corresponding to each population density category.
-The boxplots illustrate the spread of values of percentage change in the number of inflows and outflows during a selected month for each population density category.
+The boxplots illustrate the spread of values of percentage change in the number of inflows and outflows during a selected month for each population density category. 
 
 Furthermore, we also considered the impact of the pandemic in the mobility patterns by analysing changes in net mobility.
 We looked at the evolution of netflows, i.e. the difference in the number of people entering and leaving a location, throughout the whole period of the dataset.
@@ -240,20 +239,18 @@ Population flows for which the recorded distance was 0 km were discarded.
 We also split the Facebook Movement dataset into two, one considering flows where the straight line distance covered by the movement was below 100 km and the other for flows covering 100 km or more.
 The rationale for this stratification is that we expect the COVID-19 pandemic to affect mobility differently at different spatial scales.
 As highlighted in the background section, a decrease in inflows to the urban core coupled with an increase in inflows in suburban was observed in multiple large cities from the Global North, indicating a change in the commuting patterns.
-Population flows from big cities to rural areas were also observed in some GLobal North countries, which suggests a change in internal migration patterns in the form of an urban exodus.
-Given that the information contained in the Facebook Movement data set is aggregated, we are unable to infer the purpose of a movement, but separate analysis of population flows that cover under and over 100 km separately can help us understand whether the patterns observed in Latin American countries follow the same trends observed in the Global North.
+Population flows from big cities to rural areas were also observed in some Global North countries, which suggests a change in internal migration patterns in the form of an urban exodus.
+Given that the information contained in the Facebook Movement data set is aggregated, we are unable to infer the purpose of a movement, but analysing population flows that cover under and over 100 km separately can help us better understand whether the patterns observed in Latin American countries follow the same trends that were observed in countries from the Global North.
 In particular, we expect populations flows covering under 100 km to capture local travel such as commutes or day trips, and flows over 100 km to capture longer-distance multi-day trips or even internal migration.
 
 # Results
 
 ## Changes in mobility in May 2020 and in March 2022
 
-We analysed changes in the intensity of inflows and outflows for different population density categories across Argentina, Chile, Colombia and Mexico in May 2020 and March 2022.
+We analysed changes in the intensity of inflows and outflows for different population density categories across Argentina, Chile and Mexico in May 2020 and March 2022.
 These two months represent two pivotal points in the pandemic.
-March provides a good representation of the early days when a series of strong stringency measures were enacted following the WHO's declaration of COVID-19 on the 11th of March 2020 as a global pandemic.
-March 2022 captures the later days of the COVID-19 pandemic about six months after most of the COVID-19 restrictions had been relaxed in the countries in our analysis.
-
-@fig-outflowsU100 and @fig-outflowsO100 show boxplots of the distribution of the percentage change in the number of outflows by areas according to their population density for under and over 100 km, respectively.
+May 2020 provides a good representation of the early days when a series of strong stringency measures were enacted following the WHO's declaration of COVID-19 on the 11th of March 2020 as a global pandemic.
+March 2022 captures the later days of the COVID-19 pandemic about six months after most of the COVID-19 restrictions had been relaxed in the countries in our analysis. @fig-outflowsU100 and @fig-outflowsO100 show boxplots of the distribution of the percentage change in the number of outflows by areas according to their population density for under and over 100 km, respectively.
 The boxplots report movements that emerge from each population density category during May 2020 and March 2022.
 The baseline levels are represented by the dotted line at $y=0$.
 Positive values indicate increases in mobility relative to the pre-pandemic period, while negative values indicate a reduction in mobility.
@@ -262,12 +259,17 @@ Positive values indicate increases in mobility relative to the pre-pandemic peri
 
 ![Changes in mobility flows during May 2020 and March 2022 by population density deciles, relative to baseline period. Movements over 100km.](./outputs/all_countries_outflows_o100_minus_Colombia.pdf){#fig-outflowsO100}
 
-Overall, we observe a consistent decline in outflows across all population density categories for movements under and over 100 km.
-The decline is specially strong in the early days of the pandemic.
-We observe some degree of recovery in March 2022, evidenced by the fact that the boxplots appear closer to the baseline levels.
-Furthermore, we observe a consistent trend whereby the decline in outflows becomes greater as the population density increases, so the largest drops occurred in the most densely populated areas, such as Buenos Aires, Santiago, Bogotá and Mexico City.
-This effect is specially evident in May 2020, where population flows with destination in tiles belonging to the highest-density category, dropped by more than 50% in some cases.
-Low-density areas reported lower declines which is some cases are statistically indistinguisahble from 0%.
+*Short-distance movements*
+
+Overall, we observe a consistent decline in outflows across all population density categories for movements under 100 km. The decline is specially strong in the early days of the pandemic. We observe some degree of recovery in March 2022, evidenced by the fact that the boxplots appear closer to the baseline levels.
+
+Furthermore, we observe a consistent trend whereby the decline in outflows becomes greater as the population density increases, so the largest drops occurred in the most densely populated areas, such as Buenos Aires, Santiago and Mexico City. This effect is specially evident in May 2020, where population flows with destination in tiles belonging to the highest-density category, dropped by more than 50% in some cases. Low-density areas reported lower declines which is some cases are statistically indistinguishable from 0%. 
+
+The observed patterns could be attributed to the some or a combination of the following behaviours. Firstly, there could be a donut effect whereby people move from the highest-density urban cores to lower-density areas in the surrounding regions at less than 100 km away. The decrease in population at the urban cores would explain the larger decrease in short-distance outflows in high density areas. Secondly, there could be a reduction in commuter flows driven by the higher number of people engaging in remote work. <!-- *I AM HERE: EXPLAIN THAT THE FACT THAT IN CITIES THERE ARE MORE JOBS THAT CAN BE DONE REMOTELY COULD BE AN EXPLANATION OF THE LARGER DECREASE OF OUTFLOWS IN HIGH-DENSITY AREAS. THIRDLY, URBAN EXODUS TO LOWER DENSITY REGIONS THAT ARE FURTHER AWAY THAN 100KM* 
+
+*Long-distance movements*
+
+*EXPLAIN. text below is what I had before, do not delete*
 
 Generally speaking, we also identify a relatively higher level of variability in the percentage change values for low-density categories, showing that the behaviours in these regions might be more heterogeneous than in densely-populated areas.
 
@@ -277,7 +279,8 @@ Second, while outflows over 100 km in Argentina, Chile and Colombia declined mor
 This could be attributed to the smaller sample size of population flows covering more than 100 km.
 
 This last remark leads us to address the issue that in Colombia, both in May 2020 and in March 2022, there are some population density categories with no outflows over 100 km.
-<!-- maybe start describing the process that may produce low counts in the first place? Pointing all on the data may not help our case --> On the one hand, the tiles used in the Facebook Movements data set to spatially aggregate the data are smaller for the case of Colombia, so fewer movements are recorded per cell.
+# maybe start describing the process that may produce low counts in the first place? Pointing all on the data may not help our case#
+On the one hand, the tiles used in the Facebook Movements data set to spatially aggregate the data are smaller for the case of Colombia, so fewer movements are recorded per cell.
 On the other hand, according to Facebook's documentation, three procedures are applied to maintain data privacy, which could be the reason why we have so few population flows covering a distance of more than 100 km recorded in the raw Facebook Movement data set (before aggregating them by month).
 Of these three procedures, 'small-count dropping' could be specially relevant since population flows with small counts for either the pandemic or the baseline period, are fully removed from the data set.
 Essentially, in the first place, we have few movements emerging from each tile for each 8-hour time interval due to the small tile size, so when the small count dropping mechanism is applied for each time interval, these low counts are removed from the data set.
@@ -300,14 +303,14 @@ As a result, mobility patterns during this baseline period might differ from tho
 
 In summary, based on @fig-outflowsU100 and @fig-outflowsO100, we see less people leaving densely-populated areas which suggests that a phenomenon of urban exodus did not take place in the four Latin American countries during the first wave of COVID-19.
 We observe, however, a general decline in the intensity of population flows from and to all population density categories during early stages of the pandemic, especially for highly-dense areas.
-This decline shows signs of being temporary, since the number of people moving has almost recovered to pre-pandemic levels as of March 2022.
+This decline shows signs of being temporary, since the number of people moving has almost recovered to pre-pandemic levels as of March 2022. -->
 
 ## Spatio-temporal patterns of population redistribution during COVID-19
 
 We also analysed the spatial impact of mobility on redistributing population across the country during the COVID-19 pandemic.
 Specifically, we examined the evolution of changes in the net balance between mobility inflows and outflows across the rural-urban hierarchy during the pandemic.
 We calculated the monthly net movement balance as the difference between mobility inflows minus outflows for individual population density classes during March 2020 to May 2022.
-@fig-fig4 and @fig-fig5 shows the changes in net balance for movements under 100km and over 100km, respectively.
+@fig-fig4 and @fig-fig5 show the changes in net balance for movements under 100km and over 100km, respectively.
 
 ![Total number of net movement by population density class. Movements under 100km.](./outputs/netflows_u100_0km_format_report_minus_Colombia.pdf){#fig-fig4}
 
@@ -316,7 +319,7 @@ We calculated the monthly net movement balance as the difference between mobilit
 *Short-distance movement*
 
 @fig-fig4 reveals a persistent pattern of fluctuating negative net balances of movements under 100km in the highest population density areas in Argentina <!--# , Colombia --> and Mexico for most of March 2020 to May 2022.
-The extent of these balances become more notably pronounced after July 2020, but they vary widely by country.
+The extent of these balances becomes more notably pronounced after July 2020, but they vary widely by country.
 Mexico displays the largest negative balances, probably reflecting the fact that it is the second most populated country in Latin America following Brazil.
 The trend of negative balances indicates that the highest population density areas in Argentina <!--# , Colombia --> and Mexico tended to record a larger number of outward movements than inward movements over distances of less than 100km.
 As indicated in @sec-methods1, these locations comprise highly dense metropolitan cores predominantly in capital cities, including the Central Business District.

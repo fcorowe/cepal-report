@@ -261,49 +261,33 @@ Positive values indicate increases in mobility relative to the pre-pandemic peri
 
 *Short-distance movements*
 
-Overall, we observe a consistent decline in outflows across all population density categories for movements under 100 km. The decline is specially strong in the early days of the pandemic. We observe some degree of recovery in March 2022, evidenced by the fact that the boxplots appear closer to the baseline levels.
+Overall, in @fig-outflowsU100 we observe a consistent decline in outflows across all population density categories for movements under 100 km. The decline is specially strong in the early days of the pandemic. We observe some degree of recovery in March 2022, evidenced by the fact that the boxplots appear closer to the baseline levels. Of all countries, Chile displays the lowest degree of recovery.
 
-Furthermore, we observe a consistent trend whereby the decline in outflows becomes greater as the population density increases, so the largest drops occurred in the most densely populated areas, such as Buenos Aires, Santiago and Mexico City. This effect is specially evident in May 2020, where population flows with destination in tiles belonging to the highest-density category, dropped by more than 50% in some cases. Low-density areas reported lower declines which is some cases are statistically indistinguishable from 0%. 
+Furthermore, we observe a consistent trend whereby the decline in outflows becomes greater as the population density increases, so the largest drops occurred in the most densely populated areas, such as Buenos Aires, Santiago and Mexico City. This effect is stronger in May 2020, where population flows originating in tiles from the highest-density category, dropped by more than 50% in some cases. Chile displays a larger decline of outflows from population density category 10 than Argentina or Mexico. Low-density areas reported lower declines which in some cases are statistically indistinguishable from 0%. 
 
-The observed patterns could be attributed to the some or a combination of the following behaviours. Firstly, there could be a donut effect whereby people move from the highest-density urban cores to lower-density areas in the surrounding regions at less than 100 km away. The decrease in population at the urban cores would explain the larger decrease in short-distance outflows in high density areas. Secondly, there could be a reduction in commuter flows driven by the higher number of people engaging in remote work. <!-- *I AM HERE: EXPLAIN THAT THE FACT THAT IN CITIES THERE ARE MORE JOBS THAT CAN BE DONE REMOTELY COULD BE AN EXPLANATION OF THE LARGER DECREASE OF OUTFLOWS IN HIGH-DENSITY AREAS. THIRDLY, URBAN EXODUS TO LOWER DENSITY REGIONS THAT ARE FURTHER AWAY THAN 100KM* 
+The observed variation in mobility across population density classes is likely to be the result of a combination of the following behaviours. Firstly, this variation could emerge due to a reduction in commuter flows to, from and within cities driven by the fact that a high proportion of jobs that can be done remotely are concentrated in cities [@Althoff22]. Secondly, it could be capturing an urban exodus phenomenon, i.e. people's relocation from the highest-density urban cores to lower-density areas. Particularly, a donut effect is a type of urban exodus where people relocate to lower-density areas surrounding the high-density urban core. Due to the aggregated nature of our data, we are unable to ascertain whether the decline in outflows from densely populated areas can be attributed to the first or second behaviour. In particular, we cannot determine whether we are observing the behaviour of individuals who typically commute to highly dense areas within a 100 km radius of their residence, but are now opting to stay closer to home and commute into the city less frequently, or of individuals who typically reside in highly dense areas but have relocated to lower-density regions, resulting in reduced activity in high-density zones. The analysis of net movements in the next section can help us better understand the extent to which the population of each country has redistributed across the territory.
+
 
 *Long-distance movements*
 
-*EXPLAIN. text below is what I had before, do not delete*
+In @fig-outflowsO100, we observe very similar trends to those observed in @fig-outflowsU100. Firstly, a consistent decline in outflows across all population density categories for movements over 100 km, like we did for movements under 100 km. This leads us to the conclusion, that mobility was reduced for all types of movements, regardless of the distance they cover or of the population density of the origin and destination. The decline is specially strong in the early days of the pandemic, especially for Chile, and there is some recovery by March 2022, where the number of outflows is closer to the baseline levels, especially for Argentina and Mexico. 
 
-Generally speaking, we also identify a relatively higher level of variability in the percentage change values for low-density categories, showing that the behaviours in these regions might be more heterogeneous than in densely-populated areas.
+The Figure shows the same consistent variation that we observed for short-distance movements in accordance to the population density class of the origin, i.e. the decline in outflows is greater as the population density increases, so the largest decline corresponds to the most densely populated areas. However, we identify a relatively higher level of variability in this trend, likely due to the smaller sample size of population flows covering more than 100 km.
 
-There are some exceptions to the general behaviours discussed above.
-Firstly, declines in short-distance movements from high and medium densely areas are slightly lower in Argentina and Mexico than in Chile and Colombia.
-Second, while outflows over 100 km in Argentina, Chile and Colombia declined more for higher density categories, this trend displays more variability than in the case of Mexico and in the case of ouflows under 100 km.
-This could be attributed to the smaller sample size of population flows covering more than 100 km.
+The mobility behaviours giving rise to the patterns observed for movements covering over 100 km are likely to be the same as for short-distance movements, namely, a reduction in commuter flows and a redistribution of population to less dense areas. The latter factor, however, is likely to carry greater significance in this scenario, primarily because commutes typically occur within distances of less than 100 km. 
 
-This last remark leads us to address the issue that in Colombia, both in May 2020 and in March 2022, there are some population density categories with no outflows over 100 km.
-# maybe start describing the process that may produce low counts in the first place? Pointing all on the data may not help our case#
+
+<!--This last remark leads us to address the issue that in Colombia, both in May 2020 and in March 2022, there are some population density categories with no outflows over 100 km.
+#maybe start describing the process that may produce low counts in the first place? Pointing all on the data may not help our case#
 On the one hand, the tiles used in the Facebook Movements data set to spatially aggregate the data are smaller for the case of Colombia, so fewer movements are recorded per cell.
 On the other hand, according to Facebook's documentation, three procedures are applied to maintain data privacy, which could be the reason why we have so few population flows covering a distance of more than 100 km recorded in the raw Facebook Movement data set (before aggregating them by month).
 Of these three procedures, 'small-count dropping' could be specially relevant since population flows with small counts for either the pandemic or the baseline period, are fully removed from the data set.
 Essentially, in the first place, we have few movements emerging from each tile for each 8-hour time interval due to the small tile size, so when the small count dropping mechanism is applied for each time interval, these low counts are removed from the data set.
 Therefore, when we aggregate the population flows over a month to generate @fig-outflowsU100 and @fig-outflowsO100, some classes of population density end up with no counts at all.
 Even for density classes containing some counts, the numbers are low, making the results for long-distance movements in Colombia inconclusive.
-When considering larger tiles, as in Argentina, Chile or Mexico, this effect could be non-existent since the counts are higher, and there are not as many rows in the database to discard due to the small-count dropping procedure.
+When considering larger tiles, as in Argentina, Chile or Mexico, this effect could be non-existent since the counts are higher, and there are not as many rows in the database to discard due to the small-count dropping procedure.!-->
 
-As we mentioned above, we observe some degree of recovery in March 2022 following the relaxation of COVID-19 restrictions.
-We observe increases in both short- and long-distance outflows across the population density categories, so that in most cases, the intensity of outflows bounced back closer to pre-pandemic levels.
-However, not all population density categories recovered to the same extent.
-Remarkably, while low density areas are fully or almost fully back to pre-pandemic levels, the highest density areas continued to record slightly lower levels of outflows than in the baseline period.
-This suggests that since the outbreak of COVID-19 there has been less people travelling out of highly-dense areas including the urban core of the capital cities of each country.
-When looking at the Figures for analogous inflows, which can be found in the Appendix, the same pattern can be observed, suggesting that highly dense areas have seen a consistent reduction in the number of people travelling in and out.
 
-It is worth noting that among all countries, Mexico is the one demonstrating the most significant degree of recovery.
-Variations across countries could be driven by the different strength and durability of stringency measures.
-These measures were weaker and implemented for a shorter period of time in Mexico.
-It is also worth noting that the baseline measurements included in the Facebook Movements dataset were collected from February to mid-March, coinciding with the holiday season in Chile.
-As a result, mobility patterns during this baseline period might differ from those observed for the remainder of the year.
-
-In summary, based on @fig-outflowsU100 and @fig-outflowsO100, we see less people leaving densely-populated areas which suggests that a phenomenon of urban exodus did not take place in the four Latin American countries during the first wave of COVID-19.
-We observe, however, a general decline in the intensity of population flows from and to all population density categories during early stages of the pandemic, especially for highly-dense areas.
-This decline shows signs of being temporary, since the number of people moving has almost recovered to pre-pandemic levels as of March 2022. -->
 
 ## Spatio-temporal patterns of population redistribution during COVID-19
 

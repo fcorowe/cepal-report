@@ -1,0 +1,461 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+# data wrangling
+library(tidyverse)
+
+# spatial data wrangling
+library(sf)
+
+# data visualisation
+library(viridis) 
+
+# format data visualisations
+library(ggthemes)
+library(patchwork)
+library(showtext)
+library(scales)
+
+# create maps
+library(leaflet)
+library(tmap)
+library(mapdeck)
+```
+
+Set font style
+```{r}
+# clean workspace
+rm(list=ls())
+# load font
+font_add_google("Roboto Condensed", "robotocondensed")
+# automatically use showtext to render text
+showtext_auto()
+```
+
+Theme for maps
+```{r}
+theme_map <- function(...) {
+  theme_tufte() +
+  theme(
+    text = element_text(family = "robotocondensed", size = 30),
+    # remove all axes
+    axis.text.x = element_blank(),
+    axis.text.y = element_blank(),
+    axis.ticks = element_blank()
+    )
+}
+```
+
+## need to read this in 4 separate times - 202
+```{r}
+# 2020 in
+df20_a <- readRDS("R:\\data\\outputs\\chile\\movements\\2020_04_mov.rds") %>% 
+  mutate(GEOMETRY = NULL) %>% 
+  dplyr::filter(country == "CL") %>% 
+  st_as_sf(coords = c("start_lon", "start_lat"), 
+                                      crs = 'EPSG:4326')
+# 2020 out
+df20_b <- readRDS("R:\\data\\outputs\\chile\\movements\\2020_04_mov.rds") %>% 
+  mutate(GEOMETRY = NULL) %>% 
+  dplyr::filter(country == "CL") %>% 
+  st_as_sf(coords = c("end_lon", "end_lat"), 
+                                      crs = 'EPSG:4326')
+# 2022 in
+df22_a <- readRDS("R:\\data\\outputs\\chile\\movements\\2022_03_mov.rds") %>% 
+  mutate(GEOMETRY = NULL) %>% 
+  dplyr::filter(country == "CL") %>% 
+  st_as_sf(coords = c("start_lon", "start_lat"), 
+                                      crs = 'EPSG:4326')
+# 2022 out
+df22_b <- readRDS("R:\\data\\outputs\\chile\\movements\\2022_03_mov.rds") %>% 
+  mutate(GEOMETRY = NULL) %>% 
+  dplyr::filter(country == "CL") %>% 
+  st_as_sf(coords = c("end_lon", "end_lat"), 
+                                      crs = 'EPSG:4326')
+```
+
+```{r}
+adm_shp <- st_read("R:\\outputs\\maps\\shapefiles\\Chile_shp\\adm\\province\\PROVINCIAS_2020.shp")%>% 
+  st_simplify(preserveTopology = T,
+              dTolerance = 1000) %>% 
+  st_make_valid() %>% 
+  st_transform(crs = 'EPSG:4326')
+
+region_shp <- st_read("R:\\outputs\\maps\\shapefiles\\Chile_shp\\adm\\region\\REGIONES_2020.shp")%>% 
+  st_simplify(preserveTopology = T,
+              dTolerance = 1000) %>% 
+  st_make_valid() %>% 
+  st_transform(crs = 'EPSG:4326')
+```
+
+```{r}
+df20_out <- df20_b %>% 
+  filter(start_polygon_name == 'Santiago')
+
+df20_in <- df20_a %>% 
+    filter(end_polygon_name == 'Santiago')
+  
+df22_out <- df22_b %>% 
+  filter(start_polygon_name == 'Santiago')
+
+df22_in <- df22_a %>% 
+  filter(end_polygon_name == 'Santiago')
+```
+
+```{r}
+df20_in <- df20_in %>%
+  group_by(start_polygon_name) %>%
+  mutate(geometry = st_union(geometry)) %>%
+  ungroup()
+
+df20_out <- df20_out %>%
+  group_by(end_polygon_name) %>%
+  mutate(geometry = st_union(geometry)) %>%
+  ungroup()
+
+df22_in <- df22_in %>%
+  group_by(start_polygon_name) %>%
+  mutate(geometry = st_union(geometry)) %>%
+  ungroup()
+
+df22_out <- df22_out %>%
+  group_by(end_polygon_name) %>%
+  mutate(geometry = st_union(geometry)) %>%
+  ungroup()
+```
+
+
+```{r}
+# sum of outflows
+outflows_df_20 <- df20_out %>% 
+  filter(start_polygon_name != end_polygon_name) %>% 
+  group_by(start_polygon_name, end_polygon_name, geometry) %>% 
+  dplyr::summarise(
+    sum_outflow = sum(n_crisis, na.rm = T)) %>% 
+  ungroup() 
+
+outflows_df_22 <- df22_out %>% 
+  filter(start_polygon_name != end_polygon_name) %>% 
+  group_by(start_polygon_name, end_polygon_name, geometry) %>% 
+  dplyr::summarise(
+    sum_outflow = sum(n_crisis, na.rm = T)) %>% 
+  ungroup() 
+
+inflows_df_20 <- df20_in %>% 
+  filter(start_polygon_name != end_polygon_name) %>% 
+  group_by(start_polygon_name, end_polygon_name, geometry) %>% 
+  dplyr::summarise(
+    sum_outflow = sum(n_crisis, na.rm = T)) %>% 
+  ungroup() 
+
+inflows_df_22 <- df22_in %>% 
+  filter(start_polygon_name != end_polygon_name) %>% 
+  group_by(start_polygon_name, end_polygon_name, geometry) %>% 
+  dplyr::summarise(
+    sum_outflow = sum(n_crisis, na.rm = T)) %>% 
+  ungroup() 
+```
+
+
+```{r}
+p <- ggplot() + 
+  geom_sf(data = adm_shp,
+          color = "gray60", 
+          size = 0.1) 
+
+last_plot()
+```
+
+
+```{r}
+p <- p +
+  geom_point(data = inflows_df_20,
+    aes(geometry = geometry),
+    stat = "sf_coordinates"
+  ) 
+last_plot()
+```
+
+
+```{r}
+bbox_new <- st_bbox(adm_shp) # current bounding box
+
+xrange <- bbox_new$xmax - bbox_new$xmin # range of x values
+yrange <- bbox_new$ymax - bbox_new$ymin # range of y values
+
+bbox_new[1] <- bbox_new[1] + (0.6 * xrange) # xmin - left
+#bbox_new[3] <- bbox_new[3] + (0.5 * xrange) # xmax - right
+#bbox_new[2] <- bbox_new[2] - (0.5 * yrange) # ymin - bottom
+#bbox_new[4] <- bbox_new[4] + (0.5 * yrange) # ymax - top
+
+bbox_new <- bbox_new %>%  # take the bounding box ...
+  st_as_sfc() # ... and make it a sf polygon
+
+ggplot() + 
+  geom_sf(data = adm_shp,
+          color = "gray60", 
+          size = 0.1) +
+  geom_point(data = outflows_df_20,
+    aes(geometry = geometry),
+    stat = "sf_coordinates",
+    size = .1
+  ) +
+  coord_sf(xlim = st_coordinates(bbox_new)[c(1,2),1], # min & max of x values
+           ylim = st_coordinates(bbox_new)[c(2,3),2]) + # min & max of y values
+  theme_void()
+```
+```{r}
+inflows_df_20$year <- '2020'
+inflows_df_22$year <- '2022'
+outflows_df_20$year <- '2020'
+outflows_df_22$year <- '2022'
+```
+
+
+```{r}
+inflows_df <- rbind(inflows_df_20, inflows_df_22)
+outflows_df <- rbind(outflows_df_20, outflows_df_22)
+```
+
+```{r}
+mob_indicators_1 <- st_join(adm_shp, outflows_df)
+# check if all polygons are matched
+outflows_df$check <- outflows_df$end_polygon_name %in% mob_indicators_1$end_polygon_name
+# identify unmatched polygons
+outflows_df %>% select(end_polygon_name, check) %>% 
+  filter(check == "FALSE")
+
+mob_indicators_2 <- st_join(adm_shp, inflows_df)
+inflows_df$check <- t$start_polygon_name %in% mob_indicators_2$start_polygon_name
+inflows_df %>% select(start_polygon_name, check) %>% 
+  filter(check == 'FALSE')
+```
+
+# ```{r}
+# # get coordinates
+# coordinates <- st_coordinates(outflows_df) 
+# # combine data frames
+# outflows_df <- cbind(outflows_df, coordinates) %>% 
+#   rename(
+#     long = X, 
+#     lat = Y
+# )
+# # list province to be adjusted
+# province_name <- c("Valparaíso", "Magallanes")
+# # adjust the centroid
+# for (area in 1:2) {
+#   long <- outflows_df %>% 
+#     st_drop_geometry() %>% 
+#     dplyr::filter(end_polygon_name == province_name[area]) %>% 
+#     select(long) %>% 
+#     as.numeric()
+#   
+#   lat <- outflows_df %>% 
+#     st_drop_geometry() %>%
+#     dplyr::filter(end_polygon_name == province_name[area]) %>% 
+#     select(lat) %>% 
+#     as.numeric()
+# 
+#   st_geometry(outflows_df[outflows_df$end_polygon_name == province_name[area], ]) <-  st_sfc(st_point(c( long * 0.98, lat * 1 )))
+# }
+# 
+# # get coordinates
+# coordinates <- st_coordinates(inflows_df) 
+# # combine data frames
+# inflows_df <- cbind(inflows_df, coordinates) %>% 
+#   rename(
+#     long = X, 
+#     lat = Y
+# )
+# # list province to be adjusted
+# province_name <- c("Valparaíso", "Magallanes")
+# # adjust the centroid
+# for (area in 1:2) {
+#   long <- inflows_df %>% 
+#     st_drop_geometry() %>% 
+#     dplyr::filter(start_polygon_name == province_name[area]) %>% 
+#     select(long) %>% 
+#     as.numeric()
+#   
+#   lat <- inflows_df %>% 
+#     st_drop_geometry() %>%
+#     dplyr::filter(start_polygon_name == province_name[area]) %>% 
+#     select(lat) %>% 
+#     as.numeric()
+# 
+#   st_geometry(inflows_df[inflows_df$start_polygon_name == province_name[area], ]) <-  st_sfc(st_point(c( long * 0.98, lat * 1 )))
+# }
+# ```
+
+
+```{r}
+library(classInt)
+```
+
+```{r}
+mob_indicators_1 <- na.omit(mob_indicators_1)
+mob_indicators_2 <- na.omit(mob_indicators_2)
+```
+
+
+```{r}
+mob_indicators_1$new_jenk_class <- classify_intervals(mob_indicators_1$sum_outflow, n = 5, style = "quantile", factor = TRUE)
+mob_indicators_2$new_jenk_class <- classify_intervals(mob_indicators_2$sum_outflow, n = 5, style = "quantile", factor = TRUE)
+
+outflow_labels_1 <- levels(mob_indicators_1$new_jenk_class)
+outflow_labels_1 <- gsub("^.|.$", "",  outflow_labels_1)
+levels(mob_indicators_1$new_jenk_class) <- outflow_labels_1
+
+outflow_labels_2 <- levels(mob_indicators_2$new_jenk_class)
+outflow_labels_2 <- gsub("^.|.$", "", outflow_labels_2)
+levels(mob_indicators_2$new_jenk_class) <- outflow_labels_2
+
+# change geometry
+shp_reg <- adm_shp %>% st_transform(crs = 'EPSG:4326')
+```
+
+ 
+
+
+```{r}
+mob_indicators_2_20 <- mob_indicators_2 %>% 
+  filter(year == 2020)
+
+inflow_plot_20 <- ggplot(data = mob_indicators_2_20, aes(fill = new_jenk_class )) +
+  geom_sf(col = "white", size = .2) + 
+  coord_sf() +
+  scale_fill_brewer(palette = "PuBu", direction = 1) +
+  theme_map() +
+  theme(plot.title = element_text(size = 40, face = "bold"),
+        legend.position = "right") +
+  labs(title = "(a) Santiago: 2020 Inflows",
+       fill = "Number of moves") +
+  geom_sf(data = region_shp,
+          col = "gray", 
+          size = .7,
+          fill = "transparent") +
+   # geom_sf(data = mob_indicators_2 %>%
+   #           filter(REGION == "Metropolitana de Santiago"),  # Filter for Santiago municipality
+   #        aes(fill = "black"),  # Set a custom fill for the highlighted municipality
+   #        col = "black",                 # Set the border color for Santiago
+   #        size = 1.5,                  # Adjust the border size
+   #        fill = "transparent") + 
+  coord_sf(xlim = st_coordinates(bbox_new)[c(1,2),1], 
+           ylim = st_coordinates(bbox_new)[c(2,3),2]) 
+
+
+inflow_plot_20
+
+mob_indicators_2_22 <- mob_indicators_2 %>% 
+  filter(year == 2022)
+
+inflow_plot_22 <- ggplot(data = mob_indicators_2_22, aes(fill = new_jenk_class )) +
+  geom_sf(col = "white", size = .2) + 
+  coord_sf() +
+  scale_fill_brewer(palette = "PuBu", direction = 1) +
+  theme_map() +
+  theme(plot.title = element_text(size = 40, face = "bold"),
+        legend.position = "right") +
+  labs(title = "(b) Santiago: 2022 Inflows",
+       fill = "Number of moves") +
+  geom_sf(data = region_shp,
+          col = "gray", 
+          size = .7,
+          fill = "transparent") +
+   # geom_sf(data = mob_indicators_2 %>%
+   #           filter(REGION == "Metropolitana de Santiago"),  # Filter for Santiago municipality
+   #        aes(fill = "black"),  # Set a custom fill for the highlighted municipality
+   #        col = "black",                 # Set the border color for Santiago
+   #        size = 0.5,                  # Adjust the border size
+   #        fill = "transparent") + 
+  coord_sf(xlim = st_coordinates(bbox_new)[c(1,2),1], 
+           ylim = st_coordinates(bbox_new)[c(2,3),2]) 
+
+
+inflow_plot_22
+
+
+```
+
+
+          
+```{r}
+mob_indicators_1_20 <- mob_indicators_1 %>% 
+  filter(year == 2020)
+
+
+outflow_plot_20 <- ggplot(data = mob_indicators_1_20, aes(fill = new_jenk_class )) +
+  geom_sf(col = "white", size = .2) + 
+  coord_sf() +
+  scale_fill_brewer(palette = "OrRd", direction = 1) +
+  theme_map() +
+  theme(plot.title = element_text(size = 40, face = "bold"),
+        legend.position = "right") +
+  labs(title = "(c) Santiago: Outflows 2020",
+       fill = "Number of moves") +
+  geom_sf(data = region_shp,
+          col = "gray", 
+          size = .7,
+          fill = "transparent") +
+  # geom_sf(data = mob_indicators_1_20 %>%
+  #            filter(REGION == "Metropolitana de Santiago"),  # Filter for Santiago municipality
+  #         aes(fill = "black"),  # Set a custom fill for the highlighted municipality
+  #         col = "black",                 # Set the border color for Santiago
+  #         size = 1.5,                  # Adjust the border size
+  #         fill = "transparent") +
+  coord_sf(xlim = st_coordinates(bbox_new)[c(1,2),1], 
+           ylim = st_coordinates(bbox_new)[c(2,3),2]) 
+
+outflow_plot_20
+
+mob_indicators_1_22 <- mob_indicators_1 %>% 
+  filter(year == 2022)
+
+outflow_plot_22 <- ggplot(data = mob_indicators_1_22, aes(fill = new_jenk_class )) +
+  geom_sf(col = "white", size = .2) + 
+  coord_sf() +
+  scale_fill_brewer(palette = "OrRd", direction = 1) +
+  theme_map() +
+  theme(plot.title = element_text(size = 40, face = "bold"),
+        legend.position = "right") +
+  labs(title = "(d) Santiago: Outflows 2022",
+       fill = "Number of moves") +
+  geom_sf(data = region_shp,
+          col = "gray", 
+          size = .7,
+          fill = "transparent") +
+  # geom_sf(data = mob_indicators_1_22 %>%
+  #            filter(REGION == "Metropolitana de Santiago"),  # Filter for Santiago municipality
+  #         aes(fill = "black"),  # Set a custom fill for the highlighted municipality
+  #         col = "black",                 # Set the border color for Santiago
+  #         size = 1.5,                  # Adjust the border size
+  #         fill = "transparent") +
+  coord_sf(xlim = st_coordinates(bbox_new)[c(1,2),1], 
+           ylim = st_coordinates(bbox_new)[c(2,3),2]) 
+
+outflow_plot_22
+
+
+```
+```{r}
+library(patchwork)
+```
+
+```{r}
+plot <- (inflow_plot_20 + inflow_plot_22) / (outflow_plot_20 + outflow_plot_22)
+```
+
+
+```{r}
+png("sant_flows.png", units="in", width=8, height=15, res=300)
+plot
+dev.off()
+```
+
+```{r}
+st_write(mob_indicators, 'santiago_outflows2.shp')
+           ```
+

@@ -97,22 +97,16 @@ While there is some evidence on the mixed effects that the pandemic had on the p
 
 ## Human mobility across the rural-urban continuum in Latin American countries
 
-Currently, Latin America has the highest urbanization rate in the world after North America, totaling 81% [@UNpopulation19].
-It means that the population is highly concentrated across space within Latin American countries, particularly in large cities with more than one million inhabitants, where half of urban residents are settled [@PintoDaCunha02; @lattes2017].
-High urbanization rates are due to massive levels of population redistribution from rural settlements to cities until the 1980s, mostly during the fast industrialisation period from early-1950s to late-1970s, when population gains were mainly observed in chief cities [@firebaugh1979; @lattes95; @sobrino12].
-Internal population movements in Latin America have been declining since the 1980s, as rural population stocks were depleted [@chávezgalindo2016] and the industrial crisis leaded to deconcentration trends in large cities, such as Santiago de Chile [@gonzálezollino2006) or Mexico City [@sobrino2006], where long distance inflows have declined.
-In sum, middle size cities became more attractive to internal migrants as a consequence of increasing domestic and foreign investment in export-oriented industries or tourism activities, leading to geographic economic dispersal [@Brea03; @Pérez-Campuzano13; @chávezgalindo2016].
-Nowadays, movements between cities dominate the internal migratory system in Latin American countries [@bernard2017; @rodríguez-vignoli2018; @UNpopulation19].
-About 80% of internal migrants moved between cities, according to the 2010-11 census round [@rodríguez-vignoli2018].
-Medium-sizes cities from 500.000 to 1 million residents showed the highest population gains by internal migration, while large cities with more than 1 million residents registered balanced rates and small cities with less than 500.000 inhabitants lost population by internal mobility [@rodríguez-vignoli2018].
+Currently, Latin America has the highest urbanisation rate in the world after North America, totaling 81% [@UNpopulation19].
+This means that the population is highly concentrated across space within Latin American countries, particularly in large cities with more than one million inhabitants, where half of urban residents are settled [@PintoDaCunha02; @lattes2017].
+The high urbanisation rates are due to massive levels of population redistribution from rural settlements to cities taking place until the 1980s, driven by the fast industrialisation period from the early 1950s to the late 1970s [@firebaugh1979; @lattes95; @sobrino12].
+Internal population movements in Latin America have been declining since the 1980s, as rural population stocks were depleted [@chávezgalindo2016] and large cities, such as Santiago de Chile [@gonzálezollino2006) or Mexico City [@sobrino2006], lost popularity due to the industrial crisis. Middle size cities then became more attractive to internal migrants as a consequence of increasing domestic and foreign investment in export-oriented industries or tourism activities, leading to geographic economic dispersal [@Brea03; @Pérez-Campuzano13; @chávezgalindo2016].
+Nowadays, movements between cities dominate the internal migratory system in Latin American countries [@bernard2017; @rodríguez-vignoli2018; @UNpopulation19]. About 80% of internal migrants moved between cities, according to the 2010-2011 census round [@rodríguez-vignoli2018].
+Medium-sized cities with population size between 500,000 and 1 million showed the highest population gains by internal migration, large cities with more than 1 million residents registered balanced rates and small cities with less than 500,000 inhabitants lost population by internal mobility [@rodríguez-vignoli2018].
 
-Latin American cities have shown a significant growth in terms of land development in their urban peripheries.
-Since the 1970s, large cities, such as Santiago de Chile, Buenos Aires or Mexico City, but also middle and small cities have experienced suburbanisation [@graizbord2007; @chávezgalindo2016].
-Suburbanisation flows comprise middle- and high-class families moving from cities to auto-segregated areas in the periphery [@borsdorf2003; @rodríguezvignoli2017].
-Low-income individuals also settle in slams across suburbs but, in this case, in those areas where the land cost is cheaper [@janoschka2002; @rodríguezvignoli2017].
-Both residents in auto-segregated areas and slams commute daily to cities, mainly for work reasons [@chávezgalindo2016].
-Most recently, reurbanisation trends have been identified in central areas due to gentrification dynamics, although suburbanization flows continue to dominate short distance movements [@sobrino12; @chávezgalindo2016].
-In this repot, we explore COVID-19 impacts on the patterns of human mobility across the rural-urban continuum in Latin America.
+Since the 1970s Latin American cities such as Santiago de Chile, Buenos Aires or Mexico City, but also middle and small cities, have experienced suburbanisation [@graizbord2007; @chávezgalindo2016]. Suburbanisation flows comprise middle- and high-income families moving from cities to autosegregated areas in the periphery [@borsdorf2003; @rodríguezvignoli2017]. Some individuals with lower income also settle in peripheral slums but only in suburbs where the land cost is cheap [@janoschka2002; @rodríguezvignoli2017].
+Both residents in auto segregated areas and slums commute daily to cities, mainly for work reasons [@chávezgalindo2016]. Recently, reurbanisation trends have been identified in central areas due to gentrification dynamics, although suburbanisation flows continue to dominate short-distance movements [@sobrino12; @chávezgalindo2016].
+Here, we explore COVID-19 impacts on the patterns of short and long-distance human movements across the rural-urban continuum in Latin America.
 
 # Data
 

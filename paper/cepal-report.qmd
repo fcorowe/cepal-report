@@ -448,50 +448,19 @@ They are more likely to have second or holidays homes and have jobs which can be
 Less socio-economically advantaged individuals were less able to relocate away from their home as they are more likely to work on less well paid service jobs requiring face-to-face interaction \[REF\].
 Drawing on area-level population attributes, future work could investigate the occurrence and persistence of these patterns in Global South countries where socio-economic inequalities are more acute \[REF\].
 
+Further research is also needed to establish the cause of the observed changes in the spatial patterns of internal population movement since the start of the COVID-19 pandemic.
+Understanding these causes can assist in anticipating long-term structural changes in the direction of mobility flows in the coming years.
+A combination of factors, including social distancing, business shutdowns, school closures, telework and unemployment, have all been cited as key forces recasting preexisting patterns of population movement in the early stages of the pandemic.
+While some of these factors vanished as COVID-19 restrictions were relaxed, others such as telework has endured the pandemic [@aksoy2022].
+Determining the extent to which forms and workers have and will continue to adopt remote work will be key to understand future residential and mobility choices within and away from large and dense urban areas.
+
 Additionally, accessing and working with DFD to measure human mobility and migration is challenging.
 DFD are known to suffer from biases and issues of statistical representation reflecting differences in technology usage and accessibility [@rowe2023big].
 While concerted efforts to develop data services and methodological frameworks to leverage on DFD exist in the Global North \[REF\], limited progress has been done in Latin America.
 National government and statistical agencies have a prime position to promote the creation of data sharing partnerships with private companies and create the digital infrastructure to ensure equal and secure access to DFD sources for the social good.
 With academia, these agencies could play a major role in promoting the creation of a methodological framework for the use and analysis of DFD, setting common definitions, metrics, and standard approaches to measure and correct data biases and validate data analyses.
-Location data have been proven key to monitor population movement and displacement during natural disasters, wars and epidemics, to develop appropriate policy responses.
-We envision resources like those created by the European Commission Joint Research Centre \[REF\] and the Statistics Division of the United Nations \[REF\], identifying sources of non-traditional data and establishing methodological guidelines for the use of mobile phone data for official mobility statistics.
-We envision these resources with a regional focus, reflecting differences in the local landscape of data and use of digital technology.
-
-entativeness
-
--   we don't know who these people are
-
--   future work should look at area level data - just a dataset became available
-
--   hypotheses to test - wealthy people migrate - poor people move more locally
-
-DFD for policy - access - key policy implication - framework to process data
-
--   short and long-term policy
-
--   for housing, transport and planning
-
--   for DFD access
-
--   challenges of working with DFD
-
-Policy implications
-
--   About data
-
-Discussion about what we are actually capturing i.e. commuting, shopping trips, etc. vs residential movements / internal migration, and therefore how we interpret the results
-
-DID derived from mobile phone applications now provide a unique opportunity to capture these movements at an unprecedented spatial and temporal granularity
-
--   Decline in mobility intensity after the outbreak of COVID-19
-
--   Support of urban exodus - short distances for Argentina, and Mexico and over long-distance for Chile
-
--   but temporary - recovery to pre-pandemic levels
-
--   Donut effect in Argentina, Colombia and Mexico
-
-## 
+Location data have been proven key to monitor and develop appropriate policy responses to population displacement and movement during natural disasters, wars and epidemics [@green2021]. We envision resources like those created by the European Commission Joint Research Centre [REF] and the Statistics Division of the United Nations \[REF\], identifying sources of non-traditional data and establishing methodological guidelines for the use of mobile phone data for official mobility statistics.
+Existing resources have a global character, we call for initiatives with a regional focus accounting for differences in the local landscape of data availability and digital technology usage.
 
 # Conclusion
 

@@ -360,7 +360,7 @@ At the same time, we observed a continuous trend of negative net balances in hig
 ## Movements from and to capital cities
 
 To understand better the nature of movements involving areas of population density class 10, we analysed the spatial patterns of movement of under and over 100km from and to capital cities.
-Movements from and to areas of population density class 10 exclusively represent mobility patterns from and to metropolitan core areas of capital cities in our analysis.
+Movements from and to areas of population density class 10 exclusively represent movements from and to metropolitan core areas of capital cities.
 
 -   In the context of negative net balances relating to short-distance movement for areas of class 10 in Argentina and Mexico, identify the key destinations and any systematic patterns of outflows - what sort of areas attracted people
 
@@ -405,7 +405,7 @@ Our findings suggest that levels of internal population movement over both short
 In Chile, seasonality in mobility patterns may prompt these conclusions as the pre-pandemic baseline coincides with the national period of summer holidays when levels of internal movements over long distances are typically higher than during the rest of the year.
 Yet, we argue that such seasonality produces a substitution effect by trading short-distance commuting moves for long-distance travel, rather than increasing overall levels of mobility across the country.
 Additionally, we argue that hybrid forms of working that emerged during the height of the pandemic may have had a continuing effect on internal population movements in the three countries in our analysis.
-Hybrid working may have precipitated a secular trend of internal migration decline which was in motion before the pandemic <!--# [Champion and Bell]  -->, and led to reduced rates of mobility in many countries during COVID-19 [@rowe2023].
+Hybrid working may have precipitated a secular trend of internal migration decline which was in motion before the pandemic [@bell2017global], and led to reduced rates of mobility in many countries during COVID-19 [@rowe2023].
 Furthermore, global analyses indicate that hybrid working has become a new future of our working life as stigma associated with working from home has diminished, large investments on working environments to enable hybrid work have been made, and working-from-home experiences in terms of productivity and work-life balance have been better than expected [@barrero2021; @aksoy2022].
 Hybrid working is thus expected to reduce the need for daily commuting travel and living in close proximity to work places.
 
@@ -442,11 +442,11 @@ Our data capture these movements but also include frequent and daily travel beha
 Future work could extend and validate our work identifying changes to moves relating permanent and temporary displacements, and triangulating alternative DFD and traditional data sources, such as censuses and representative surveys collecting information on residential location.
 
 We focused on analysing the levels and spatial patterns of internal population movement.
-Recent evidence from the Global North suggests systematic differences in the mobility patterns of more and less socio-economically advantaged individuals during the early stages of the pandemic \[REF\].
-More socio-economically advantaged individuals seem to have been able to relocate more "permanently" away from large and dense urban areas during the height of the pandemic \[REF\].
+Available evidence from the Global North suggests systematic differences in the mobility patterns of more and less socio-economically advantaged individuals during the early stages of the pandemic [@gauvin2021; @long2022; @santana2023].
+While empirical evidence is lacking, existing findings suggest that more socio-economically advantaged individuals seem to have been able to relocate more "permanently" away from large and dense urban areas during the height of the pandemic [@gauvin2021].
 They are more likely to have second or holidays homes and have jobs which can be done remotely.
-Less socio-economically advantaged individuals were less able to relocate away from their home as they are more likely to work on less well paid service jobs requiring face-to-face interaction \[REF\].
-Drawing on area-level population attributes, future work could investigate the occurrence and persistence of these patterns in Global South countries where socio-economic inequalities are more acute \[REF\].
+Less socio-economically advantaged individuals were less able to relocate away from their home as they are more likely to work on less well paid service jobs requiring face-to-face interaction [@santana2023].
+Drawing on area-level population attributes, future work could investigate the occurrence and persistence of these patterns in Global South countries where socio-economic inequalities are more acute [@qureshi2023rising].
 
 Further research is also needed to establish the cause of the observed changes in the spatial patterns of internal population movement since the start of the COVID-19 pandemic.
 Understanding these causes can assist in anticipating long-term structural changes in the direction of mobility flows in the coming years.
@@ -459,7 +459,8 @@ DFD are known to suffer from biases and issues of statistical representation ref
 While concerted efforts to develop data services and methodological frameworks to leverage on DFD exist in the Global North \[REF\], limited progress has been done in Latin America.
 National government and statistical agencies have a prime position to promote the creation of data sharing partnerships with private companies and create the digital infrastructure to ensure equal and secure access to DFD sources for the social good.
 With academia, these agencies could play a major role in promoting the creation of a methodological framework for the use and analysis of DFD, setting common definitions, metrics, and standard approaches to measure and correct data biases and validate data analyses.
-Location data have been proven key to monitor and develop appropriate policy responses to population displacement and movement during natural disasters, wars and epidemics [@green2021]. We envision resources like those created by the European Commission Joint Research Centre [REF] and the Statistics Division of the United Nations \[REF\], identifying sources of non-traditional data and establishing methodological guidelines for the use of mobile phone data for official mobility statistics.
+Location data have been proven key to monitor and develop appropriate policy responses to population displacement and movement during natural disasters, wars and epidemics [@green2021].
+We envision resources like those created by the @europeancommission.jointresearchcentre.2022 and the @escap2019handbook, identifying sources of non-traditional data and establishing methodological guidelines for the use of mobile phone data for official mobility statistics.
 Existing resources have a global character, we call for initiatives with a regional focus accounting for differences in the local landscape of data availability and digital technology usage.
 
 # Conclusion

@@ -408,23 +408,27 @@ Additionally, we argue that hybrid forms of working that emerged during the heig
 Hybrid working may have precipitated a secular trend of internal migration decline which was in motion before the pandemic <!--# [Champion and Bell]  -->, and led to reduced rates of mobility in many countries during COVID-19 \[@rowe2023\]. Furthermore, global analyses indicate that hybrid working has become a new future of our working life as stigma associated with working from home has diminished, large investments on working environments to enable hybrid work have been made, and working-from-home experiences in terms of productivity and work-life balance have been better than expected \[@barrero2021; @aksoy2022\].
 Hybrid working is thus expected to reduce the need for daily commuting travel and living in close proximity to work places.
 
--   Decline in Levels
-
-    -   extend prior work - changes in 2020 or until 2021 (maybe add in the introduction)
-
-    -   implications for housing, transport, planning - net zero carbon - , and as a result, it may have implications for public spending in major city centres
-
-    -   changes in mobility patterns due to working from home
-
 Additionally, our study lends some support for the theory of an urban exodus providing evidence of negative net balances of movements in the most dense areas of capital cities.
 These patterns are consistent with 'the donut effect' identified by @ramani2021 to describe net population losses in dense city centres in most US metropolitan areas during ealy stages of the COVID-19 pandemic.
 In Argentina, Chile and Mexico, distinct processes seem to have underpinned these patterns of negative net balances.
-In Argentina, sustained negative balances in highly dense areas were associated with short-distance movements, likely reflecting a pattern of sub-urbanisation in the metropolitan area of Buenos Aires.
+In Argentina, sustained negative balances in highly dense areas were associated with short-distance movements, likely reflecting a pattern of suburbanisation in the metropolitan area of Buenos Aires.
 In Mexico, the pattern of negative balances were also associated with short-distance moves but extended to a wider set of highly dense areas around the metropolitan area of Mexico City, and generated positive balances of moves in sparsely populated areas, suggesting a pattern of counterurbanisation.
 In Chile, negative balances in highly dense areas of the metropolitan area of Santiago were underpinned by long-distance moves.
-These losses were however temporary, transitioning to positive balances in 2021 and 2022.
-Overall, the evidence from Argentina and Mexico seems to align with findings from Spain [@gonzález-leonardo2022c] and Britain [@rowe2022b] indicating that highly dense areas and large cities continued to report, albeit small, net population losses due to internal population movement.
-Additional analysis is required to identify the forces shaping the patterns of population redistribution in Chile.
+These losses were however temporary, switching to neutral and positive balances in 2021 and 2022.
+
+Overall, we contributed to expanding existing evidence on the impact of COVID-19 on the levels and spatial patterns of internal population movement.
+Existing work has focused on developed countries and restricted to the immediate effects of COVID-19 analysing data from 2020.
+The cumulative evidence suggest that the levels of human mobility declined in 2020, that large cities lost population through internal migration, and that suburbs and rural areas experienced population gains.
+To our knowledge, only two studies have analysed data extending to 2021 for Spain [@gonzález-leonardo2022c] and Britain [@rowe2022b].
+In Spain, large cities (Madrid and Barcelona) continued to report population losses through internal migration.
+In Britain, low and high density areas returned to display net balances of movement similar to those observed before the COVID-19 pandemic.
+We expanded this existing evidence by investigating the patterns of internal population movement in Latin America over a period stretching from March 2020 to May 2022.
+Our evidence suggests that negative balances of moves in highly dense areas and large cities recorded for various countries in 2020 may have persisted over 2021 and 2022, as we documented for short-distance moves in Argentina and Mexico.
+They suggest a structural change from a core city preference for suburban and less populated areas.
+Though, this seemed to be shifting back in Argentina.
+Alternatively, our findings suggest that population losses due to long-distance movement in highly dense areas in the metropolitan area of Santiago were short-lived, shifting to neutral and positive balances over 2021 and 2022.
+
+Policy implications
 
 -   Population redistribution
 

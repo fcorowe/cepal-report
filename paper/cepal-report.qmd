@@ -40,6 +40,11 @@ editor_options:
 
 # Introduction
 
+The COVID-19 pandemic triggered major changes in the patterns of human population movement across the world.
+Nonpharmaceuthical interventions to contain the spread of COVID-19, such as social distancing, lockdowns, business and school closures contributed to sharp declines in internal population movements within countries \[REF\].
+As the virus spread globally in early 2020, COVID‐19 infection and mortality rates were disproportionately higher in large and dense metropolitan areas \[REF\], and diminished retail activity reduced the attractiveness and vibrancy of these areas \[REF\].
+In the context of gloomy prospects in urban centres, media headlines suggested the death of cities gathering anecdotal evidence on an "urban exodus", claiming a sudden rise in the number of people leaving large cities \[REF\].
+
 Digital footprint data (DFD) are increasingly becoming a vital component of the data ecosystem to measure and monitor human mobility.
 DFD are digital traces left as a result of social interactions on digital platforms, such as the Internet through web search engines (e.g. Google), social media networks (e.g. Twitter and Facebook), commercial systems in the way of transactions (e.g. payment systems), sensor networks to capture environmental and human changes (e.g. fitness trackers, temperature and sound sensors), and imagery collected via satellites, cameras, drones, CCTV and imaging devices.
 Digital traces encoding location recorded through Call Detail Records (CDRs), eXtended Detail Records (XDR), Global Positioning System (GPS), Bluetooth and smart card data have been particularly valuable to reconstruct a traceable digital representation of human mobility.
@@ -129,8 +134,6 @@ Recently, reurbanisation trends have been identified in central areas due to gen
 Here, we explore COVID-19 impacts on the patterns of short and long-distance human movements across the rural-urban continuum in Latin America.
 
 # Data
-
-<!--# section reviewed by Carmen -->
 
 ## Meta-Facebook Data
 
@@ -360,7 +363,7 @@ At the same time, we observed a continuous trend of negative net balances in hig
 ## Movements from and to capital cities
 
 To understand better the nature of movements involving areas of population density class 10, we analysed the spatial patterns of movement of under and over 100km from and to capital cities.
-Movements from and to areas of population density class 10 exclusively represent movements from and to metropolitan core areas of capital cities.
+Movements from and to areas of population density class 10 exclusively represent mobility patterns from and to metropolitan core areas of capital cities in our analysis.
 
 -   In the context of negative net balances relating to short-distance movement for areas of class 10 in Argentina and Mexico, identify the key destinations and any systematic patterns of outflows - what sort of areas attracted people
 
@@ -405,63 +408,68 @@ Our findings suggest that levels of internal population movement over both short
 In Chile, seasonality in mobility patterns may prompt these conclusions as the pre-pandemic baseline coincides with the national period of summer holidays when levels of internal movements over long distances are typically higher than during the rest of the year.
 Yet, we argue that such seasonality produces a substitution effect by trading short-distance commuting moves for long-distance travel, rather than increasing overall levels of mobility across the country.
 Additionally, we argue that hybrid forms of working that emerged during the height of the pandemic may have had a continuing effect on internal population movements in the three countries in our analysis.
-Hybrid working may have precipitated a secular trend of internal migration decline which was in motion before the pandemic [@bell2017global], and led to reduced rates of mobility in many countries during COVID-19 [@rowe2023].
+Hybrid working may have precipitated a secular trend of internal migration decline which was in motion before the pandemic <!--# [Champion and Bell]  -->, and led to reduced rates of mobility in many countries during COVID-19 [@rowe2023].
 Furthermore, global analyses indicate that hybrid working has become a new future of our working life as stigma associated with working from home has diminished, large investments on working environments to enable hybrid work have been made, and working-from-home experiences in terms of productivity and work-life balance have been better than expected [@barrero2021; @aksoy2022].
 Hybrid working is thus expected to reduce the need for daily commuting travel and living in close proximity to work places.
+
+-   Decline in Levels
+
+    -   extend prior work - changes in 2020 or until 2021 (maybe add in the introduction)
+
+    -   implications for housing, transport, planning - net zero carbon - , and as a result, it may have implications for public spending in major city centres
+
+    -   changes in mobility patterns due to working from home
 
 Additionally, our study lends some support for the theory of an urban exodus providing evidence of negative net balances of movements in the most dense areas of capital cities.
 These patterns are consistent with 'the donut effect' identified by @ramani2021 to describe net population losses in dense city centres in most US metropolitan areas during ealy stages of the COVID-19 pandemic.
 In Argentina, Chile and Mexico, distinct processes seem to have underpinned these patterns of negative net balances.
-In Argentina, sustained negative balances in highly dense areas were associated with short-distance movements, likely reflecting a pattern of suburbanisation in the metropolitan area of Buenos Aires.
+In Argentina, sustained negative balances in highly dense areas were associated with short-distance movements, likely reflecting a pattern of sub-urbanisation in the metropolitan area of Buenos Aires.
 In Mexico, the pattern of negative balances were also associated with short-distance moves but extended to a wider set of highly dense areas around the metropolitan area of Mexico City, and generated positive balances of moves in sparsely populated areas, suggesting a pattern of counterurbanisation.
 In Chile, negative balances in highly dense areas of the metropolitan area of Santiago were underpinned by long-distance moves.
-These losses were however temporary, switching to neutral and positive balances in 2021 and 2022.
+These losses were however temporary, transitioning to positive balances in 2021 and 2022.
+Overall, the evidence from Argentina and Mexico seems to align with findings from Spain [@gonzález-leonardo2022c] and Britain [@rowe2022b] indicating that highly dense areas and large cities continued to report, albeit small, net population losses due to internal population movement.
+Additional analysis is required to identify the forces shaping the patterns of population redistribution in Chile.
 
-Overall, we contributed to expanding existing evidence on the impact of COVID-19 on the levels and spatial patterns of internal population movement.
-Existing work has focused on developed countries and restricted to the immediate effects of COVID-19 analysing data from 2020.
-The cumulative evidence suggest that the levels of human mobility declined in 2020, that large cities lost population through internal migration, and that suburbs and rural areas experienced population gains.
-To our knowledge, only two studies have analysed data extending to 2021 for Spain [@gonzález-leonardo2022c] and Britain [@rowe2022b].
-In Spain, large cities continued to report population losses through internal migration.
-In Britain, low and high density areas returned to display net balances of movement similar to those observed before the COVID-19 pandemic.
+-   Population redistribution
 
-We expanded the existing evidence by investigating the patterns of internal population movement in Latin America over a period stretching from March 2020 to May 2022.
-Our evidence suggests that negative balances of moves in highly dense areas and large cities recorded for various countries in 2020 may have persisted over 2021 and 2022, as we documented for short-distance moves in Argentina and Mexico.
-They suggest a structural change from a core city preference for suburban and less populated areas.
-Though, this seemed to be shifting back in Argentina.
-Alternatively, our findings suggest that population losses due to long-distance movement in highly dense areas in the metropolitan area of Santiago were short-lived, shifting to neutral and positive balances over 2021 and 2022.
-Contrary to the initial expectations of apocalyptic headlines - \`empty cities', 'dead cities', 'ghost cities', 'deserted cities' and 'silent cities'- on the media, the evidence emerging from Chile attests the attraction of cities to absorb population.
-Economies agglomeration in dense urban spaces are likely to continue to facilitate and foster knowledge exchange, innovation and economic growth [@storper2004].
-At the same time, digital infrastructure in rural locales of Latin American countries remain deficient [@pick2020], representing a major challenge to permanently relocate to these areas.
+    -   some evidence of urban exodus / donut effect
+
+        -   different patterns at play: with variations by country and distance of moves
+
+    -   Argentina and Mexico - suburbanisation / urban expansion - short distance
+
+    -   Evidence from Spain [@gonzález-leonardo2022c] and Britain [@rowe2022b] indicates that highly dense areas and large have continued to report cities, albeit small, net population losses though internal population movement.
+
+        -   Cost / housing
+
+    -   Chile - temporary exodus - no donut effect but class 9 areas i.e.
+        Reñaca and NW of the Metropolitan Region (low and medium income households)
+
+-   Durability
+
+-   About data
+
+Discussion about what we are actually capturing i.e. commuting, shopping trips, etc. vs residential movements / internal migration, and therefore how we interpret the results
+
+DID derived from mobile phone applications now provide a unique opportunity to capture these movements at an unprecedented spatial and temporal granularity
+
+-   Decline in mobility intensity after the outbreak of COVID-19
+
+-   Support of urban exodus - short distances for Argentina, and Mexico and over long-distance for Chile
+
+-   but temporary - recovery to pre-pandemic levels
+
+-   Donut effect in Argentina, Colombia and Mexico
+
+## 
 
 ## Limitations and future work
 
-We distinguished between short- and long-distance moves.
-Typically short-distance moves are typically used to capture local residential and routine moves, and long-distance moves are used to account for more permanent and infrequent moves, such as internal migration [@owen1992migration].
-However, we cannot identify moves involving permanent changes of residential address.
-Our data capture these movements but also include frequent and daily travel behaviour, such as commuting and shopping trips.
-Future work could extend and validate our work identifying changes to moves relating permanent and temporary displacements, and triangulating alternative DFD and traditional data sources, such as censuses and representative surveys collecting information on residential location.
+-   for housing, transport and planning
 
-We focused on analysing the levels and spatial patterns of internal population movement.
-Available evidence from the Global North suggests systematic differences in the mobility patterns of more and less socio-economically advantaged individuals during the early stages of the pandemic [@gauvin2021; @long2022; @santana2023].
-While empirical evidence is lacking, existing findings suggest that more socio-economically advantaged individuals seem to have been able to relocate more "permanently" away from large and dense urban areas during the height of the pandemic [@gauvin2021].
-They are more likely to have second or holidays homes and have jobs which can be done remotely.
-Less socio-economically advantaged individuals were less able to relocate away from their home as they are more likely to work on less well paid service jobs requiring face-to-face interaction [@santana2023].
-Drawing on area-level population attributes, future work could investigate the occurrence and persistence of these patterns in Global South countries where socio-economic inequalities are more acute [@qureshi2023rising].
+-   for DFD access
 
-Further research is also needed to establish the cause of the observed changes in the spatial patterns of internal population movement since the start of the COVID-19 pandemic.
-Understanding these causes can assist in anticipating long-term structural changes in the direction of mobility flows in the coming years.
-A combination of factors, including social distancing, business shutdowns, school closures, telework and unemployment, have all been cited as key forces recasting preexisting patterns of population movement in the early stages of the pandemic.
-While some of these factors vanished as COVID-19 restrictions were relaxed, others such as telework has endured the pandemic [@aksoy2022].
-Determining the extent to which forms and workers have and will continue to adopt remote work will be key to understand future residential and mobility choices within and away from large and dense urban areas.
-
-Additionally, accessing and working with DFD to measure human mobility and migration is challenging.
-DFD are known to suffer from biases and issues of statistical representation reflecting differences in technology usage and accessibility [@rowe2023big].
-While concerted efforts to develop data services and methodological frameworks to leverage on DFD exist in the Global North \[REF\], limited progress has been done in Latin America.
-National government and statistical agencies have a prime position to promote the creation of data sharing partnerships with private companies and create the digital infrastructure to ensure equal and secure access to DFD sources for the social good.
-With academia, these agencies could play a major role in promoting the creation of a methodological framework for the use and analysis of DFD, setting common definitions, metrics, and standard approaches to measure and correct data biases and validate data analyses.
-Location data have been proven key to monitor and develop appropriate policy responses to population displacement and movement during natural disasters, wars and epidemics [@green2021].
-We envision resources like those created by the @europeancommission.jointresearchcentre.2022 and the @escap2019handbook, identifying sources of non-traditional data and establishing methodological guidelines for the use of mobile phone data for official mobility statistics.
-Existing resources have a global character, we call for initiatives with a regional focus accounting for differences in the local landscape of data availability and digital technology usage.
+-   challenges of working with DFD
 
 # Conclusion
 

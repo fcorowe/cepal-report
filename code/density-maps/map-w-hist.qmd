@@ -1,0 +1,203 @@
+---
+title: "Cloropleth mapping with a histogram legend"
+format: html
+editor: visual
+---
+
+# Dependencies
+
+```{r}
+# handle spatial data
+library(sf)
+# manipulate data
+library(tidyverse)
+library(lubridate)
+library(readxl)
+# create maps
+library(tmap)
+library(biscale) # bivariate maps
+# data visualisation
+library(viridis) 
+library(viridisLite)
+library(RColorBrewer)
+library(ggthemes)
+library(scico)
+library(patchwork)
+library(showtext)
+library(cowplot)
+library(pals)
+library(scales)
+```
+
+# Set themes
+
+Set font style
+
+```{r}
+# clean workspace
+rm(list=ls())
+# load font
+font_add_google("Roboto Condensed", "robotocondensed")
+# automatically use showtext to render text
+showtext_auto()
+```
+
+Theme for maps
+
+```{r}
+theme_map <- function(...) {
+  theme_tufte() +
+  theme(
+    text = element_text(family = "robotocondensed"),
+    # remove all axes
+    axis.text.x = element_blank(),
+    axis.text.y = element_blank(),
+    axis.ticks = element_blank(),
+    legend.position = "none"
+    )
+}
+```
+
+Theme for plots
+
+```{r}
+theme_tufte2 <- function(...) {
+  theme_tufte() +
+  theme(
+    text = element_text(family = "robotocondensed"),
+    )
+}
+
+```
+
+# Data
+
+```{r}
+# set up country
+country = 'Chile'
+```
+
+```{r}
+# set up base path
+base_path <- '/Volumes/rdm08/RECAST/data/'
+#base_path2 <- '/Users/Andrea/Desktop/argentina_with_id.shp'
+
+sdf_shp <- st_read(paste0(base_path, 
+                          'populations/fb_worldpop_aggregation/data_with_id/', 
+                          country, '_with_id.shp'))
+
+#sdf_shp <- st_read(base_path2)
+```
+
+# Create map
+
+```{r}
+# Define the desired order of legend labels
+legend_order <- as.factor(1:10)
+
+# Reorder the levels of dnsty_c
+sdf_shp$dnsty_c <- factor(sdf_shp$dnsty_c, levels = legend_order)
+
+# map
+choropleth_map <- ggplot(data = sdf_shp) +
+  geom_sf(aes(fill = dnsty_c, color = dnsty_c)) +
+  coord_sf() +
+  scale_fill_viridis(discrete = TRUE) +
+  scale_color_viridis(discrete = TRUE) +
+  theme_map() 
+
+# show map
+#choropleth_map
+```
+
+# Create histogram
+
+```{r}
+#sdf_shp %>% filter(pp_dns_ > 0) %>% 
+#  ggplot() + 
+#  geom_histogram(bins = 100, aes(x = pp_dns_, fill = dnsty_c)) +
+  #scale_y_continuous(trans='log2') +
+  #scale_y_log10(breaks = trans_breaks("log10", function(x) 10^x),
+              #labels = trans_format("log10", math_format(10^.x))) + 
+#  scale_y_sqrt() +
+#  scale_fill_viridis(discrete = TRUE) +
+#  theme_tufte2() #+ annotation_logticks() 
+```
+
+```{r}
+#sdf_shp %>% filter(pp_dns_ > 0) %>% 
+#  ggplot() + 
+#  geom_histogram(bins = 100, aes(y = pp_dns_, fill = dnsty_c)) +
+  #scale_y_continuous(trans='log2') +
+  #scale_y_log10(breaks = trans_breaks("log10", function(x) 10^x),
+              #labels = trans_format("log10", math_format(10^.x))) + 
+#  scale_x_sqrt() +
+#  scale_fill_viridis(discrete = TRUE) +
+#  theme_tufte2() #+ annotation_logticks() 
+```
+
+```{r}
+#sdf_shp %>% filter(pp_dns_ > 0) %>% 
+#  ggplot() + 
+#  geom_histogram(binwidth = 80, aes(y = pp_dns_, fill = dnsty_c)) +
+  #scale_y_continuous(trans='log2') +
+  #scale_y_log10(breaks = trans_breaks("log10", function(x) 10^x),
+              #labels = trans_format("log10", math_format(10^.x))) + 
+#  scale_x_sqrt() +
+#  scale_fill_viridis(discrete = TRUE) +
+#  theme_tufte2() #+ annotation_logticks() 
+```
+
+# Bar plot
+
+```{r}
+# Create a custom color palette for the legend
+n_colors <- length(legend_order)
+legend_colors <- viridis(n = n_colors)
+
+# Set up places name for each country
+# Argentina
+#city_names = c('Valcheta', 'Las Heras', 'Pinamar', 'Bariloche', 'Ushuaia', 'Posadas', 'Mar del Plata', 'Rosario', 'Córdoba', 'Buenos Aires')
+
+# Chile
+city_names = c('Mejillones', 'Pichilemu', 'Calama', 'San Felipe', 'Punta Arenas', 'Antofagasta', 'Concepcíon', 'Valparaíso', 'Reñaca', 'Santiago')
+
+# Mexico
+#city_names = c('El Naranjo', 'Benito Juarez', 'Ciudad Valles', 'Chetumal', 'Culiacán', 'Cancún', 'Saltillo', 'Tijuana', 'Monterrey', 'Ciudad de Mexico')
+
+
+# Define the desired order of legend labels
+legend_order <- as.factor(1:10)
+
+# Format the legend labels as '1 - city name', '2 - city name', etc.
+legend_labels <- paste0(legend_order, " (eg.", city_names, ')')
+
+sdf_shp %>% filter(pp_dns_ > 0) %>% 
+  ggplot(aes(x = dnsty_c, fill = dnsty_c)) + 
+  geom_bar() + 
+  #scale_y_continuous(position="right") +
+  scale_y_sqrt() +
+    #breaks = c(100, 500, 2000, 5000, 10000), limits = c(0, 13000)) +
+  theme_tufte2() +
+  coord_flip() +
+  scale_x_discrete(limits=rev, labels = rev(legend_labels)) +
+  ylab("Population / Area (units)") +
+  scale_fill_manual(values = legend_colors, breaks = legend_order) + # Specify colors and break
+  theme(legend.position = "none",
+        plot.title = element_text(size = 16, face = "bold"),
+        axis.title.y = element_blank(),
+        axis.ticks.y = element_blank()) # Set custom y-axis labels
+map_legend <- last_plot()
+
+```
+
+# Adding legend and save the figure
+
+```{r}
+final_map = choropleth_map + 
+  map_legend + 
+  labs(title = paste('Population Density Class -', country))
+final_map
+ggsave(filename = paste0(country, "_map_with_histogram.png"), plot = final_map, dpi = 300)
+
+```

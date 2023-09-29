@@ -55,25 +55,25 @@ theme_map <- function(...) {
 ## need to read this in 4 separate times - 202
 
 # 2020 in
-df20_a <- readRDS("R:\\data\\outputs\\argentina\\movements\\2020_04_mov.rds") %>% 
+df20_a <- readRDS("/Volumes/RECAST/data/outputs/argentina/movements/2020_04_mov.rds") %>% 
   mutate(GEOMETRY = NULL) %>% 
   dplyr::filter(country == "AR") %>% 
   st_as_sf(coords = c("start_lon", "start_lat"), 
                                       crs = 'EPSG:4326')
 # 2020 out
-df20_b <- readRDS("R:\\data\\outputs\\argentina\\movements\\2020_04_mov.rds") %>% 
+df20_b <- readRDS("/Volumes/RECAST/data/outputs/argentina/movements/2020_04_mov.rds") %>% 
   mutate(GEOMETRY = NULL) %>% 
   dplyr::filter(country == "AR") %>% 
   st_as_sf(coords = c("end_lon", "end_lat"), 
                                       crs = 'EPSG:4326')
 # 2022 in
-df22_a <- readRDS("R:\\data\\outputs\\argentina\\movements\\2022_03_mov.rds") %>% 
+df22_a <- readRDS("/Volumes/RECAST/data/outputs/argentina/movements/2022_03_mov.rds") %>% 
   mutate(GEOMETRY = NULL) %>% 
   dplyr::filter(country == "AR") %>% 
   st_as_sf(coords = c("start_lon", "start_lat"), 
                                       crs = 'EPSG:4326')
 # 2022 out
-df22_b <- readRDS("R:\\data\\outputs\\argentina\\movements\\2022_03_mov.rds") %>% 
+df22_b <- readRDS("/Volumes/RECAST/data/outputs/argentina/movements/2022_03_mov.rds") %>% 
   mutate(GEOMETRY = NULL) %>% 
   dplyr::filter(country == "AR") %>% 
   st_as_sf(coords = c("end_lon", "end_lat"), 
@@ -81,13 +81,13 @@ df22_b <- readRDS("R:\\data\\outputs\\argentina\\movements\\2022_03_mov.rds") %>
 ```
 
 ```{r}
-adm_shp <- st_read("R:\\outputs\\maps\\shapefiles\\gadm41_ARG_shp\\gadm41_ARG_2.shp")%>% 
+adm_shp <- st_read("/Users/franciscorowe/Dropbox/Francisco/Research/in_progress/recast/cepal-report/data/maps/shapefiles/gadm41_ARG_shp/gadm41_ARG_2.shp")%>% 
   st_simplify(preserveTopology = T,
               dTolerance = 1000) %>% 
   st_make_valid() %>% 
   st_transform(crs = 'EPSG:4326')
 
-region_shp <- st_read("R:\\outputs\\maps\\shapefiles\\gadm41_ARG_shp\\gadm41_ARG_1.shp")%>% 
+region_shp <- st_read("/Users/franciscorowe/Dropbox/Francisco/Research/in_progress/recast/cepal-report/data/maps/shapefiles/gadm41_ARG_shp/gadm41_ARG_1.shp")%>% 
   st_simplify(preserveTopology = T,
               dTolerance = 1000) %>% 
   st_make_valid() %>% 
@@ -108,6 +108,26 @@ df20_out$start_polygon_name <- 'Buenos Aires'
 df22_in$end_polygon_name <- 'Buenos Aires'
 df22_out$start_polygon_name <- 'Buenos Aires'
 
+df20_in <- df20_in %>% filter(!start_polygon_name %in% area_names)
+df22_in <- df22_in %>% filter(!start_polygon_name %in% area_names)
+df20_out <- df20_out %>% filter(!end_polygon_name %in% area_names)
+df22_out <- df22_out %>% filter(!end_polygon_name %in% area_names)
+```
+
+# Define distance
+```{r}
+df20_in %>% mutate(
+  distance_class = case_when(length_km < 100 ~ "<100",
+                             length_km >= 100 ~ ">100"))
+
+```
+
+
+```{r}
+# write.csv(df20_in, 'arg_inflows_20.csv')
+# write.csv(df22_in, 'arg_inflows_22.csv')
+# write.csv(df20_out, 'arg_outflows_20.csv')
+# write.csv(df22_out, 'arg_outflows_22.csv')
 ```
 
 ```{r}
@@ -171,6 +191,7 @@ p <- ggplot() +
 
 last_plot()
 ```
+
 ```{r}
 p <- p +
   geom_point(data = outflows_df_20,

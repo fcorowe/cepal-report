@@ -144,7 +144,7 @@ df22_in <- df22_in %>%
 # sum of outflows
 outflows_df_20 <- df20_out %>% 
   filter(start_polygon_name != end_polygon_name) %>% 
-  group_by(start_polygon_name, end_polygon_name, geometry) %>% 
+  group_by(geometry) %>% 
   dplyr::summarise(
     sum_outflow = sum(n_crisis, na.rm = T)) %>% 
   ungroup() 

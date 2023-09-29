@@ -1,0 +1,462 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+# Dependencies
+```{r}
+# data wrangling
+library(tidyverse)
+
+# spatial data wrangling
+library(sf)
+
+# data visualisation
+library(viridis) 
+
+# format data visualisations
+library(ggthemes)
+library(patchwork)
+library(showtext)
+library(scales)
+library(classInt)
+
+# create maps
+library(leaflet)
+library(tmap)
+library(mapdeck)
+library(patchwork)
+```
+
+# Setting theme
+
+Set font style
+```{r}
+# clean workspace
+rm(list=ls())
+# load font
+font_add_google("Roboto Condensed", "robotocondensed")
+# automatically use showtext to render text
+showtext_auto()
+```
+
+Theme for maps
+```{r}
+theme_map <- function(...) {
+  theme_tufte() +
+  theme(
+    text = element_text(family = "robotocondensed", size = 30),
+    # remove all axes
+    axis.text.x = element_blank(),
+    axis.text.y = element_blank(),
+    axis.ticks = element_blank()
+    )
+}
+```
+
+# Argentina
+
+## Data
+
+### mobility data
+```{r}
+## need to read this in 4 separate times - 202
+
+# 2020 out
+df20_b <- readRDS("/Volumes/RECAST/data/outputs/argentina/movements/2020_04_mov.rds") %>% 
+  mutate(GEOMETRY = NULL) %>% 
+  dplyr::filter(country == "AR") %>% 
+  st_as_sf(coords = c("end_lon", "end_lat"), 
+                                      crs = 'EPSG:4326')
+
+# 2022 out
+df22_b <- readRDS("/Volumes/RECAST/data/outputs/argentina/movements/2022_03_mov.rds") %>% 
+  mutate(GEOMETRY = NULL) %>% 
+  dplyr::filter(country == "AR") %>% 
+  st_as_sf(coords = c("end_lon", "end_lat"), 
+                                      crs = 'EPSG:4326')
+```
+
+### boundary data
+```{r}
+adm_shp <- st_read("/Users/franciscorowe/Dropbox/Francisco/Research/in_progress/recast/cepal-report/data/maps/shapefiles/gadm41_ARG_shp/gadm41_ARG_2.shp")%>% 
+  st_simplify(preserveTopology = T,
+              dTolerance = 1000) %>% 
+  st_make_valid() %>% 
+  st_transform(crs = 'EPSG:4326')
+
+region_shp <- st_read("/Users/franciscorowe/Dropbox/Francisco/Research/in_progress/recast/cepal-report/data/maps/shapefiles/gadm41_ARG_shp/gadm41_ARG_1.shp")%>% 
+  st_simplify(preserveTopology = T,
+              dTolerance = 1000) %>% 
+  st_make_valid() %>% 
+  st_transform(crs = 'EPSG:4326')
+```
+
+## Data wrangling
+```{r}
+area_names <- c("José C. Paz", "San Miguel", "Morón", "Capital Federal", "Esteban Echeverría", "Florencio Varela")
+
+# filter for the area names which are within Buenos Aires
+df20_out <- df20_b %>% dplyr::filter(start_polygon_name %in% area_names)
+df22_out <- df22_b %>% dplyr::filter(start_polygon_name %in% area_names)
+
+df20_out$start_polygon_name <- 'Buenos Aires'
+df22_out$start_polygon_name <- 'Buenos Aires'
+
+df20_out <- df20_out %>% filter(!end_polygon_name %in% area_names)
+df22_out <- df22_out %>% filter(!end_polygon_name %in% area_names)
+```
+
+### Define distance
+```{r}
+df20_out <- df20_out %>% mutate(
+  distance_class = case_when(length_km < 100 ~ "<100",
+                             length_km >= 100 ~ ">100"))
+
+df22_out <- df22_out %>% mutate(
+  distance_class = case_when(length_km < 100 ~ "<100",
+                             length_km >= 100 ~ ">100"))
+
+```
+
+### preserve a unique geometry
+```{r}
+df20_out <- df20_out %>%
+  group_by(end_polygon_name) %>%
+  mutate(geometry = st_union(geometry)) %>%
+  ungroup()
+
+df22_out <- df22_out %>%
+  group_by(end_polygon_name) %>%
+  mutate(geometry = st_union(geometry)) %>%
+  ungroup()
+```
+
+### Sum of flows
+```{r}
+outflows_df_20 <- df20_out %>% 
+  filter(start_polygon_name != end_polygon_name) %>% 
+  group_by(start_polygon_name, end_polygon_name, geometry, distance_class) %>% 
+  dplyr::summarise(
+    sum_outflow = sum(n_crisis, na.rm = T)) %>% 
+  ungroup() 
+
+outflows_df_22 <- df22_out %>% 
+  filter(start_polygon_name != end_polygon_name) %>% 
+  group_by(start_polygon_name, end_polygon_name, geometry, distance_class) %>% 
+  dplyr::summarise(
+    sum_outflow = sum(n_crisis, na.rm = T)) %>% 
+  ungroup() 
+```
+
+### Check alignment between data frames
+```{r}
+p <- ggplot() + 
+  geom_sf(data = adm_shp,
+          color = "gray60", 
+          size = 0.1) 
+
+last_plot()
+```
+
+```{r}
+p <- p +
+  geom_point(data = outflows_df_20,
+    aes(geometry = geometry),
+    stat = "sf_coordinates"
+  ) 
+last_plot()
+```
+
+### Add year
+```{r}
+outflows_df_20$year <- '2020'
+outflows_df_22$year <- '2022'
+```
+
+### Bind outflows
+```{r}
+outflows_df <- rbind(outflows_df_20, outflows_df_22)
+```
+
+### Join flows to polygons
+```{r}
+mob_indicators_1 <- st_join(adm_shp, outflows_df)
+```
+
+### classify data into quantiles
+```{r}
+mob_indicators_1$new_jenk_class <- classify_intervals(mob_indicators_1$sum_outflow, n = 5, style = "quantile", factor = TRUE)
+
+outflow_labels_1 <- levels(mob_indicators_1$new_jenk_class)
+outflow_labels_1 <- gsub("^.|.$", "",  outflow_labels_1)
+outflow_labels_1 <- gsub("\\.[0-9]+", "",  outflow_labels_1)
+outflow_labels_1 <- gsub("\\,", "-",  outflow_labels_1)
+levels(mob_indicators_1$new_jenk_class) <- outflow_labels_1
+
+# mob_indicators_1 <- mob_indicators_1 %>% 
+  # mutate(new_jenk_class = str_replace(new_jenk_class, ",", "-"))
+
+# change geometry
+shp_reg <- adm_shp %>% st_transform(crs = 'EPSG:4326')
+```
+
+```{r}
+mob_indicators_1 <- na.omit(mob_indicators_1)
+```
+
+
+## Plotting
+
+### Creating individual country map
+```{r}
+
+ggplot(data = mob_indicators_1, 
+                           aes(fill = new_jenk_class )) +
+  geom_sf(col = "white", size = .2) + 
+  coord_sf() +
+  scale_fill_brewer(palette = "OrRd", direction = 1, na.value="black") +
+  facet_grid(distance_class ~ year) +
+  theme_map() +
+  theme(plot.title = element_text(size = 20, face = "bold"),
+        legend.title = element_text(size = 14),
+        legend.text = element_text(size = 8),
+        legend.position = "bottom",
+        panel.background = element_rect(fill = "#F9F9F9", colour ="#F9F9F9")
+        ) +
+  labs(title = "(a) Buenos Aires",
+       fill = "Number of \n out-moves") +
+      geom_sf(data = adm_shp,
+           col = "grey70", 
+           size = .3,
+           fill = "transparent")
+    # geom_sf(data = region_shp,
+    #       col = "grey70", 
+    #       size = .5,
+    #       fill = "transparent")
+
+outflow_plot_arg <- last_plot()
+```
+
+### Saving map
+```{r}
+png("/Users/franciscorowe/Dropbox/Francisco/Research/in_progress/recast/cepal-report/outputs/cloropleth-maps/cloropleth-arg.png", units="in", width=8, height=10, res=300)
+  outflow_plot_arg
+dev.off()
+```
+
+# Chile
+
+## Data
+
+### mobility data
+```{r}
+## need to read this in 4 separate times - 202
+
+# 2020 out
+df20_b <- readRDS("/Volumes/RECAST/data/outputs/chile/movements/2020_04_mov.rds") %>% 
+  mutate(GEOMETRY = NULL) %>% 
+  dplyr::filter(country == "CL") %>% 
+  st_as_sf(coords = c("end_lon", "end_lat"), 
+                                      crs = 'EPSG:4326')
+
+# 2022 out
+df22_b <- readRDS("/Volumes/RECAST/data/outputs/chile/movements/2022_03_mov.rds") %>% 
+  mutate(GEOMETRY = NULL) %>% 
+  dplyr::filter(country == "CL") %>% 
+  st_as_sf(coords = c("end_lon", "end_lat"), 
+                                      crs = 'EPSG:4326')
+```
+
+### boundary data
+```{r}
+adm_shp <- st_read("/Users/franciscorowe/Dropbox/Francisco/Research/in_progress/recast/cepal-report/data/maps/shapefiles/Chile_shp/adm/province/PROVINCIAS_2020.shp")%>% 
+  st_simplify(preserveTopology = T,
+              dTolerance = 1000) %>% 
+  st_make_valid() %>% 
+  st_transform(crs = 'EPSG:4326')
+
+region_shp <- st_read("/Users/franciscorowe/Dropbox/Francisco/Research/in_progress/recast/cepal-report/data/maps/shapefiles/Chile_shp/adm/region/REGIONES_2020.shp")%>% 
+  st_simplify(preserveTopology = T,
+              dTolerance = 1000) %>% 
+  st_make_valid() %>% 
+  st_transform(crs = 'EPSG:4326')
+```
+
+## Data wrangling
+```{r}
+df20_out <- df20_b %>% 
+  filter(start_polygon_name == 'Santiago')
+  
+df22_out <- df22_b %>% 
+  filter(start_polygon_name == 'Santiago')
+
+```
+
+### Define distance
+```{r}
+df20_out <- df20_out %>% mutate(
+  distance_class = case_when(length_km < 100 ~ "<100",
+                             length_km >= 100 ~ ">100"))
+
+df22_out <- df22_out %>% mutate(
+  distance_class = case_when(length_km < 100 ~ "<100",
+                             length_km >= 100 ~ ">100"))
+
+```
+
+### preserve a unique geometry
+```{r}
+df20_out <- df20_out %>%
+  group_by(end_polygon_name) %>%
+  mutate(geometry = st_union(geometry)) %>%
+  ungroup()
+
+df22_out <- df22_out %>%
+  group_by(end_polygon_name) %>%
+  mutate(geometry = st_union(geometry)) %>%
+  ungroup()
+```
+
+### Sum of flows
+```{r}
+outflows_df_20 <- df20_out %>% 
+  filter(start_polygon_name != end_polygon_name) %>% 
+  group_by(start_polygon_name, end_polygon_name, geometry, distance_class) %>% 
+  dplyr::summarise(
+    sum_outflow = sum(n_crisis, na.rm = T)) %>% 
+  ungroup() 
+
+outflows_df_22 <- df22_out %>% 
+  filter(start_polygon_name != end_polygon_name) %>% 
+  group_by(start_polygon_name, end_polygon_name, geometry, distance_class) %>% 
+  dplyr::summarise(
+    sum_outflow = sum(n_crisis, na.rm = T)) %>% 
+  ungroup() 
+```
+
+### Check alignment between data frames
+```{r}
+p <- ggplot() + 
+  geom_sf(data = adm_shp,
+          color = "gray60", 
+          size = 0.1) 
+
+last_plot()
+```
+
+```{r}
+p <- p +
+  geom_point(data = outflows_df_20,
+    aes(geometry = geometry),
+    stat = "sf_coordinates"
+  ) 
+last_plot()
+```
+
+### Add year
+```{r}
+outflows_df_20$year <- '2020'
+outflows_df_22$year <- '2022'
+```
+
+### Bind outflows
+```{r}
+outflows_df <- rbind(outflows_df_20, outflows_df_22)
+```
+
+### Join flows to polygons
+```{r}
+mob_indicators_1 <- st_join(adm_shp, outflows_df)
+```
+
+## classify data into quantiles
+```{r}
+mob_indicators_1$new_jenk_class <- classify_intervals(mob_indicators_1$sum_outflow, n = 5, style = "quantile", factor = TRUE)
+
+outflow_labels_1 <- levels(mob_indicators_1$new_jenk_class)
+outflow_labels_1 <- gsub("^.|.$", "",  outflow_labels_1)
+outflow_labels_1 <- gsub("\\.[0-9]+", "",  outflow_labels_1)
+outflow_labels_1 <- gsub("\\,", "-",  outflow_labels_1)
+levels(mob_indicators_1$new_jenk_class) <- outflow_labels_1
+
+# mob_indicators_1 <- mob_indicators_1 %>% 
+  # mutate(new_jenk_class = str_replace(new_jenk_class, ",", "-"))
+
+# change geometry
+shp_reg <- adm_shp %>% st_transform(crs = 'EPSG:4326')
+```
+
+```{r}
+mob_indicators_1 <- na.omit(mob_indicators_1)
+```
+
+
+## Plotting
+
+### Crop bounding box
+```{r}
+bbox_new <- st_bbox(adm_shp) # current bounding box
+
+xrange <- bbox_new$xmax - bbox_new$xmin # range of x values
+yrange <- bbox_new$ymax - bbox_new$ymin # range of y values
+
+bbox_new[1] <- bbox_new[1] + (0.6 * xrange) # xmin - left
+
+bbox_new <- bbox_new %>%  # take the bounding box ...
+  st_as_sfc() # ... and make it a sf polygon
+
+ggplot() + 
+  geom_sf(data = adm_shp,
+          color = "gray60", 
+          size = 0.1) +
+  geom_point(data = outflows_df_20,
+    aes(geometry = geometry),
+    stat = "sf_coordinates",
+    size = .1
+  ) +
+  coord_sf(xlim = st_coordinates(bbox_new)[c(1,2),1], # min & max of x values
+           ylim = st_coordinates(bbox_new)[c(2,3),2]) + # min & max of y values
+  theme_void()
+```
+
+### Creating individual country map
+```{r}
+
+ggplot(data = mob_indicators_1, 
+                           aes(fill = new_jenk_class )) +
+  geom_sf(col = "white", size = .2) + 
+  coord_sf() +
+  scale_fill_brewer(palette = "OrRd", direction = 1, na.value="black") +
+  facet_grid(distance_class ~ year) +
+  theme_map() +
+  theme(plot.title = element_text(size = 20, face = "bold"),
+        legend.title = element_text(size = 14),
+        legend.text = element_text(size = 8),
+        legend.position = "bottom",
+        panel.background = element_rect(fill = "gray99", colour = "gray99")
+        ) +
+  labs(title = "(b) Santiago",
+       fill = "Number of moves") +
+    geom_sf(data = adm_shp,
+          col = "grey", 
+          size = .5,
+          fill = "transparent") +
+    coord_sf(xlim = st_coordinates(bbox_new)[c(1,2),1], 
+           ylim = st_coordinates(bbox_new)[c(2,3),2]) 
+
+outflow_plot_chi <- last_plot()
+```
+
+### Saving country map
+```{r}
+png("/Users/franciscorowe/Dropbox/Francisco/Research/in_progress/recast/cepal-report/outputs/cloropleth-maps/cloropleth-chi.png", units="in", width=8, height=10, res=300)
+  last_plot()
+dev.off()
+```
+
+```{r}
+png("/Users/franciscorowe/Dropbox/Francisco/Research/in_progress/recast/cepal-report/outputs/cloropleth-maps/cloropleth-map.png", units="in", width=8, height=10, res=300)
+  outflow_plot_arg / outflow_plot_chi
+```
+

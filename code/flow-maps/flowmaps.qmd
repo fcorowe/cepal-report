@@ -1,0 +1,478 @@
+---
+title: "Flow Map for Santiago In-flows June 2020"
+format: html
+self-contained: true
+editor: visual
+---
+
+```{r}
+rm(list=ls())
+```
+
+```{r include=FALSE}
+library(mapdeck)
+library(tidyverse)
+library(mapview)
+library(htmlwidgets)
+library(webshot)
+library(patchwork)
+```
+
+```{r include=FALSE}
+# db_20 <- readRDS("C:\\Users\\rpnev\\Desktop\\argentina\\2020_04_mov.rds") %>% 
+#   mutate(GEOMETRY = NULL) 
+# db_22 <- readRDS("C:\\Users\\rpnev\\Desktop\\argentina\\2022_04_mov.rds") %>% 
+#   mutate(GEOMETRY = NULL)
+```
+
+```{r}
+db_20_04 <- readRDS("R:\\data\\outputs\\colombia\\movements\\2020_04_mov.rds")
+db_20_05 <- readRDS("R:\\data\\outputs\\colombia\\movements\\2020_05_mov.rds")
+db_20_06 <- readRDS("R:\\data\\outputs\\colombia\\movements\\2020_06_mov.rds")
+db_20_07 <- readRDS("R:\\data\\outputs\\colombia\\movements\\2020_07_mov.rds")
+```
+
+```{r}
+db_20 <- rbind(db_20_04, db_20_05, db_20_06, db_20_07)
+```
+
+```{r}
+db_21_04 <- readRDS("R:\\data\\outputs\\colombia\\movements\\2022_01_mov.rds")
+db_21_05 <- readRDS("R:\\data\\outputs\\colombia\\movements\\2022_02_mov.rds")
+db_21_06 <- readRDS("R:\\data\\outputs\\colombia\\movements\\2022_03_mov.rds")
+db_21_07 <- readRDS("R:\\data\\outputs\\colombia\\movements\\2022_04_mov.rds")
+```
+
+```{r}
+db_22 <- rbind(db_21_04, db_21_05, db_21_06, db_21_07)
+```
+
+```{r}
+# need to group by length and calculate mean length
+#db_20 <- db_20 %>%
+#  group_by(start_polygon_name, end_polygon_name, start_lat, start_lon, end_lat, end_lon, #n_crisis) %>%
+#  summarize(length_km = mean(length_km)) %>% 
+#  distinct() %>% 
+#  ungroup()
+
+#db_22 <- db_22 %>%
+#  group_by(start_polygon_name, end_polygon_name, start_lat, start_lon, end_lat, end_lon, #n_crisis) %>%
+#  summarize(length_km = mean(length_km)) %>% 
+#  distinct() %>% 
+#  ungroup()
+```
+
+```{r include=FALSE}
+# remove 0km movements
+db_20 <- db_20 %>% 
+  filter(length_km != 0)
+db_22 <- db_22 %>% 
+  filter(length_km != 0)
+```
+
+```{r include=FALSE}
+# less than 50k
+db20_s <- db_20 %>% 
+  filter(length_km <= 50)
+
+db22_s <- db_22 %>% 
+  filter(length_km <= 50)
+
+
+# more than 50k
+db20_m <- db_20 %>% 
+  filter(length_km > 50)
+
+db22_m <- db_22 %>% 
+  filter(length_km > 50)
+
+# less than 100
+
+db20_uh <- db_20 %>% 
+  filter(length_km < 100)
+
+db22_uh <- db_22 %>% 
+  filter(length_km < 100)
+
+
+# more than 100
+
+db20_h <- db_20 %>% 
+  filter(length_km >= 100)
+
+db22_h <- db_22 %>% 
+  filter(length_km >= 100)
+```
+
+```{r include=FALSE}
+# compute sum move by origin-destination pair
+flow_db_20_h <- db20_h %>% 
+  filter(start_polygon_name != end_polygon_name) %>% 
+  group_by(start_polygon_name, end_polygon_name) %>% 
+  dplyr::summarise(
+    sum_flow = sum(n_crisis, na.rm = T)
+    ) %>% 
+  ungroup()
+
+flow_db_20_uh <- db20_uh %>% 
+  filter(start_polygon_name != end_polygon_name) %>% 
+  group_by(start_polygon_name, end_polygon_name) %>% 
+  dplyr::summarise(
+    sum_flow = sum(n_crisis, na.rm = T)
+    ) %>% 
+  ungroup()
+
+flow_db_22_h <- db22_h %>% 
+  filter(start_polygon_name != end_polygon_name) %>% 
+  group_by(start_polygon_name, end_polygon_name) %>% 
+  dplyr::summarise(
+    sum_flow = sum(n_crisis, na.rm = T)
+    ) %>% 
+  ungroup()
+
+flow_db_22_uh <- db22_uh %>% 
+filter(start_polygon_name != end_polygon_name) %>% 
+  group_by(start_polygon_name, end_polygon_name) %>% 
+  dplyr::summarise(
+    sum_flow = sum(n_crisis, na.rm = T)
+    ) %>% 
+  ungroup()
+```
+
+```{r include=FALSE}
+# create a coordinate data frame for origins
+#origin_coordinate_db <- db1_s %>% 
+#  dplyr::select( c(start_polygon_name, start_lat, start_lon)) %>% 
+#  distinct()
+```
+
+```{r include=FALSE}
+origin_coordinates_db_20_h <- db20_h %>%
+  group_by(start_polygon_name) %>%
+  summarize(start_lat = mean(start_lat),
+            start_lon = mean(start_lon)) %>% 
+  distinct() %>% 
+  ungroup()
+
+origin_coordinates_db_20_uh <- db20_uh %>%
+  group_by(start_polygon_name) %>%
+  summarize(start_lat = mean(start_lat),
+            start_lon = mean(start_lon)) %>% 
+  distinct() %>% 
+  ungroup()
+
+origin_coordinates_db_22_h <- db22_h %>%
+  group_by(start_polygon_name) %>%
+  summarize(start_lat = mean(start_lat),
+            start_lon = mean(start_lon)) %>% 
+  distinct() %>% 
+  ungroup()
+
+origin_coordinates_db_22_uh <- db22_uh %>%
+  group_by(start_polygon_name) %>%
+  summarize(start_lat = mean(start_lat),
+            start_lon = mean(start_lon)) %>% 
+  distinct() %>% 
+  ungroup()
+```
+
+```{r include=FALSE}
+# create a coordinate data frame for destinations
+#destination_coordinate_db <- db1_s %>% 
+#  dplyr::select( c(end_polygon_name, end_lat, end_lon)) %>% 
+#  distinct()
+```
+
+```{r include=FALSE}
+destination_coordinates_db_20_h <- db20_h %>%
+  group_by(end_polygon_name) %>%
+  summarize(end_lat = mean(end_lat),
+            end_lon = mean(end_lon)) %>% 
+  distinct() %>% 
+  ungroup()
+
+destination_coordinates_db_20_uh <- db20_uh %>%
+  group_by(end_polygon_name) %>%
+  summarize(end_lat = mean(end_lat),
+            end_lon = mean(end_lon)) %>% 
+  distinct() %>% 
+  ungroup()
+
+destination_coordinates_db_22_h <- db22_h %>%
+  group_by(end_polygon_name) %>%
+  summarize(end_lat = mean(end_lat),
+            end_lon = mean(end_lon)) %>% 
+  distinct() %>% 
+  ungroup()
+
+destination_coordinates_db_22_uh <- db22_uh %>%
+  group_by(end_polygon_name) %>%
+  summarize(end_lat = mean(end_lat),
+            end_lon = mean(end_lon)) %>% 
+  distinct() %>% 
+  ungroup()
+```
+
+```{r include=FALSE}
+# join coordinates for origins and destinations
+flow_db_20_h <- left_join(flow_db_20_h, origin_coordinates_db_20_h, by = c("start_polygon_name" = "start_polygon_name"))
+flow_db_20_h <- left_join(flow_db_20_h, destination_coordinates_db_20_h, by = c("end_polygon_name" = "end_polygon_name"))
+
+flow_db_20_uh <- left_join(flow_db_20_uh, origin_coordinates_db_20_uh, by = c("start_polygon_name" = "start_polygon_name"))
+flow_db_20_uh <- left_join(flow_db_20_uh, destination_coordinates_db_20_uh, by = c("end_polygon_name" = "end_polygon_name"))
+
+flow_db_22_h <- left_join(flow_db_22_h, origin_coordinates_db_22_h, by = c("start_polygon_name" = "start_polygon_name"))
+flow_db_22_h <- left_join(flow_db_22_h, destination_coordinates_db_22_h, by = c("end_polygon_name" = "end_polygon_name"))
+
+flow_db_22_uh <- left_join(flow_db_22_uh, origin_coordinates_db_22_uh, by = c("start_polygon_name" = "start_polygon_name"))
+flow_db_22_uh <- left_join(flow_db_22_uh, destination_coordinates_db_22_uh, by = c("end_polygon_name" = "end_polygon_name"))
+```
+
+```{r include=FALSE}
+## focus on bogota
+## for all other countries
+df_bogota_20_uh <- flow_db_20_uh %>% dplyr::filter(start_polygon_name == "Bogotá, D.C.")
+df_bogota_20_h <- flow_db_20_h %>% dplyr::filter(start_polygon_name == "Bogotá, D.C.")
+df_bogota_22_uh <- flow_db_22_uh %>% dplyr::filter(start_polygon_name == "Bogotá, D.C.")
+df_bogota_22_h <- flow_db_22_h %>% dplyr::filter(start_polygon_name == "Bogotá, D.C.")
+
+# #for argentina only
+# area_names <- c("José C. Paz", "San Miguel", "Morón", "Capital Federal", "Esteban Echeverría", "Florencio Varela")
+# 
+# df_bogota_20_h <- flow_db_20_h %>% dplyr::filter(start_polygon_name %in% area_names)
+# df_bogota_20_uh <- flow_db_20_uh %>% dplyr::filter(start_polygon_name %in% area_names)
+# df_bogota_22 <- flow_db_22 %>% dplyr::filter(start_polygon_name %in% area_names)
+# 
+# df_bogota_20$start_polygon_name <- 'Buenos Aires'
+# df_bogota_22$start_polygon_name <- 'Buenos Aires'
+# 
+# # also replace those values in destination with Beunos Aires and then filter out
+# 
+# df_bogota_20$end_polygon_name <- ifelse(df_bogota_20$end_polygon_name %in% area_names, "Buenos Aires", df_bogota_20$end_polygon_name)
+# 
+# df_bogota_22$end_polygon_name <- ifelse(df_bogota_22$end_polygon_name %in% area_names, "Buenos Aires", df_bogota_22$end_polygon_name)
+# 
+# ## remove if beunos aires destination
+# 
+# df_bogota_20 <- df_bogota_20 %>%
+#   filter(end_polygon_name != 'Buenos Aires')
+# 
+# df_bogota_22 <- df_bogota_22 %>%
+#   filter(end_polygon_name != 'Buenos Aires')
+# 
+# 
+# 
+# # group and calc mean coords for Beunos Aires origin
+# 
+# df_bogota_20$start_lat <- mean(df_bogota_20$start_lat)
+# df_bogota_20$start_lon <- mean(df_bogota_20$start_lon)
+# 
+# df_bogota_22$start_lat <- mean(df_bogota_22$start_lat)
+# df_bogota_22$start_lon <- mean(df_bogota_22$start_lon)
+# 
+# ## group and sum destinastios
+# df_bogota_20 <- df_bogota_20 %>%
+#   group_by(start_polygon_name, end_polygon_name, start_lat, start_lon, end_lat, end_lon) %>%
+#   summarize(sum_flow = sum(sum_flow)) %>%
+#   ungroup()
+# 
+# df_bogota_22 <- df_bogota_22 %>%
+#   group_by(start_polygon_name, end_polygon_name, start_lat, start_lon, end_lat, end_lon) %>%
+#   summarize(sum_flow = sum(sum_flow)) %>%
+#   ungroup()
+```
+
+```{r}
+df_bogota_20_h$year <- '2020'
+df_bogota_20_uh$year <- '2020'
+df_bogota_22_h$year <- '2022'
+df_bogota_22_uh$year <- '2022'
+
+df_bogota_20_h$distance <- '100+'
+df_bogota_20_uh$distance <- '<100'
+df_bogota_22_h$distance <- '100+'
+df_bogota_22_uh$distance <- '<100'
+
+df_bogota <- rbind(df_bogota_20_uh, df_bogota_20_h, df_bogota_22_uh, df_bogota_22_h)
+
+```
+
+```{r}
+write.csv(df_bogota, "C:\\Users\\rpnev\\Desktop\\Colombia\\colombia_mov.csv")
+```
+
+```{r include=FALSE}
+#write.csv(df_bogota_20, 'C:\\Users\\rpnev\\Documents\\PhD Year 3\\RA\\playground\\cl_long_over100_2020.csv')
+#write.csv(df_bogota_22, 'C:\\Users\\rpnev\\Documents\\PhD Year 3\\RA\\playground\\ar_long_2022.csv')
+```
+
+```{r include=FALSE}
+key <- 'pk.eyJ1IjoicnV0aG5ldmlsbGUiLCJhIjoiY2t6cGhiOWg2MGxzZTJycGV4Mmh4YnBodSJ9.Vlm7HnreuTBCuTG8AqVUug'
+```
+
+```{r include=FALSE}
+# Calculate the total sum of flows 
+#total_sum <- sum(df_bogota$sum_flow)
+
+
+# Scale the flow values as a percentage of the total sum of flows 
+#df_bogota$relative_flow <- df_bogota$sum_flow / total_sum
+
+
+# Define a scaling factor to adjust the stroke width 
+#scaling_factor <- 10
+
+# Scale the min-max normalized flow values to increase the stroke width
+#df_bogota$scaled_relative_stroke <- df_bogota$relative_flow * scaling_factor
+
+```
+
+```{r}
+# Min-max scaling function
+min_max_scaling <- function(x) {
+  (x - min(x)) / (max(x) - min(x))
+}
+
+# Normalize the movements for 2020 and 2022 separately
+df_bogota$scaled_flow <- min_max_scaling(df_bogota$sum_flow)
+
+df_bogota$scaled_flow <- df_bogota$scaled_flow * 15
+
+```
+
+```{r}
+## replace Santiago coords with centroid for visual appeal
+
+df_bogota$start_lat[df_bogota$start_polygon_name == 'Bogotá, D.C.'] <- 4.624335
+df_bogota$start_lon[df_bogota$start_polygon_name == 'Bogotá, D.C.'] <- -74.063644
+
+df_bogota$start_lat <- as.numeric(df_bogota$start_lat)
+df_bogota$start_lon <- as.numeric(df_bogota$start_lon)
+```
+
+```{r}
+## want the end locations to have the same coords when they are the same place
+df_bogota <- df_bogota %>%
+  group_by(end_polygon_name) %>%
+  mutate(
+    end_lat = ifelse(n_distinct(end_lat) > 1, mean(end_lat), end_lat),
+    end_lon = ifelse(n_distinct(end_lon) > 1, mean(end_lon), end_lon)
+  ) %>%
+  ungroup()
+```
+
+```{r}
+df_bogota_20_uh <- df_bogota %>% 
+  filter(year == '2020') %>% 
+  filter(distance == '<100') 
+
+df_bogota_22_uh <- df_bogota %>% 
+  filter(year == '2022') %>% 
+  filter(distance == '<100')
+```
+
+```{r}
+flowmap <- mapdeck(
+  token = key,
+  style = mapdeck_style('dark'),
+  location = c(-34.60385, -58.38177),
+  zoom = 6,
+  pitch = 45) %>% 
+  add_arc(
+  data = df_bogota_20_uh,
+  layer_id = 'arc_layer_2020',
+  origin = c('start_lon', 'start_lat'),
+  destination = c('end_lon', 'end_lat'),
+  stroke_width = 'test')
+
+flowmap
+```
+
+```{r}
+flowmap_22 <- mapdeck(
+  token = key,
+  style = mapdeck_style('dark'),
+  location = c(-34.60385, -58.38177),
+  zoom = 6,
+  pitch = 45) %>% 
+  add_arc(
+  data = df_bogota_22_uh,
+  layer_id = 'arc_layer_2020',
+  origin = c('start_lon', 'start_lat'),
+  destination = c('end_lon', 'end_lat'),
+  stroke_width = 'test')
+
+flowmap_22
+```
+
+```{r include=FALSE}
+# Create the map for 2020 with arcs varying by the scaled flow values
+flowmap_2020 <- mapdeck(
+  token = key,
+  style = mapdeck_style("dark"),
+  location = c(-3.7, 40.4),
+  zoom = 6,
+  pitch = 45
+) %>%
+  add_arc(
+    data = df_bogota_20_uh,
+    layer_id = "arc_layer_2020",
+    origin = c("start_lon", "start_lat"),
+    destination = c("end_lon", "end_lat"),
+    stroke_width = "scaled_flow")
+
+
+
+# Create the map for 2022 with arcs varying by the scaled flow values
+flowmap_2022 <- mapdeck(
+  token = key,
+  style = mapdeck_style("dark"),
+  location = c(-3.7, 40.4),
+  zoom = 6,
+  pitch = 45
+) %>%
+  add_arc(
+    data = df_bogota_22,
+    layer_id = "arc_layer_2020",
+    origin = c("start_lon", "start_lat"),
+    destination = c("end_lon", "end_lat"),
+    # colour strokes depending on the number of flows
+    stroke_from = "sum_flow",
+    stroke_to = "sum_flow",
+    palette = "sequential_hcl",
+    stroke_width = "scaled_flow",  
+    legend = TRUE,
+    legend_options = list(
+            stroke_from = list( title = "Total Number of Flows 2022"),
+            stroke_to = list(title = "",  digits = 3)
+  ))
+```
+
+```{r}
+flowmap_2020
+```
+
+```{r}
+flowmap_2022
+```
+
+```{r include=FALSE}
+#htmltools::save_html(flowmap, file = "C:\\Users\\rpnev\\Documents\\PhD Year 3\\RA\\playground\\mx_long_2022_m2.html")
+```
+
+```{r, setup, include = FALSE}
+htmltools::save_html(flowmap_2020, file = "R:\\outputs\\plots\\flow_maps\\argentina\\interactive\\ar_long_2020.html")
+htmltools::save_html(flowmap_2022, file = "R:\\outputs\\plots\\flow_maps\\argentina\\interactive\\ar_long_2022.html")
+```
+
+```{r}
+htmltools::save_html(flowmap_2020, file = "C:\\Users\\rpnev\\Documents\\PhD Year 3\\RA\\playground\\flow maps\\flowmaps2\\ar_long_2020.html")
+htmltools::save_html(flowmap_2022, file = "C:\\Users\\rpnev\\Documents\\PhD Year 3\\RA\\playground\\flow maps\\flowmaps2\\ar_long_2022.html")
+
+```
+
+```{r}
+#png("C:\\Users\\rpnev\\Documents\\PhD Year 3\\RA\\playground\\flow maps\\flowmaps2\\map1.png", units="in", width=10, height=10, res=300)
+#flowmap_2020
+#dev.off()
+```

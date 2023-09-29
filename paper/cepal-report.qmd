@@ -25,7 +25,7 @@ affiliations:
     name: El Colegio de México
     city: Mexico
 abstract: |
-  **Abstract**. Text for abstract
+  **Abstract**. The COVID‐19 pandemic has impacted the national systems of population movement around the world. Existing work has focused on countries of the Global North and restricted to the immediate effects of COVID-19 data during 2020. Data have represented a major limitation to monitor change in mobility patterns in countries in the Global South. Drawing on aggregate anonymised mobile phone location data from Meta‐Facebook users, we aim to analyse the extent and persistence of changes in the levels (or intensity) and spatial patterns of internal population movement across the rural-urban continuum in Argentina, Chile and Mexico over a 26-month period from March 2020 to May 2022. We revealed an overall systematic decline in the level of short- and long-distance movement during the enactment of nonpharmaceutical interventions in 2020, with the largest reductions occurred in the most dense areas. We also showed that these levels bounced back closer to pre-pandemic levels in 2022 following the relaxation of COVID-19 stringency measures; however, the intensity of these movements remained below pre-pandemic levels in many areas in 2022. [add bit on net balances]
 format: 
   pdf: 
     header-includes:
@@ -42,22 +42,22 @@ editor_options:
 # Introduction
 
 The COVID-19 pandemic triggered major changes in the patterns of human population movement across the world.
-Nonpharmaceuthical interventions to contain the spread of COVID-19, such as social distancing, lockdowns, business and school closures contributed to sharp declines in internal population movements within countries \[REF\].
-As the virus spread globally in early 2020, COVID‐19 infection and mortality rates were disproportionately higher in large and dense metropolitan areas \[REF\], remote work reduced the need to commute \[REF\] and diminished retail activity decreased the attractiveness and vibrancy of these areas \[REF\].
-In a gloomy prospect for urban centres, media headlines suggested the death of cities gathering anecdotal evidence on an "urban exodus", claiming sudden rises in the number of people moving from large cities to suburbs and rural locales \[REF\].
+Nonpharmaceuthical interventions to contain the spread of COVID-19, such as social distancing, lockdowns, business and school closures contributed to sharp declines in internal population movements within countries [@nouvellet2021].
+As the virus spread globally in early 2020, COVID‐19 infection and mortality rates were disproportionately higher in large and dense metropolitan areas [@Pomeroy2021], remote work reduced the need to commute [@nathan2020] and diminished retail activity decreased the attractiveness and vibrancy of these areas [@florida2021].
+In a gloomy prospect for urban centres, media headlines suggested the death of cities gathering anecdotal evidence on an "urban exodus", claiming sudden rises in the number of people moving from large cities to suburbs and rural locales [@paybarah2020new; @marsh2020escape].
 
 Empirical evidence have examined these claims focusing on two key dimensions of internal population movements i.e. its level (or intensity), and its spatial impacts on population redistribution.
-Existing evidence reveals a sharp reduction in levels of overall mobility, including short- and long-distance movements, and some support for an urban exodus during the early days of COVID-2019 in 2020 as the pandemic was unfolding and strict nonpharmaceuthical measures were enacted [REF]. Population losses through internal population movements were documented for large core metropolitan areas in Spain [REF], Germany [REF], Sweden [REF], Japan [REF], Australia [REF], the United States [REF] and Britain [REF]. Suburban and outer parts of metropolitan areas (as in the 'donut effect' noted for US cities, see @ramani2021), as well as more distant rural areas, were identified as gaining population [REF].
+Existing evidence reveals a sharp reduction in levels of overall mobility, including short- and long-distance movements, and some support for an urban exodus during the early days of COVID-2019 in 2020 as the pandemic was unfolding and strict nonpharmaceuthical measures were enacted \[@rowe2023\]. Population losses through internal population movements were documented for large core metropolitan areas in Spain \[@gonzález-leonardo2022b; @gonzález-leonardo2022c\], Germany \[@stawarz2022\], Sweden \[@vogiazides2022\], Japan \[@tønnessen2021\], Australia \[@perales2022\], the United States \[@ramani2021\] and Britain \[@rowe2022b\]. Suburban and outer parts of metropolitan areas (as in the 'donut effect' noted for US cities, see @ramani2021), as well as more distant rural areas, were identified as gaining population.
 
 Yet, less is known about the extent and durability of population movements to and from large cities during the COVID-19 pandemic in the Global South and extending beyond 2020.
 Existing work has focused on countries in the Global North and restricted to the immediate effects of COVID-19 data during 2020.
 Only two studies have analysed data extending to 2021.
 For Spain, @gonzález-leonardo2022c report continuing population losses through internal migration in large cities, such as Madrid and Barcelona.
-In Britain, however, @rowe2022 record a recovery in the levels of internal movements in low and high density areas converging to pre-pandemic levels.
+In Britain, however, @rowe2022b record a recovery in the levels of internal movements in low and high density areas converging to pre-pandemic levels.
 
 A major limitation to capture national-scale changes in the patterns of internal population movement across the rural-urban hierarchy in the Global South during the pandemic has been the lack of suitable data.
 Traditionally census and survey data are used to study human mobility patterns at such scale.
-But, these data systems are not frequently updated and suffer from slow releases, with census data for example being collected over intervals of ten years in most Latin American countries and with a six-month lag in the release of information \[REF\].
+But, these data systems are not frequently updated and suffer from slow releases, with census data for example being collected over intervals of ten years in most Latin American countries and with a few month lag for the release of information [@cepal2022].
 These systems thus lack the temporal granularity to analyse population movements over short-time periods [@green2021].
 Digital footprints (DF) left as a result of social interactions on digital platforms offer an unique source of information to capture human population movement in the unfolding data revolution [@rowe2023big].
 Particularly DF data from mobile phone applications have become a prominent source to sense patterns of human mobility at higher geographical and temporal resolution over in real time, and especially in data-scarce environments in less developed countries.
@@ -276,9 +276,9 @@ The boxplots report movements that emerge from each population density category 
 The baseline levels are represented by the dotted line at $y=0$.
 Positive values indicate increases in mobility relative to the pre-pandemic period, while negative values indicate a reduction in mobility.
 
-![Changes in mobility flows during May 2020 and March 2022 by population density deciles, relative to baseline period. Movements under 100km.](../outputs/all_countries_outflows_u100_minus_Colombia_lighter.pdf){#fig-outflowsU100}
+![Changes in mobility flows during May 2020 and March 2022 by population density class, relative to baseline period. Short-distance (\<100km) movements.](../outputs/all_countries_outflows_u100_minus_Colombia_lighter.pdf){#fig-outflowsU100}
 
-![Changes in mobility flows during May 2020 and March 2022 by population density deciles, relative to baseline period. Movements over 100km.](../outputs/all_countries_outflows_o100_minus_Colombia.pdf){#fig-outflowsO100}
+![Changes in mobility flows during May 2020 and March 2022 by population density class, relative to baseline period. Long-distance (\<100km) movements.](../outputs/all_countries_outflows_o100_minus_Colombia.pdf){#fig-outflowsO100}
 
 *Short-distance movements*
 
@@ -331,9 +331,9 @@ Specifically, we examined the evolution of changes in the net balance between mo
 We calculated the monthly net movement balance as the difference between mobility inflows minus outflows for individual population density classes during March 2020 to May 2022.
 @fig-fig4 and @fig-fig5 show the changes in net balance for movements under 100km and over 100km, respectively.
 
-![Total number of net movement by population density class. Movements under 100km.](../outputs/netflows_u100_0km_format_report_minus_Colombia.pdf){#fig-fig4}
+![Total number of net movement by population density class. Short-distance (\<100km) movements.](../outputs/netflows_u100_0km_format_report_minus_Colombia.pdf){#fig-fig4}
 
-![Total number of net movement by population density class. Movements under 100km.](../outputs/netflows_o100_0km_format_report_minus_Colombia.pdf){#fig-fig5}
+![Total number of net movement by population density class. Long-distance (\>100km) movements.](../outputs/netflows_o100_0km_format_report_minus_Colombia.pdf){#fig-fig5}
 
 *Short-distance movement*
 
@@ -381,19 +381,35 @@ At the same time, we observed a continuous trend of negative net balances in hig
 
 ## Movements from and to capital cities
 
-To understand better the nature of movements involving areas of population density class 10, we analysed the spatial patterns of movement of under and over 100km from and to capital cities.
-Movements from and to areas of population density class 10 exclusively represent mobility patterns from and to metropolitan core areas of capital cities in our analysis.
+To understand better the nature of movements involving areas of population density class 10, we analysed the spatial patterns of movement of under and over 100km from capital cities.
+In our analysis, movements from population density class 10 areas exclusively represent mobility patterns from metropolitan core areas of capital cities.
+@fig-fig6 displays the number of movements out from metropolitan core areas in Buenos Aires, Santiago and Mexico City for March 2020 and April 2022.
+As anticipated, areas around the national capitals represent the main destinations for short-distance movements.
+In March 2020, movements away from capital were limited but had expanded in volume and geographical extent by April 2022.
 
--   In the context of negative net balances relating to short-distance movement for areas of class 10 in Argentina and Mexico, identify the key destinations and any systematic patterns of outflows - what sort of areas attracted people
+![Short-distance (\<100km) and long-distance (\>100km) movements from core areas in capital cities. March 2020 and April 2022.](../outputs/cloropleth-maps/cloropleth-arg.png){#fig-fig6}
 
--   In Chile, what are the flows, origins and destinations underpinning the limited redistribution in class 10 areas over short distances
+@fig-fig6 reveals the main destinations for the movements underpinning the persistent losses of short-distance movement observed for class 10 areas in Argentina and Mexico.
+Our data revealed that nearby urban and suburban areas, such as Moreno, La Matanza and Tigre in Argentina and Ecatepec de Morelos, Ciudad López Mateos and Chicoloapan de Juárez in Mexico absorbed over 80% of short-distance moves from Buenos Aires and Mexico City in April 2022.
+To a lesser extent, these moves have been directed to rural areas.
+Though, as we described in the previous section, these areas recorded a relatively large net balance of short-distance moves, particularly in Mexico, while short-distance movements are quite balanced in metropolitan core areas in Chile (@fig-fig4).
 
--   In Chile, how we explain a negative net balance early in the pandemic
+@fig-fig6 also reveals a similar pattern to the donut effect documented in the US with large cities hollowing out [@ramani2021].
+The maps for short-distance moves in @fig-fig6 show that suburban areas closer to metropolitan core areas absorbed larger counts of short-distance moves, with neighbouring rural locations and towns attracting smaller numbers.
+In Argentina and Chile, this pattern has been relatively uniform with areas closer to Buenos Aires and Santiago absorbing large numbers.
+In Mexico, areas on the west and north-west, such as Lerma, Metepec and Chiautla have tended to record the largest numbers from Mexico City.
+
+@fig-fig6 identifies the destination areas underpinning the negative balance of long-distance movements in the early months of the pandemic observed for Santiago, Chile.
+The bottom-left map in @fig-fig6 reveals that key destinations were coastal areas in the province of Valparaiso and central-southern areas in the provinces of Talca, Curico and Colchagua.
+Movements to these destinations are thought to have been moves from affluent households, with second or holiday homes in these areas and jobs which could be done remotely.
+Additionally, the bottom-left map in @fig-fig6 for Chile shows that the provinces of Antofagasta and El Loa also attracted a relatively large number of moves.
+The economy of these areas suggest that these were long-distance commuting moves, rather than migratory moves.
+
+@fig-fig5 showed that metropolitan core areas in the three countries in our analysis have tended to record consistent positive balances of long-distance movements.
+Contrary to early speculations of the death of cities, this pattern may reflect the resilience of cities to endure crises and as a key engine of economic growth, innovation and prosperity.
+@fig-fig6 revealed the
 
 -   In Argentina, Chile and Mexico, how do we explain the rise in positive net balances in 2021 and 2022
-
-Our findings suggest that a general drop of movements from large cities occurred in Latin America during the first wave of COVID-19, but the patterns of internal population movements away from these cities were not altered, despite a decline in the distance that people travelled from Buenos Aires and Bogota.
-Nonetheless, variations seem to have been temporary and did not altered macro-structures of the human mobility in Latin American countries.
 
 # Discussion {#sec-discussion}
 

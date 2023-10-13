@@ -1,0 +1,150 @@
+---
+title: "Cloropleth mapping with a histogram legend"
+format: html
+editor: visual
+---
+
+# Dependencies
+
+```{r}
+# handle spatial data
+library(sf)
+# manipulate data
+library(tidyverse)
+library(lubridate)
+library(readxl)
+# create maps
+library(tmap)
+library(biscale) # bivariate maps
+# data visualisation
+library(viridis) 
+library(viridisLite)
+library(RColorBrewer)
+library(ggthemes)
+library(scico)
+library(patchwork)
+library(showtext)
+library(cowplot)
+library(pals)
+library(scales)
+```
+
+# Set themes
+
+Set font style
+
+```{r}
+# clean workspace
+rm(list=ls())
+# load font
+font_add_google("Roboto Condensed", "robotocondensed")
+# automatically use showtext to render text
+showtext_auto()
+```
+
+Theme for maps
+
+```{r}
+theme_map <- function(...) {
+  theme_tufte() +
+  theme(
+    text = element_text(family = "robotocondensed", size = 22),
+    # remove all axes
+    axis.text.x = element_blank(),
+    axis.text.y = element_blank(),
+    axis.ticks = element_blank(),
+    legend.position = "none"
+    )
+}
+```
+
+Theme for plots
+
+```{r}
+theme_tufte2 <- function(...) {
+  theme_tufte() +
+  theme(
+    text = element_text(family = "robotocondensed", size = 24),
+    )
+}
+
+```
+
+# Data
+
+```{r}
+# set up country
+country = 'Mexico'
+```
+
+```{r}
+# set up base path
+base_path <- '/Volumes/RECAST/data/'
+
+sdf_shp <- st_read(paste0(base_path, 
+                          'populations/fb_worldpop_aggregation/data_with_id/', 
+                          country, '_with_id.shp')) %>% 
+  st_simplify(preserveTopology = T,
+              dTolerance = 1000) %>% 
+  st_make_valid() %>% 
+  st_transform(crs = 'EPSG:4326')
+
+cntry_shp <- st_read("/Users/franciscorowe/Dropbox/Francisco/Research/in_progress/recast/cepal-report/data/maps/shapefiles/gadm41_MEX_shp/gadm41_MEX_0.shp") %>% 
+  st_simplify(preserveTopology = T,
+              dTolerance = 1000) %>% 
+  st_make_valid() %>% 
+  st_transform(crs = 'EPSG:4326')
+#sdf_shp <- st_read(base_path2)
+```
+
+# Create map
+
+```{r}
+# Define the desired order of legend labels
+legend_order <- as.factor(1:10)
+
+# Reorder the levels of dnsty_c
+sdf_shp$dnsty_c <- factor(sdf_shp$dnsty_c, levels = legend_order)
+
+# get centriods
+cntry_shp$centroid <- cntry_shp %>% 
+  st_centroid() %>% 
+  st_geometry()
+
+# set parameters to adjust figure
+# padding_width <- 17
+# padding_height <- 22
+
+# map
+ggplot(data = sdf_shp) +
+  geom_sf(aes(fill = dnsty_c, color = dnsty_c)) +
+  coord_sf() +
+  scale_fill_viridis(discrete = TRUE, 
+                     option = "C",
+                     labels = c("1 least", "2", "3", "4", "5", "6", "7", "8", "9", "10 most")) +
+  scale_color_viridis(discrete = TRUE, option = "C") +
+  labs(title = paste(country),
+       fill = "Population \n density class") +
+  theme_map() +
+  theme(plot.title = element_text(size = 30, face = "bold"),
+        legend.position = "right") + 
+  guides(color = FALSE, size = FALSE)
+#+
+            # coord_sf(xlim = c(cntry_shp$centroid[[1]][1] - padding_width, 
+            #                   cntry_shp$centroid[[1]][1] + padding_width), 
+            #          ylim = c(cntry_shp$centroid[[1]][2] - padding_height, 
+            #                   cntry_shp$centroid[[1]][2] + padding_height), 
+            #         expand = FALSE)
+
+# show map
+choropleth_map <- last_plot()
+```
+
+
+# Saving
+
+```{r}
+png("/Users/franciscorowe/Dropbox/Francisco/Research/in_progress/recast/cepal-report/outputs/density-maps/density_map-mx.png", units="in", width=14, height=10, res=300)
+  choropleth_map
+dev.off()
+```

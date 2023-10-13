@@ -48,7 +48,7 @@ Theme for maps
 theme_map <- function(...) {
   theme_tufte() +
   theme(
-    text = element_text(family = "robotocondensed"),
+    text = element_text(family = "robotocondensed", size = 22),
     # remove all axes
     axis.text.x = element_blank(),
     axis.text.y = element_blank(),
@@ -64,7 +64,7 @@ Theme for plots
 theme_tufte2 <- function(...) {
   theme_tufte() +
   theme(
-    text = element_text(family = "robotocondensed"),
+    text = element_text(family = "robotocondensed", size = 24),
     )
 }
 
@@ -79,13 +79,22 @@ country = 'Chile'
 
 ```{r}
 # set up base path
-base_path <- '/Volumes/rdm08/RECAST/data/'
+base_path <- '/Volumes/RECAST/data/'
 #base_path2 <- '/Users/Andrea/Desktop/argentina_with_id.shp'
 
 sdf_shp <- st_read(paste0(base_path, 
                           'populations/fb_worldpop_aggregation/data_with_id/', 
-                          country, '_with_id.shp'))
+                          country, '_with_id.shp')) %>% 
+  st_simplify(preserveTopology = T,
+              dTolerance = 1000) %>% 
+  st_make_valid() %>% 
+  st_transform(crs = 'EPSG:4326')
 
+cntry_shp <- st_read("/Users/franciscorowe/Dropbox/Francisco/Research/in_progress/recast/cepal-report/data/maps/shapefiles/Chile_shp/adm/country/gadm41_CHL_0.shp") %>% 
+  st_simplify(preserveTopology = T,
+              dTolerance = 1000) %>% 
+  st_make_valid() %>% 
+  st_transform(crs = 'EPSG:4326')
 #sdf_shp <- st_read(base_path2)
 ```
 
@@ -98,13 +107,29 @@ legend_order <- as.factor(1:10)
 # Reorder the levels of dnsty_c
 sdf_shp$dnsty_c <- factor(sdf_shp$dnsty_c, levels = legend_order)
 
+# get centriods
+cntry_shp$centroid <- cntry_shp %>% 
+  st_centroid() %>% 
+  st_geometry()
+
+# set parameters to adjust figure
+padding_width <- 17
+padding_height <- 22
+
 # map
 choropleth_map <- ggplot(data = sdf_shp) +
   geom_sf(aes(fill = dnsty_c, color = dnsty_c)) +
   coord_sf() +
   scale_fill_viridis(discrete = TRUE) +
   scale_color_viridis(discrete = TRUE) +
-  theme_map() 
+  labs(title = paste("B.", country)) +
+  theme_map() +
+  theme(plot.title = element_text(size = 30, face = "bold")) +
+            coord_sf(xlim = c(cntry_shp$centroid[[1]][1] - padding_width, 
+                              cntry_shp$centroid[[1]][1] + padding_width), 
+                     ylim = c(cntry_shp$centroid[[1]][2] - padding_height, 
+                              cntry_shp$centroid[[1]][2] + padding_height), 
+                    expand = FALSE)
 
 # show map
 #choropleth_map
@@ -160,17 +185,17 @@ legend_colors <- viridis(n = n_colors)
 #city_names = c('Valcheta', 'Las Heras', 'Pinamar', 'Bariloche', 'Ushuaia', 'Posadas', 'Mar del Plata', 'Rosario', 'Córdoba', 'Buenos Aires')
 
 # Chile
-city_names = c('Mejillones', 'Pichilemu', 'Calama', 'San Felipe', 'Punta Arenas', 'Antofagasta', 'Concepcíon', 'Valparaíso', 'Reñaca', 'Santiago')
+city_names = c('Mejillones', 'Pichilemu', 'Calama', 'San Felipe', 'Punta Arenas', 'Antofagasta', 'Concepción', 'Valparaíso', 'Quilicura', 'Santiago')
 
 # Mexico
-#city_names = c('El Naranjo', 'Benito Juarez', 'Ciudad Valles', 'Chetumal', 'Culiacán', 'Cancún', 'Saltillo', 'Tijuana', 'Monterrey', 'Ciudad de Mexico')
+#city_names = c('El Naranjo', 'Chilchota', 'Ciudad Valles', 'Chetumal', 'Culiacán', 'Cancún', 'Saltillo', 'Tijuana', 'Monterrey', 'Ciudad de Mexico')
 
 
 # Define the desired order of legend labels
 legend_order <- as.factor(1:10)
 
 # Format the legend labels as '1 - city name', '2 - city name', etc.
-legend_labels <- paste0(legend_order, " (eg.", city_names, ')')
+legend_labels <- paste0(legend_order, " (", city_names, ')')
 
 sdf_shp %>% filter(pp_dns_ > 0) %>% 
   ggplot(aes(x = dnsty_c, fill = dnsty_c)) + 
@@ -181,12 +206,21 @@ sdf_shp %>% filter(pp_dns_ > 0) %>%
   theme_tufte2() +
   coord_flip() +
   scale_x_discrete(limits=rev, labels = rev(legend_labels)) +
-  ylab("Population / Area (units)") +
+  ylab("Number of grids (sqrt)") +
+  labs(title = "Population density class (example)") +
   scale_fill_manual(values = legend_colors, breaks = legend_order) + # Specify colors and break
   theme(legend.position = "none",
-        plot.title = element_text(size = 16, face = "bold"),
+        plot.title = element_text(size = 20, color = "grey30"),
+        plot.title.position = "plot",
         axis.title.y = element_blank(),
-        axis.ticks.y = element_blank()) # Set custom y-axis labels
+        axis.ticks.y = element_blank(), 
+        axis.text.y = element_text(hjust = 0, 
+                                   colour= rev(legend_colors),
+                                   face = "bold"),
+        panel.background = element_rect(fill = "white", colour = "white"),
+        plot.background = element_rect(fill = "white", colour = "white")
+        ) # Set custom y-axis labels
+
 map_legend <- last_plot()
 
 ```
@@ -195,9 +229,15 @@ map_legend <- last_plot()
 
 ```{r}
 final_map = choropleth_map + 
-  map_legend + 
-  labs(title = paste('Population Density Class -', country))
+  map_legend
 final_map
-ggsave(filename = paste0(country, "_map_with_histogram.png"), plot = final_map, dpi = 300)
+save_directory <- "/Users/franciscorowe/Dropbox/Francisco/Research/in_progress/recast/cepal-report/outputs/density-maps/"
+ggsave(filename = paste0(save_directory, country, "_map_with_histogram.png"), plot = final_map, dpi = 300)
 
+```
+
+```{r}
+png(filename = paste0(save_directory, country, "_map_with_histogram2.png"), units="in", width=14, height=10, res=300)
+  final_map
+dev.off()
 ```

@@ -121,10 +121,10 @@ ggplot(data = sdf_shp) +
   coord_sf() +
   scale_fill_viridis(discrete = TRUE, 
                      option = "C",
-                     labels = c("1 least", "2", "3", "4", "5", "6", "7", "8", "9", "10 most")) +
+                     labels = c("1 menos", "2", "3", "4", "5", "6", "7", "8", "9", "10 más")) +
   scale_color_viridis(discrete = TRUE, option = "C") +
-  labs(title = paste(country),
-       fill = "Population \n density class") +
+  labs(title = "México",
+       fill = "Clases de densidad de población") +
   theme_map() +
   theme(plot.title = element_text(size = 30, face = "bold"),
         legend.position = "right") + 
@@ -139,7 +139,6 @@ ggplot(data = sdf_shp) +
 # show map
 choropleth_map <- last_plot()
 ```
-
 
 # Saving
 
